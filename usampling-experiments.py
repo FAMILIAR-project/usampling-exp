@@ -14,6 +14,7 @@ FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
 FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
 FLA_DATASET_FOLDER="/home/samplingfm/Benchmarks/"
 FLABLASTED_DATASET_FOLDER="/home/samplingfm/Benchmarks/Blasted_Real/"
+FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
 
 
 
@@ -76,9 +77,13 @@ def all_cnf_files(folder):
 #flas_basic = all_cnf_files(FLA_DATASET_FOLDER)
 #exp_results_spur = experiment_SPUR(flas=flas_basic)
 #exp_results_spur.to_csv("experiments-SPUR-case.csv", index=False)
-flas_blasted = all_cnf_files(FLABLASTED_DATASET_FOLDER)
-exp_results_spur = experiment_SPUR(flas=flas_blasted)
-exp_results_spur.to_csv("experiments-SPUR-blasted.csv", index=False)
+#flas_blasted = all_cnf_files(FLABLASTED_DATASET_FOLDER)
+#exp_results_spur = experiment_SPUR(flas=flas_blasted)
+#exp_results_spur.to_csv("experiments-SPUR-blasted.csv", index=False)
+
+flas_v7 = all_cnf_files(FLAV7_DATASET_FOLDER)
+exp_results_spur = experiment_SPUR(flas=flas_v7)
+exp_results_spur.to_csv("experiments-SPUR-V7.csv", index=False)
 
 
 
