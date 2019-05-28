@@ -6,21 +6,22 @@ import pandas as pd
 import numpy as np
 
 N_SAMPLES=10
-TIMEOUT=120
+TIMEOUT=5
 KUS_CMD="python3 /home/KUS/KUS.py --samples " + str(N_SAMPLES)
 SPUR_CMD="/home/spur/build/Release/spur -s " + str(N_SAMPLES) + " -cnf" # + " -t " + str(TIMEOUT)
 
 FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
 FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
 FLA_DATASET_FOLDER="/home/samplingfm/Benchmarks/"
+FLABLASTED_DATASET_FOLDER="/home/samplingfm/Benchmarks/Blasted_Real/"
 
 
-onlyfla = [join(FLA_DATASET_FOLDER, f) for f in listdir(FLA_DATASET_FOLDER) if isfile(join(FLA_DATASET_FOLDER, f)) and f.endswith(".cnf")]
 
-def experiment_SPUR():
+
+def experiment_SPUR(flas):
 
     exp_results = pd.DataFrame()
-    for fla in onlyfla:
+    for fla in flas:
         full_cmd = SPUR_CMD + " " +  fla
         #print("calling ", full_cmd.split(" "))
         #subprocess.call(full_cmd, shell=True)
@@ -67,13 +68,25 @@ def experiment_SPUR():
         # print("DONE")
     return exp_results
 
-exp_results_spur = experiment_SPUR()
-exp_results_spur.to_csv("experiments-SPUR.csv", index=False)
+
+
+def all_cnf_files(folder):
+    return [join(folder, f) for f in listdir(folder) if isfile(join(folder, f)) and f.endswith(".cnf")]
+
+#flas_basic = all_cnf_files(FLA_DATASET_FOLDER)
+#exp_results_spur = experiment_SPUR(flas=flas_basic)
+#exp_results_spur.to_csv("experiments-SPUR-case.csv", index=False)
+flas_blasted = all_cnf_files(FLABLASTED_DATASET_FOLDER)
+exp_results_spur = experiment_SPUR(flas=flas_blasted)
+exp_results_spur.to_csv("experiments-SPUR-blasted.csv", index=False)
+
+
 
 ############## same but with KUS
+# flas = [join(FLA_DATASET_FOLDER, f) for f in listdir(FLA_DATASET_FOLDER) if isfile(join(FLA_DATASET_FOLDER, f)) and f.endswith(".cnf")]
 
 #exp_kus_results = pd.DataFrame()
-#for fla in onlyfla:
+#for fla in flas:
     # chdir('/home/KUS')
     # if not "karatsuba.sk_7_41.cnf" in fla:
     #     continue
