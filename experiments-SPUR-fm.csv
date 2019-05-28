@@ -1,0 +1,118 @@
+start_time,formula_file,num_vars,independent_support_size,num_clauses,tot_num_models,max_component_split_depth,max_branch_var_depth,num_samples,num_second_pass_groups,avg_second_pass_var,execution_time,pass1_time,pass2_time,timeout
+Tue May 28 15:43:31 2019,/home/samplingfm/Benchmarks/FeatureModels/sparclite_sim.cnf,1168,0,2587,31506117330638209963044978072983956210771703423518162467137502207143887426026525283299774751701910447997211646995406800,15,32,10,8,573.38,2.71945,2.63348,0.085975,False
+,/home/samplingfm/Benchmarks/FeatureModels/nano.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/edosk2674.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ref4955.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pid.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/refidt334.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:44:01 2019,/home/samplingfm/Benchmarks/FeatureModels/mace1.cnf,1234,0,2739,656138321259525538341752693748935312699763422251791867946687820763865319989865255405956422922846320061568854804405062352800,16,34,10,8,600.88,4.92959,4.83894,0.090647,False
+,/home/samplingfm/Benchmarks/FeatureModels/npwr.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/frv400.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:44:16 2019,/home/samplingfm/Benchmarks/FeatureModels/asb.cnf,1231,0,2695,208624558379411103767821804583904842978313689091761159356391529720268946501738751047094209591166794144888724214609887754772226000,15,32,10,7,569.71,4.9393,4.85459,0.08471,False
+,/home/samplingfm/Benchmarks/FeatureModels/atlas_mips64_5kc.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:44:25 2019,/home/samplingfm/Benchmarks/FeatureModels/stm3210e_eval.cnf,1269,0,2802,4912757308146160349314301146591062782855509161602264722534572884723063790968509380276050874186818212113782280182394229350320,17,33,10,5,652.40,3.55098,3.46787,0.083113,False
+Tue May 28 15:44:25 2019,/home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf,45,0,104,26256,3,5,10,1,0.00,0.008326,0.007975,0.000351,False
+,/home/samplingfm/Benchmarks/FeatureModels/aim711.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/smdk2410.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pc_i82544.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/assabet.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/uE250.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/grg.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/viper.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/mac7100evb.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/dreamcast.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/atlas_mips32_4kc.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pc_rltk8139.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ipaq.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/brutus.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sh4_202_md.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/flexanet.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/at91sam7sek.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/excalibur_arm9.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:45:58 2019,/home/samplingfm/Benchmarks/FeatureModels/tx39_sim.cnf,1179,0,2602,682632541893845669089365150548794224452599778292732575200940395975820255893908361943767657141773822968058178943088795600,15,32,10,6,594.17,2.72449,2.64536,0.079127,False
+Tue May 28 15:46:01 2019,/home/samplingfm/Benchmarks/FeatureModels/h8300h_sim.cnf,1182,0,2615,126024469283361873384607583754956414503940294936791222380108890012274328010073888669496725421228478394457674641589608400,15,32,10,6,641.00,3.28159,2.88295,0.39864,False
+,/home/samplingfm/Benchmarks/FeatureModels/picasso.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/m5272c3.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cma28x.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/phycore.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/moab.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/stdeval1.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/asb2305.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/csb281.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/se77x9.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/e7t.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/iq80310.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/eb42.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ocelot.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/se7751.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/lpcmt.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/eb40.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/integrator_arm9.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cerfpda.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pc_vmWare.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sparc_erc32.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/adder.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/eb55.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/aaed2000.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/olpch2294.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/mpc50.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sa1100mm.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/mbx.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pc_usb_d12.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/edb7xxx.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/rattler.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cme555.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ebsa285.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/vads.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/iq80321.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/malta_mips64_5kc.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/h8max.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pati.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/integrator_arm7.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/linux.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/olpce2294.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/h8s_sim.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/prpmc1100.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cq7750.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:49:46 2019,/home/samplingfm/Benchmarks/FeatureModels/am31_sim.cnf,1165,0,2582,31506117330638209963044978072983956210771703423518162467137502207143887426026525283299774751701910447997211646995406800,15,32,10,5,586.20,4.16866,4.05899,0.109671,False
+,/home/samplingfm/Benchmarks/FeatureModels/phycore229x.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/at91sam7xek.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/malta_mips32_4kc.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:50:06 2019,/home/samplingfm/Benchmarks/FeatureModels/psim.cnf,1181,0,2609,13453112094617398415824934984913073033840711698308292670109074570535666450360752126123266769824474558845382956879372034000,15,33,10,5,576.00,4.90895,4.82936,0.079582,False
+,/home/samplingfm/Benchmarks/FeatureModels/olpcl2294.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:50:15 2019,/home/samplingfm/Benchmarks/FeatureModels/calm16_ceb.cnf,1173,0,2604,77674052529377392824747553600935813078433450659822055905519707522967392202246841496570076051609082173630985952799694800,15,32,10,7,589.29,3.92084,3.80784,0.112992,False
+,/home/samplingfm/Benchmarks/FeatureModels/ea2468.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/eb40a.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/hs7729pci.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ceb_v850.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cq7708.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ec555.cnf,,,,,,,,,,5,,,True
+Tue May 28 15:50:50 2019,/home/samplingfm/Benchmarks/FeatureModels/calm32_ceb.cnf,1173,0,2604,77674052529377392824747553600935813078433450659822055905519707522967392202246841496570076051609082173630985952799694800,15,32,10,6,597.17,4.06212,3.93864,0.123486,False
+,/home/samplingfm/Benchmarks/FeatureModels/mb93093.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sleb.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/mb93091.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sh7708.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/snds.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ixdp425.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/innovator.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ts1000.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cerf.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/vrc4375.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/skmb91302.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/mcb2100.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/aki3068net.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/sparc_leon.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/gps4020.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/aeb.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/ts6.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/stb.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/jmr3904.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/pc_i82559.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/p2106.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/cma230.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/adderII.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/fads.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/vrc4373.cnf,,,,,,,,,,5,,,True
+,/home/samplingfm/Benchmarks/FeatureModels/jtst.cnf,,,,,,,,,,5,,,True

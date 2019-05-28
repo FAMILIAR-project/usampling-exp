@@ -15,6 +15,8 @@ FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
 FLA_DATASET_FOLDER="/home/samplingfm/Benchmarks/"
 FLABLASTED_DATASET_FOLDER="/home/samplingfm/Benchmarks/Blasted_Real/"
 FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
+FLAV3_DATASET_FOLDER="/home/samplingfm/Benchmarks/V3/"
+FLAV15_DATASET_FOLDER="/home/samplingfm/Benchmarks/V15/"
 
 
 
@@ -81,9 +83,17 @@ def all_cnf_files(folder):
 #exp_results_spur = experiment_SPUR(flas=flas_blasted)
 #exp_results_spur.to_csv("experiments-SPUR-blasted.csv", index=False)
 
-flas_v7 = all_cnf_files(FLAV7_DATASET_FOLDER)
-exp_results_spur = experiment_SPUR(flas=flas_v7)
-exp_results_spur.to_csv("experiments-SPUR-V7.csv", index=False)
+#flas_v7 = all_cnf_files(FLAV7_DATASET_FOLDER)
+#exp_results_spur = experiment_SPUR(flas=flas_v7)
+#exp_results_spur.to_csv("experiments-SPUR-V7.csv", index=False)
+
+dataset_fla = { 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
+for dataset_key, dataset_folder in dataset_fla.items():
+        print(dataset_key, dataset_folder)
+        flas_dataset = all_cnf_files(dataset_folder)
+        exp_results_spur = experiment_SPUR(flas=flas_dataset)
+        exp_results_spur.to_csv("experiments-SPUR-" + dataset_key + ".csv", index=False)
+        break
 
 
 
