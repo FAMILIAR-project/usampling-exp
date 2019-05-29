@@ -87,7 +87,7 @@ def all_cnf_files(folder):
 #exp_results_spur = experiment_SPUR(flas=flas_v7)
 #exp_results_spur.to_csv("experiments-SPUR-V7.csv", index=False)
 
-dataset_fla = { 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
+dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
 for dataset_key, dataset_folder in dataset_fla.items():
         print(dataset_key, dataset_folder)
         flas_dataset = all_cnf_files(dataset_folder)
