@@ -22,7 +22,7 @@ FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
 FLAV3_DATASET_FOLDER="/home/samplingfm/Benchmarks/V3/"
 FLAV15_DATASET_FOLDER="/home/samplingfm/Benchmarks/V15/"
 
-FMLINUX_DATASET_FOLDER="/home/fm_history_linux/"
+FMLINUX_DATASET_FOLDER="/home/fm_history_linux_dimacs/"
 
 
 ### execution_time_in is measurement within Python
