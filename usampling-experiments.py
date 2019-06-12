@@ -223,7 +223,7 @@ def launch_SPUR_experiment_linux(timeout, nsamples):
 def launch_KUS_experiment_linux(timeout, nsamples):
     print("dimacs analysis of Linux feature model (KUS)", FMLINUX_DATASET_FOLDER)
     flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
-    exp_results_spur = experiment_KUS(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "linux" + ".csv")
+    exp_results_spur = experiment_KUS(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "linux" + ".csv")
 
 
 parser = argparse.ArgumentParser()
