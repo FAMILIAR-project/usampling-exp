@@ -216,9 +216,14 @@ def launch_KUS_experiment(timeout, nsamples):
 
 ######## SPUR
 def launch_SPUR_experiment_linux(timeout, nsamples):
-    print("dimacs analysis", FMLINUX_DATASET_FOLDER)
+    print("dimacs analysis of Linux feature model (SPUR)", FMLINUX_DATASET_FOLDER)
     flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
-    exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "linux" + ".csv")
+    exp_results_spur = experiment_SPUR(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "linux" + ".csv")
+
+def launch_KUS_experiment_linux(timeout, nsamples):
+    print("dimacs analysis of Linux feature model (KUS)", FMLINUX_DATASET_FOLDER)
+    flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
+    exp_results_spur = experiment_KUS(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "linux" + ".csv")
 
 
 parser = argparse.ArgumentParser()
@@ -227,6 +232,7 @@ parser.add_argument("-n", "--nsamples", help="number of samples", type=int, defa
 parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spurlinux", help="enable SPUR experiment over feature model Linux SPLC challenge track",  action="store_true")
+parser.add_argument("--kuslinux", help="enable KUS experiment over feature model Linux SPLC challenge track",  action="store_true")
 args = parser.parse_args()
 
 timeout=args.timeout
@@ -243,6 +249,10 @@ if args.spur:
 if args.spurlinux:
     print("SPUR experiment over Linux")
     launch_SPUR_experiment_linux(timeout, nsamples)
+
+if args.kuslinux:
+    print("KUS experiment over Linux")
+    launch_KUS_experiment_linux(timeout, nsamples)
 
 
 
