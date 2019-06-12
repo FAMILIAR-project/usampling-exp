@@ -22,6 +22,7 @@ FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
 FLAV3_DATASET_FOLDER="/home/samplingfm/Benchmarks/V3/"
 FLAV15_DATASET_FOLDER="/home/samplingfm/Benchmarks/V15/"
 
+FMLINUX_DATASET_FOLDER="/home/fm_history_linux/"
 
 
 ### execution_time_in is measurement within Python
@@ -188,6 +189,9 @@ def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
 def all_cnf_files(folder):
     return [join(folder, f) for f in listdir(folder) if isfile(join(folder, f)) and f.endswith(".cnf")]
 
+def all_dimacs_files(folder):
+    return [join(folder, f) for f in listdir(folder) if isfile(join(folder, f)) and f.endswith(".dimacs")]
+
 #dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
 
 dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'blaster' : FLABLASTED_DATASET_FOLDER }
@@ -210,19 +214,37 @@ def launch_KUS_experiment(timeout, nsamples):
         exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
 
 
+######## SPUR
+def launch_SPUR_experiment_linux(timeout, nsamples):
+    print("dimacs analysis", FMLINUX_DATASET_FOLDER)
+    flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
+    exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
+parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
+parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
+parser.add_argument("--spurlinux", help="enable SPUR experiment over feature model Linux SPLC challenge track",  action="store_true")
 args = parser.parse_args()
 
 timeout=args.timeout
 nsamples=args.nsamples
 
-print("KUS experiment")
-launch_KUS_experiment(timeout, nsamples)
-print("SPUR experiment")
-launch_SPUR_experiment(timeout, nsamples)
+if args.kus:
+    print("KUS experiment")
+    launch_KUS_experiment(timeout, nsamples)
+
+if args.spur:
+    print("SPUR experiment")
+    launch_SPUR_experiment(timeout, nsamples)
+
+if args.spurlinux:
+    print("SPUR experiment over Linux")
+    launch_SPUR_experiment_linux(timeout, nsamples)
+
+
 
 #### for debugging run timeout
 #o, e = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/111.sk_2_36.cnf', TIMEOUT * 2, cwd='/home/KUS/')
