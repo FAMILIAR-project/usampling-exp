@@ -11,10 +11,8 @@ import shlex
 from subprocess import Popen, PIPE
 from threading import Timer
 
-N_SAMPLES=10
-TIMEOUT=15
-KUS_CMD="python3 /home/KUS/KUS.py --samples " + str(N_SAMPLES)
-SPUR_CMD="/home/spur/build/Release/spur -s " + str(N_SAMPLES) + " -cnf" # + " -t " + str(TIMEOUT)
+import argparse
+
 
 FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
 FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
@@ -23,6 +21,8 @@ FLABLASTED_DATASET_FOLDER="/home/samplingfm/Benchmarks/Blasted_Real/"
 FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
 FLAV3_DATASET_FOLDER="/home/samplingfm/Benchmarks/V3/"
 FLAV15_DATASET_FOLDER="/home/samplingfm/Benchmarks/V15/"
+
+
 
 ### execution_time_in is measurement within Python
 ### we may have other/intermediate measures as well
@@ -41,17 +41,21 @@ def run_with_timeout(cmd, timeout_sec, cwd=None):
     finally:
         timer.cancel()
 
-def experiment_SPUR(flas):
+
+def mk_spur_cmd(nsamples):
+    return "/home/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
+
+def experiment_SPUR(flas, timeout, nsamples, savecsv_onthefly=None):
 
     exp_results = pd.DataFrame()
     for fla in flas:
-        full_cmd = SPUR_CMD + " " +  fla
+        full_cmd = mk_spur_cmd(nsamples) + " " +  fla
         #print("calling ", full_cmd.split(" "))
         #subprocess.call(full_cmd, shell=True)
 
         try:
             start = time.time()
-            output = check_output(full_cmd.split(" "), stderr=STDOUT, timeout=TIMEOUT, encoding='UTF-8') #, shell=True not recommended # https://stackoverflow.com/questions/36952245/subprocess-timeout-failure
+            output = check_output(full_cmd.split(" "), stderr=STDOUT, timeout=timeout, encoding='UTF-8') #, shell=True not recommended # https://stackoverflow.com/questions/36952245/subprocess-timeout-failure
             end = time.time()
             etime = end - start
 
@@ -87,11 +91,14 @@ def experiment_SPUR(flas):
                 df_exp = pd.DataFrame(dict_exp, index=[0])
                 exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
         except TimeoutExpired:
-            df_exp = pd.DataFrame({'formula_file' : [fla], 'execution_time_in': [TIMEOUT], 'timeout' : [True]}, index=[0])
+            df_exp = pd.DataFrame({'formula_file' : [fla], 'execution_time_in': [timeout], 'timeout' : [True]}, index=[0])
             exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
             #print("Timeout")
             continue
         # print("DONE")
+        finally:
+            if savecsv_onthefly is not None:
+                exp_results.to_csv(savecsv_onthefly, index=False)
     return exp_results
 
 
@@ -102,12 +109,15 @@ def extract_pattern(dpattern, ostr):
             return d.strip()
     return None
 
-def experiment_KUS(flas, savecsv_onthefly=None):
+def mk_kus_cmd(nsamples):
+    return "python3 /home/KUS/KUS.py --samples " + str(nsamples)
+
+def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
 
     exp_results = pd.DataFrame()
     for fla in flas:
 
-        full_cmd_kus = KUS_CMD + " " +  fla
+        full_cmd_kus = mk_kus_cmd(nsamples) + " " +  fla
         # full_cmd_kus = '/home/samplingfm/scripts/doalarm -t real 10 ' + full_cmd_kus
         print(full_cmd_kus)
         #print("calling ", full_cmd.split(" "))
@@ -118,13 +128,13 @@ def experiment_KUS(flas, savecsv_onthefly=None):
             start = time.time()
             # output = check_output(full_cmd_kus.split(" "), timeout=TIMEOUT, cwd='/home/KUS/')
             # proc =    subprocess.run(full_cmd_kus.split(" "), timeout=TIMEOUT, cwd='/home/KUS/') # capture_output=True leads to blocking https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout https://www.blog.pythonlibrary.org/2016/05/17/python-101-how-to-timeout-a-subprocess/
-            op, err = run_with_timeout(full_cmd_kus, TIMEOUT, cwd='/home/KUS/')
+            op, err = run_with_timeout(full_cmd_kus, timeout, cwd='/home/KUS/')
             end = time.time()
             etime = end - start
 
             if (op is None): # timeout!
                 print("TIMEOUT")
-                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': TIMEOUT}, index=[0])
+                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': timeout}, index=[0])
                 exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
             else:
                 output = op.decode("utf-8")
@@ -169,7 +179,7 @@ def experiment_KUS(flas, savecsv_onthefly=None):
             continue
         finally:
             if savecsv_onthefly is not None:
-                exp_results.to_csv("experiments-KUS-" + dataset_key + ".csv", index=False)
+                exp_results.to_csv(savecsv_onthefly, index=False)
 
     return exp_results
 
@@ -178,41 +188,46 @@ def experiment_KUS(flas, savecsv_onthefly=None):
 def all_cnf_files(folder):
     return [join(folder, f) for f in listdir(folder) if isfile(join(folder, f)) and f.endswith(".cnf")]
 
-dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
+#dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'v3' : FLAV3_DATASET_FOLDER, 'v7' : FLAV7_DATASET_FOLDER }
+
+dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'v15' : FLAV15_DATASET_FOLDER, 'blaster' : FLABLASTED_DATASET_FOLDER }
+
+
+OUTPUT_DIR='/home/usampling-data/'
 
 ######## SPUR
-# for dataset_key, dataset_folder in dataset_fla.items():
-#          print(dataset_key, dataset_folder)
-#          flas_dataset = all_cnf_files(dataset_folder)
-#          exp_results_spur = experiment_SPUR(flas=flas_dataset)
-#          exp_results_spur.to_csv("experiments-SPUR-" + dataset_key + ".csv", index=False)
-#          break
-#
-######## KUS sampler
-for dataset_key, dataset_folder in dataset_fla.items():
+def launch_SPUR_experiment(timeout, nsamples):
+    for dataset_key, dataset_folder in dataset_fla.items():
         print(dataset_key, dataset_folder)
         flas_dataset = all_cnf_files(dataset_folder)
-        exp_results_kus = experiment_KUS(flas=flas_dataset, savecsv_onthefly="experiments-KUS-" + dataset_key + ".csv")
-        break
+        exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
+
+######## KUS sampler
+def launch_KUS_experiment(timeout, nsamples):
+    for dataset_key, dataset_folder in dataset_fla.items():
+        print(dataset_key, dataset_folder)
+        flas_dataset = all_cnf_files(dataset_folder)
+        exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
 
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
+parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
+args = parser.parse_args()
 
+timeout=args.timeout
+nsamples=args.nsamples
 
+print("KUS experiment")
+launch_KUS_experiment(timeout, nsamples)
+print("SPUR experiment")
+launch_SPUR_experiment(timeout, nsamples)
 
-
-
-
-
-
-#print("go!")
-# Examples: both take 1 second
-#run("sleep 1", 5)  # process ends normally at 1 second
-#run("sleep 5", 1)  # timeout happens at 1 second
-
-o, e = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/111.sk_2_36.cnf', TIMEOUT * 2, cwd='/home/KUS/')
-print(o.decode("utf-8"), "\n\n", e.decode("utf-8"))
+#### for debugging run timeout
+#o, e = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/111.sk_2_36.cnf', TIMEOUT * 2, cwd='/home/KUS/')
+#print(o.decode("utf-8"), "\n\n", e.decode("utf-8"))
 # print(o, "\n\n", e)
-o1, e1 = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/karatsuba.sk_7_41.cnf', TIMEOUT, cwd='/home/KUS/')
-print(o1, e1)
-assert (o1 is None)
+#o1, e1 = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/karatsuba.sk_7_41.cnf', TIMEOUT, cwd='/home/KUS/')
+#print(o1, e1)
+#assert (o1 is None)
