@@ -24,9 +24,9 @@ Pre-built Docker image:
 
 # Additional Requirements to setup SMARCH:
 
-In addition of the python packages above you will need additional tools and libraries to build sharpSAT and MARCH CU tools required by SMARCh (as explained on their website):
-* g++-5 (`sudo apt get install g++-5` )
-* GMP (`sudo apt get install lib-gmp`) 
+In addition of the python packages above you will need additional tools and libraries to build sharpSAT (v12.08) and MARCH CU tools required by SMARCh (as explained on their website):
+* g++-5 (`sudo apt get install g++-5` ). Should also work with more recent versions (>4.7). 
+* GMP (`sudo apt get install libgmp-dev`) 
 
 Once these installed, just type make in the release folder.
 
