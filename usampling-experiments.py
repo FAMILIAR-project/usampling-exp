@@ -106,7 +106,7 @@ def run_with_timeout_partial(cmd, timeout_sec, cwd=None):
         os.kill(os.getpid(),signal.SIGTERM)   
     
 def mk_spur_cmd(nsamples):
-    return "./samplers/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
+    return "./samplers/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
 #    return "/home/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
 
 def experiment_SPUR(flas, timeout, nsamples, savecsv_onthefly=None):
@@ -173,8 +173,10 @@ def extract_pattern(dpattern, ostr):
             return d.strip()
     return None
 
+# assuming that we are executing it in samplers folder!
 def mk_kus_cmd(nsamples):
-    return "python3 ./samplers/KUS.py --samples " + str(nsamples)
+    return "python3 KUS.py --samples " + str(nsamples)
+    # return "python3 ./samplers/KUS.py --samples " + str(nsamples)
     # return "python3 /home/KUS/KUS.py --samples " + str(nsamples)
 
 def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
@@ -190,13 +192,17 @@ def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
 
         try:
         #    output = check_output(full_cmd_kus.split(" "), stderr=STDOUT, timeout=TIMEOUT, encoding='UTF-8', cwd='/home/KUS/') #, shell=True not recommended # https://stackoverflow.com/questions/36952245/subprocess-timeout-failure
+            # cwd = os.getcwd()
+            # os.chdir(str(os.getcwd()) + '/samplers') # position the execution 
             start = time.time()
             # output = check_output(full_cmd_kus.split(" "), timeout=TIMEOUT, cwd='/home/KUS/')
             # proc =    subprocess.run(full_cmd_kus.split(" "), timeout=TIMEOUT, cwd='/home/KUS/') # capture_output=True leads to blocking https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout https://www.blog.pythonlibrary.org/2016/05/17/python-101-how-to-timeout-a-subprocess/
-            op, err = run_with_timeout(full_cmd_kus, timeout, cwd='/home/KUS/')
+            # op, err = run_with_timeout(full_cmd_kus, timeout, cwd='/home/KUS')
+            op, err = run_with_timeout(full_cmd_kus, timeout, cwd=str(os.getcwd()) + '/samplers') # execute the command in this folder (otherwise DNNF does not work)
+            # op, err = run_with_timeout(full_cmd_kus, timeout, cwd=str(os.getcwd())) # execute the command in this folder (otherwise DNNF does not work)
             end = time.time()
             etime = end - start
-
+            # os.chdir(str(cwd)) # getting back
             if (op is None): # timeout!
                 print("TIMEOUT")
                 df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': timeout}, index=[0])
