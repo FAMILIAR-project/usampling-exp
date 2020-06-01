@@ -106,7 +106,8 @@ def run_with_timeout_partial(cmd, timeout_sec, cwd=None):
         os.kill(os.getpid(),signal.SIGTERM)   
     
 def mk_spur_cmd(nsamples):
-    return "/home/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
+    return "./samplers/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
+#    return "/home/spur/build/Release/spur -s " + str(nsamples) + " -cnf" # + " -t " + str(TIMEOUT)
 
 def experiment_SPUR(flas, timeout, nsamples, savecsv_onthefly=None):
 
@@ -173,7 +174,8 @@ def extract_pattern(dpattern, ostr):
     return None
 
 def mk_kus_cmd(nsamples):
-    return "python3 /home/KUS/KUS.py --samples " + str(nsamples)
+    return "python3 ./samplers/KUS.py --samples " + str(nsamples)
+    # return "python3 /home/KUS/KUS.py --samples " + str(nsamples)
 
 def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
 
@@ -248,9 +250,11 @@ def experiment_KUS(flas, timeout, nsamples, savecsv_onthefly=None):
 
 def mk_cmd_smarch(nsamples,pthreads,mp=False):
     if mp:
-        return "python3 smarch_mp.py -p " + str(pthreads)
+        return "python3 ./samplers/smarch_mp.py -p " + str(pthreads)
+        # return "python3 smarch_mp.py -p " + str(pthreads)
     else:        
-        return "python3 smarch.py"
+        return "python3 ./samplers/smarch.py"
+        # return "python3 smarch.py"
 
 def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,mp=False):
     SMARCH_OUTPUT_DIR='./smarch_samples'
