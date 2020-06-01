@@ -17,7 +17,7 @@ import multiprocessing
 
 
 srcdir = os.path.dirname(os.path.abspath(__file__))
-SHARPSAT = srcdir + '/sharpSAT/Release/sharpSAT'
+SHARPSAT = srcdir + '/sharpSATSMARCH/Release/sharpSAT'
 MARCH = srcdir + '/march_cu/march_cu'
 
 
@@ -31,8 +31,8 @@ def read_dimacs(dimacsfile_):
     with open(dimacsfile_) as f:
         for line in f:
             # read variables in comments
-            if line.startswith("c ind"):
-                continue
+            if line.startswith("c ind"): #we do not deal with independant variables produced by other tool - modification w.r.t original SMARCH MP 
+                pass        
             elif line.startswith("c"):
                 line = line[0:len(line) - 1]
                 _feature = line.split(" ", 4)
@@ -191,7 +191,7 @@ def partition(assigned_, vcount_, clauses_, wdir_):
     out = res.split("\n")
 
     # print march result (debugging purpose)
-    # print(out)
+    #print(out)
 
     if out[7].startswith('c all'):
         _freevar = out[5].split(": ")[1].split()
@@ -210,7 +210,7 @@ def partition(assigned_, vcount_, clauses_, wdir_):
     for _cube in _cubes:
         gen_dimacs(vcount_, clauses_, assigned_ + _cube, _dimacsfile)
         res = int(getoutput(SHARPSAT + ' -q ' + _dimacsfile))
-        # print(res)
+       # print(res)
         _total += res
         _counts.append(res)
 
