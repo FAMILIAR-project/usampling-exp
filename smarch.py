@@ -18,7 +18,7 @@ from anytree.exporter import JsonExporter
 from anytree.importer import JsonImporter
 
 srcdir = os.path.dirname(os.path.abspath(__file__))
-SHARPSAT = srcdir + '/sharpSATSMARCH/Release/sharpSAT'
+SHARPSAT = srcdir + '/samplers/sharpSATSMARCH/Release/sharpSAT'
 MARCH = srcdir + '/march_cu/march_cu'
 
 
@@ -33,8 +33,8 @@ def read_dimacs(dimacsfile_):
     with open(dimacsfile_) as f:
         for line in f:
             # read variables in comments
-             if line.startswith("c ind"): #we do not deal with independant variables produced by other tool - modification w.r.t original SMARCH
-                pass
+            if line.startswith("c ind"): #we do not deal with independant variables produced by other tool - modification w.r.t original SMARCH
+                continue
             elif line.startswith("c"):
                 line = line[0:len(line) - 1]
                 _feature = line.split(" ", 4)
