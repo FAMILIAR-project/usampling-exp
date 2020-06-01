@@ -253,9 +253,10 @@ def mk_cmd_smarch(nsamples,pthreads,mp=False):
         return "python3 smarch.py"
 
 def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,mp=False):
+    SMARCH_OUTPUT_DIR='./smarch_samples'
     exp_results = pd.DataFrame()    
     for fla in flas:
-        full_cmd_smarch = mk_cmd_smarch(nsamples,pthreads,mp) + " -o " + OUTPUT_DIR  + " " +  fla + " " + str(nsamples)        
+        full_cmd_smarch = mk_cmd_smarch(nsamples,pthreads,mp) + " -o " + SMARCH_OUTPUT_DIR  + " " +  fla + " " + str(nsamples)        
         print(full_cmd_smarch)
 
         try:
