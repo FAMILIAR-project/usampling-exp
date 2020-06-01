@@ -33,7 +33,9 @@ def read_dimacs(dimacsfile_):
     with open(dimacsfile_) as f:
         for line in f:
             # read variables in comments
-            if line.startswith("c"):
+            if line.startswith("c ind"):
+                continue
+            elif line.startswith("c"):
                 line = line[0:len(line) - 1]
                 _feature = line.split(" ", 4)
                 del _feature[0]
