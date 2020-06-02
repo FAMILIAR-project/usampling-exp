@@ -574,8 +574,10 @@ def chainFormulaSetup(sampleSol, unifSol, numSolutions):
 
     # picking selector literals, i.e. k1, k2, k3, randomly
     #if args.verbose:
-        #print("len count list: " +  str(len(countList)))
-       # print(sampleSol.split())
+     #   print("len count list: " +  str(len(countList)))
+      #  print("#num of samples" + str(len(sampleSol.split())))
+    
+    assert len(sampleSol.split()) > len(countList), "There are not enough samples to proceed, sampler failed ?" 
     sampleLitList = random.sample(sampleSol.split(), len(countList))
     unifLitList = []
     unifSolMap = unifSol.split()
