@@ -307,7 +307,7 @@ class SolutionRetriver:
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
-        cmd = "./samplers/z3/build/z3 sat.quicksampler_check=true sat.quicksampler_check.timeout=3600.0 "+str(inputFile)+' > /dev/null 2>&1'
+        cmd = "./samplers/z3-quicksampler/z3 sat.quicksampler_check=true sat.quicksampler_check.timeout=3600.0 "+str(inputFile)+' > /dev/null 2>&1'
         #os.system(cmd)
         
         #cmd = "./samplers/z3 "+str(inputFile)#+' > /dev/null 2>&1'
