@@ -328,7 +328,10 @@ dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' :
 
 dataset_gilles = {'fm-gilles': FEATURE_MODELS_DATASET_FOLDER}
 
-OUTPUT_DIR='./'
+# OUTPUT_DIR='./'
+# useful to store results in a dedicated folder
+# we can mount a volume with Docker so that results are visible outside 
+OUTPUT_DIR='../usampling-data/' # assume that this folder exists... 
 
 ######## SPUR
 def launch_SPUR_experiment(timeout, nsamples):
