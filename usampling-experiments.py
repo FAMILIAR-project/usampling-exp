@@ -9,7 +9,7 @@ import re
 import sys
 from statistics import mean
 import threading
-import multiprocessing
+# import multiprocessing
 import queue
 import os
 import signal
@@ -19,6 +19,7 @@ from threading import Timer
 
 import argparse
 
+print('loading packages...')
 
 FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
 FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
@@ -370,6 +371,7 @@ def launch_SMARCH_experiment(timeout, nsamples,pthreads,mp=False):
         else:
             exp_results_smarch = experiment_SMARCH(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + dataset_key + ".csv", mp=False)
 
+print('parsing arguments')
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
@@ -411,7 +413,7 @@ if args.kuslinux:
     print("KUS experiment over Linux")
     launch_KUS_experiment_linux(timeout, nsamples)
 
-
+print('end of benchmarks')
 
 #### for debugging run timeout
 #o, e = run_with_timeout('python3 /home/KUS/KUS.py --samples 10 /home/samplingfm/Benchmarks/111.sk_2_36.cnf', TIMEOUT * 2, cwd='/home/KUS/')
