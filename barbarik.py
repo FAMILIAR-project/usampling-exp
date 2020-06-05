@@ -38,8 +38,27 @@ SAMPLER_SPUR = 6
 SAMPLER_SMARCH = 7
 SAMPLER_UNIGEN2 = 8
 SAMPLER_KUS = 9
+SAMPLER_DISTAWARE = 10
 
 P_THREADS = 4
+
+#We need a dictionary for Distribution-aware distance sampling 
+#which records names and not feature ids in outputted samples
+features_dict = {}
+
+def create_features_dict(inputFile):
+
+    with open(inputFile,'r') as f:
+         lines = f.readlines()
+    for line in lines:
+        if line.startswith("c"):
+            line = line[0:len(line) - 1]
+            _feature = line.split(" ", 4)
+            del _feature[0]
+            # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
+            global features_dict
+            features_dict.update({str(_feature[1]):str(_feature[0])})
+      
 
 def get_sampler_string(samplerType):
     if samplerType == SAMPLER_UNIGEN:
@@ -60,6 +79,8 @@ def get_sampler_string(samplerType):
         return 'UNIGEN2'
     if samplerType == SAMPLER_KUS:
         return 'KUS'
+    if samplerType == SAMPLER_DISTAWARE:
+        return 'DistributionAwareDistanceSampling'
     print("ERROR: unknown sampler type")
     exit(-1)
 
@@ -155,6 +176,9 @@ class SolutionRetriver:
         
         elif (samplerType == SAMPLER_KUS):
             sols = SolutionRetriver.getSolutionFromKUS(*topass_withseed)
+        
+        elif (samplerType == SAMPLER_DISTAWARE):
+            sols =  SolutionRetriver.getSolutionFromDistAware(*topass_withseed)            
 
         else:
             print("Error: No such sampler!")
@@ -300,6 +324,62 @@ class SolutionRetriver:
 
         os.unlink(str(tempOutputFile))
         return solreturnList
+    
+    @staticmethod
+    def getSolutionFromDistAware(inputFile, numSolutions, indVarList, newSeed):
+
+        inputFileSuffix = inputFile.split('/')[-1][:-4]
+        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
+       
+        # creating the file to configure the sampler 
+        with open("./samplers/distribution-aware/"+inputFileSuffix+".a",'w+') as f:
+            f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
+            f.write("dimacs " + str(os.path.abspath(inputFile)) + "\n")
+            
+            params = "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
+            params += "selection:SolverSelection number-weight-optimization:1"
+            f.write(params + "\n")
+            f.write("printconfigs " + tempOutputFile)
+
+        cmd = "mono ./samplers/distribution-aware/CommandLine.exe " 
+        cmd += "./samplers/distribution-aware/"+inputFileSuffix+".a"
+        
+        if args.verbose:
+            print("cmd: ", cmd)
+        os.system(cmd)
+        
+        with open(tempOutputFile, 'r') as f:
+            lines = f.readlines()
+
+        solList = []
+        
+        for line in lines:
+            features = re.findall("%\w+%",line)
+            sol = []
+
+            for feature in features:
+                feat =  feature[1:-1]
+                sol.append(feat)
+            
+            solution = ''
+
+            for k,v in features_dict.items():
+                if k in sol:
+                    solution += ' ' + str(v)
+                else:
+                    solution += ' -' + str(v)
+            #print(solution)
+            solList.append(solution)
+
+     
+
+         # todo
+
+        return solList
+
+
+  
+
 
     @staticmethod
     def getSolutionFromQuickSampler(inputFile, numSolutions, indVarList, newSeed):
@@ -921,6 +1001,10 @@ if __name__ == "__main__":
     random.seed(seed)
     minSamples = args.minSamples
     maxSamples = args.maxSamples
+
+    #preparing features list for distribution-aware sampling
+    if args.sampler == SAMPLER_DISTAWARE:
+       create_features_dict(inputFile)     
 
     totalLoops = int(math.ceil(math.log(2.0/(eta+2*epsilon), 2))+1)
     listforTraversal = range(totalLoops, 0, -1)
