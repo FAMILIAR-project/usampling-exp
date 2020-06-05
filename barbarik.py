@@ -332,7 +332,7 @@ class SolutionRetriver:
         tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
        
         # creating the file to configure the sampler
-        dbsConfigFile = "./samplers/distribution-aware/"+inputFileSuffix+".a"
+        dbsConfigFile = tempfile.gettempdir()+'/'+inputFileSuffix+".a"
    
         with open(dbsConfigFile,'w+') as f:
             f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
@@ -345,7 +345,7 @@ class SolutionRetriver:
             f.write("printconfigs " + tempOutputFile)
 
         cmd = "mono ./samplers/distribution-aware/CommandLine.exe " 
-        cmd += "./samplers/distribution-aware/"+inputFileSuffix+".a"
+        cmd += dbsConfigFile
         
         if args.verbose:
             print("cmd: ", cmd)
