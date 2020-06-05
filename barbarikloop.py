@@ -6,7 +6,9 @@ import time
 import csv
 import signal
 
-fmdir = '../../samplingforfm/Benchmarks/FeatureModels/'
+# FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
+fmdir="/home/samplingfm/Benchmarks/FeatureModels/"
+# fmdir = '../../samplingforfm/Benchmarks/FeatureModels/'
 #fmdir = 'samplingfm/Benchmarks/Blasted_Real/'
 #fmdir =  '/home/gilles/FeatureModels/'
 #fmdir = '/home/gilles/samplingforfm/Benchmarks/FMEasy/'

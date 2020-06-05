@@ -1,8 +1,8 @@
 formula_file,timeout,timeout_reached,execution_time_in,total_sampling_time,avg_sampling_time,model_count,requested_samples,actual_samples
-/home/gilles/FeatureModels/80.sk_2_48.cnf,10,True,10.010560989379883,,,1099511627776,10,0
-/home/gilles/FeatureModels/FM-3.6.1-refined.cnf,10,False,2.527750015258789,5.834742546081543,0.5834742546081543,26256,10,10
-/home/gilles/FeatureModels/aaed2000.cnf,10,True,10.009064197540283,,,,10,0
-/home/gilles/FeatureModels/blasted_case110.cnf,10,False,3.4816596508026123,7.554755449295044,0.7554755449295044,16384,10,10
-/home/gilles/FeatureModels/blasted_case47.cnf,10,False,3.9301071166992188,9.326280355453491,0.9326280355453491,262144,10,10
-/home/gilles/FeatureModels/nano.cnf,10,True,10.008119583129883,,,,10,0
-/home/gilles/FeatureModels/toybox.cnf,10,True,10.009340286254883,,,144991790900969472,10,0
+/home/gilles/FeatureModels/80.sk_2_48.cnf,10,True,10.010557413101196,,,1099511627776,10,0
+/home/gilles/FeatureModels/FM-3.6.1-refined.cnf,10,False,2.3746490478515625,5.2008397579193115,0.5200839757919311,26256,10,10
+/home/gilles/FeatureModels/aaed2000.cnf,10,True,10.00719165802002,,,,10,0
+/home/gilles/FeatureModels/blasted_case110.cnf,10,False,3.1828229427337646,7.294511318206787,0.7294511318206787,16384,10,10
+/home/gilles/FeatureModels/blasted_case47.cnf,10,False,3.8879642486572266,8.628743886947632,0.8628743886947632,262144,10,10
+/home/gilles/FeatureModels/nano.cnf,10,True,10.00607442855835,,,,10,0
+/home/gilles/FeatureModels/toybox.cnf,10,True,10.006272792816162,,,144991790900969472,10,0

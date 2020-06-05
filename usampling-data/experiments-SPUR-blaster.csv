@@ -1,0 +1,211 @@
+formula_file,execution_time_in,timeout,start_time,num_vars,independent_support_size,num_clauses,tot_num_models,max_component_split_depth,max_branch_var_depth,num_samples,num_second_pass_groups,avg_second_pass_var,execution_time,pass1_time,pass2_time
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case10.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case4.cnf,0.06376838684082031,False,Thu Jun  4 22:57:02 2020,103,18,314,32768,3,16,10,10,53.50,0.037449,0.024832,0.012617
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b12_1_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case37.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case208.cnf,0.6550562381744385,False,Thu Jun  4 23:00:03 2020,824,165,2128,5846006549323611672814739330865132078623730171904,2,71,10,8,560.88,0.618334,0.120413,0.497921
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case25.cnf,0.05322003364562988,False,Thu Jun  4 23:00:03 2020,68,15,195,512,2,9,10,8,11.50,0.029663,0.016829,0.012834
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case26.cnf,0.05292987823486328,False,Thu Jun  4 23:00:03 2020,53,13,147,1024,3,8,10,8,15.62,0.029239,0.017535,0.011704
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case6.cnf,0.16388440132141113,False,Thu Jun  4 23:00:03 2020,329,52,993,17179869184,3,25,10,9,195.56,0.138116,0.066594,0.071522
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf,0.11011219024658203,False,Thu Jun  4 23:00:03 2020,291,33,1165,1073741824,4,22,10,10,86.30,0.086597,0.048131,0.038466
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf,0.6656365394592285,False,Thu Jun  4 23:00:04 2020,238,45,680,4398046511104,2,26,10,9,96.78,0.643006,0.532643,0.110363
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case209.cnf,1.562765121459961,False,Thu Jun  4 23:00:05 2020,1189,122,3476,309485009821345068724781056,3,95,10,5,901.60,1.53521,1.06422,0.470995
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case40.cnf,0.5823650360107422,False,Thu Jun  4 23:00:06 2020,245,65,650,36028797018963968,6,25,10,10,151.10,0.556159,0.513864,0.042295
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf,0.2375965118408203,False,Thu Jun  4 23:00:06 2020,695,61,2193,8388608,2,24,10,8,288.62,0.211414,0.150457,0.060957
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case20.cnf,21.690789222717285,False,Thu Jun  4 23:00:28 2020,397,69,1126,73786976294838206464,4,46,10,10,273.10,21.6597,21.5435,0.116192
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case32.cnf,0.046881914138793945,False,Thu Jun  4 23:00:28 2020,52,13,145,1024,3,8,10,8,10.75,0.02507,0.017818,0.007252
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_1_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case214.cnf,1.4607667922973633,False,Thu Jun  4 23:02:00 2020,645,80,1883,151115727451828646838272,3,79,10,6,469.33,1.42518,0.339935,1.08524
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf,0.23943233489990234,False,Thu Jun  4 23:02:00 2020,697,61,2203,8388608,2,25,10,8,270.50,0.213549,0.157731,0.055818
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case44.cnf,0.08653450012207031,False,Thu Jun  4 23:02:00 2020,173,22,650,65536,4,20,10,10,23.70,0.06498,0.041319,0.023661
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf,0.7100019454956055,False,Thu Jun  4 23:02:01 2020,894,61,3188,28311561,2,35,10,9,327.56,0.68534,0.416596,0.268744
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring3.cnf,5.3890221118927,False,Thu Jun  4 23:02:06 2020,885,72,2810,68719476736,2,42,10,10,226.90,5.36286,5.30007,0.062792
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf,1.424328088760376,False,Thu Jun  4 23:02:08 2020,427,37,1382,1073741824,3,33,10,10,92.70,1.39834,1.37378,0.024557
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case3_b14_even3.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case22.cnf,0.08177328109741211,False,Thu Jun  4 23:03:38 2020,126,16,409,8192,2,13,10,9,32.44,0.047126,0.02626,0.020866
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case111.cnf,0.0830838680267334,False,Thu Jun  4 23:03:38 2020,306,17,1357,16384,2,20,10,6,24.83,0.060793,0.037722,0.023071
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_even1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case28.cnf,0.060578346252441406,False,Thu Jun  4 23:05:08 2020,51,13,142,1024,3,8,10,9,13.78,0.030986,0.017687,0.013299
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_even2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case107.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf,17.399319887161255,False,Thu Jun  4 23:08:26 2020,827,45,2721,274877906944,4,39,10,10,275.50,17.3598,15.8023,1.55752
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case140.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case110.cnf,0.07985997200012207,False,Thu Jun  4 23:09:56 2020,287,17,1263,16384,3,21,10,10,26.00,0.047778,0.029173,0.018605
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case106.cnf,13.474850177764893,False,Thu Jun  4 23:10:10 2020,204,60,508,4398046511104,5,40,10,10,89.10,13.4444,13.4268,0.017529
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case30.cnf,0.05031085014343262,False,Thu Jun  4 23:10:10 2020,68,15,195,512,2,9,10,7,11.00,0.023373,0.013849,0.009524
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf,0.11931300163269043,False,Thu Jun  4 23:10:10 2020,241,31,915,1048576,3,20,10,10,51.80,0.095688,0.066729,0.028959
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf,2.2470171451568604,False,Thu Jun  4 23:10:12 2020,500,42,1965,16777216,4,35,10,9,152.33,2.22093,2.17025,0.050685
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_even1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case7.cnf,0.07631897926330566,False,Thu Jun  4 23:11:42 2020,116,20,365,131072,2,15,10,9,69.56,0.041625,0.019462,0.022163
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case19.cnf,68.41593742370605,False,Thu Jun  4 23:12:51 2020,397,69,1126,73786976294838206464,4,48,10,9,307.44,68.3736,67.3891,0.98454
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf,0.3059992790222168,False,Thu Jun  4 23:12:51 2020,696,61,2198,8388608,2,23,10,9,264.56,0.27445,0.206111,0.068339
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case211.cnf,1.0428454875946045,False,Thu Jun  4 23:12:52 2020,869,83,2925,1208925819614629174706176,3,75,10,10,444.30,1.01881,0.337527,0.68128
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_4_b14_even.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case142.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_ptb_2_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf,14.325268745422363,False,Thu Jun  4 23:17:37 2020,1101,72,3642,274408144896,3,38,10,10,250.50,14.2865,14.1809,0.105611
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case101.cnf,0.0505824089050293,False,Thu Jun  4 23:17:37 2020,72,24,178,2097152,2,19,10,5,49.40,0.027473,0.013954,0.013519
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b12_2_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case41.cnf,0.43114376068115234,False,Thu Jun  4 23:19:07 2020,245,65,650,36028797018963968,6,25,10,10,129.80,0.399658,0.360829,0.038829
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case124.cnf,0.0803217887878418,False,Thu Jun  4 23:19:08 2020,133,31,385,268435456,4,24,10,8,80.00,0.057103,0.022653,0.03445
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring42.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_ptb_2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_ptb_1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf,1.137526035308838,False,Thu Jun  4 23:23:39 2020,267,59,786,35184372088832,6,30,10,10,144.60,1.10547,0.126965,0.978509
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf,1.3416643142700195,False,Thu Jun  4 23:23:40 2020,1141,61,4249,79888860,3,35,10,10,281.90,1.31935,1.21737,0.101982
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case11.cnf,0.035744667053222656,False,Thu Jun  4 23:23:40 2020,105,17,369,16384,3,12,10,8,14.38,0.020451,0.01118,0.009271
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf,0.6160862445831299,False,Thu Jun  4 23:23:41 2020,400,46,1414,8796093022208,5,34,10,10,262.10,0.597016,0.469321,0.127695
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf,1.266092300415039,False,Thu Jun  4 23:23:42 2020,284,61,850,70368744177664,6,30,10,9,143.89,1.2445,0.80133,0.44317
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b14_1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case55.cnf,0.06251358985900879,False,Thu Jun  4 23:25:13 2020,149,26,441,1048576,2,10,10,10,37.60,0.032164,0.020057,0.012107
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case137.cnf,0.041782379150390625,False,Thu Jun  4 23:25:13 2020,60,21,146,262144,1,18,10,3,33.33,0.019686,0.013143,0.006543
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case141.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf,1.6175971031188965,False,Thu Jun  4 23:26:44 2020,427,37,1382,1073741824,3,33,10,10,102.60,1.58408,1.55051,0.033569
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case104.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case59.cnf,0.05493569374084473,False,Thu Jun  4 23:28:15 2020,93,19,284,35328,3,9,10,10,19.10,0.026968,0.01657,0.010398
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf,1.6914095878601074,False,Thu Jun  4 23:28:16 2020,1031,61,3694,79888860,4,37,10,10,277.50,1.6684,1.54652,0.121881
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case68.cnf,0.11048269271850586,False,Thu Jun  4 23:28:16 2020,178,28,553,131072,1,18,10,10,46.30,0.089131,0.076141,0.01299
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case52.cnf,0.05501842498779297,False,Thu Jun  4 23:28:17 2020,132,21,395,262144,2,11,10,7,64.71,0.033136,0.0157,0.017436
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring4.cnf,5.885030031204224,False,Thu Jun  4 23:28:22 2020,891,72,2839,68719476736,3,42,10,10,196.90,5.86031,5.79523,0.065083
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case12.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case39.cnf,0.45257067680358887,False,Thu Jun  4 23:29:53 2020,245,65,650,36028797018963968,6,25,10,10,131.90,0.422701,0.382493,0.040208
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case50.cnf,1.674461841583252,False,Thu Jun  4 23:29:55 2020,843,65,3286,4611686018427387904,6,51,10,10,310.50,1.64835,1.56015,0.088197
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf,76.35006546974182,False,Thu Jun  4 23:31:11 2020,1627,72,5835,1865275930882,3,51,10,10,351.80,76.3113,75.958,0.353318
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case136.cnf,0.13796424865722656,False,Thu Jun  4 23:32:41 2020,211,42,615,549755813888,3,23,10,6,142.00,0.105353,0.037219,0.068134
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case203.cnf,0.08619904518127441,False,Thu Jun  4 23:32:42 2020,214,49,580,70368744177664,3,14,10,9,79.33,0.06346,0.029923,0.033537
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring1.cnf,5.688251495361328,False,Thu Jun  4 23:32:47 2020,891,72,2839,68719476736,4,39,10,10,245.70,5.66068,5.52914,0.131541
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring60.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b12_even3_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case105.cnf,10.548372030258179,False,Thu Jun  4 23:35:58 2020,170,59,407,2199023255552,10,33,10,8,77.25,10.507,10.4777,0.029315
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf,0.2379598617553711,False,Thu Jun  4 23:35:58 2020,695,61,2193,8388608,2,24,10,9,303.33,0.212838,0.143679,0.069159
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf,0.08974218368530273,False,Thu Jun  4 23:35:58 2020,236,41,708,2097152,1,19,10,8,131.88,0.063808,0.02691,0.036898
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf,74.76538968086243,False,Thu Jun  4 23:37:13 2020,1507,72,5210,1865275930882,3,44,10,10,365.80,74.728,74.3875,0.340513
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf,0.7528400421142578,False,Thu Jun  4 23:37:14 2020,846,61,2948,28311561,4,30,10,10,373.60,0.722121,0.343658,0.378463
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring41.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf,0.3293461799621582,False,Thu Jun  4 23:38:44 2020,428,28,1849,33554432,4,31,10,9,122.89,0.298673,0.230548,0.068125
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf,0.4359407424926758,False,Thu Jun  4 23:38:45 2020,409,39,1597,68719476736,6,28,10,9,198.11,0.414937,0.32751,0.087427
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case100.cnf,0.05381894111633301,False,Thu Jun  4 23:38:45 2020,72,24,178,2097152,2,19,10,4,50.50,0.032411,0.016858,0.015553
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case139.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf,0.11904573440551758,False,Thu Jun  4 23:40:15 2020,288,32,1158,536870912,4,22,10,9,80.56,0.088354,0.048997,0.039357
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf,0.3597896099090576,False,Thu Jun  4 23:40:16 2020,270,43,804,1099511627776,2,28,10,10,106.40,0.334718,0.218837,0.115881
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b12_even2_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_even2_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case14.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_even3.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf,0.25661540031433105,False,Thu Jun  4 23:46:16 2020,270,43,804,1099511627776,2,28,10,6,143.33,0.225662,0.149518,0.076144
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring2.cnf,5.65857195854187,False,Thu Jun  4 23:46:22 2020,885,72,2810,68719476736,3,42,10,10,268.60,5.63274,5.55429,0.078448
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf,0.04389023780822754,False,Thu Jun  4 23:46:22 2020,15,7,35,16,0,4,10,4,2.00,0.016819,0.01245,0.004369
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf,0.42589521408081055,False,Thu Jun  4 23:46:23 2020,238,45,680,4398046511104,2,26,10,9,108.78,0.402213,0.314942,0.087271
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf,0.08537697792053223,False,Thu Jun  4 23:46:23 2020,200,45,544,4398046511104,2,12,10,7,75.71,0.057069,0.024739,0.03233
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case127.cnf,0.04536747932434082,False,Thu Jun  4 23:46:23 2020,36,9,104,64,0,8,10,4,9.00,0.021277,0.014243,0.007034
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case47.cnf,0.058820486068725586,False,Thu Jun  4 23:46:23 2020,118,28,327,262144,4,15,10,5,55.20,0.036629,0.021402,0.015227
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case46.cnf,0.09777045249938965,False,Thu Jun  4 23:46:23 2020,176,22,659,65536,4,22,10,10,29.50,0.074578,0.049832,0.024746
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf,0.3342154026031494,False,Thu Jun  4 23:46:23 2020,270,43,804,1099511627776,2,28,10,10,102.60,0.313275,0.216785,0.09649
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case103.cnf,0.04822707176208496,False,Thu Jun  4 23:46:23 2020,32,11,86,256,1,6,10,4,10.00,0.022533,0.015027,0.007506
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case29.cnf,0.042739152908325195,False,Thu Jun  4 23:46:24 2020,65,14,190,256,1,10,10,7,14.29,0.022308,0.011388,0.01092
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf,20.387815237045288,False,Thu Jun  4 23:46:44 2020,827,45,2721,274877906944,4,39,10,8,324.00,20.36,16.0173,4.34269
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case54.cnf,0.06833291053771973,False,Thu Jun  4 23:46:44 2020,203,23,718,1048576,3,20,10,9,63.78,0.044446,0.026023,0.018423
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf,0.3427720069885254,False,Thu Jun  4 23:46:44 2020,428,28,1849,33554432,4,30,10,10,105.60,0.321236,0.255379,0.065857
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_2_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf,2.384375810623169,False,Thu Jun  4 23:48:17 2020,1060,61,3840,79888860,5,52,10,10,262.70,2.35282,2.26442,0.088402
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case64.cnf,0.04467439651489258,False,Thu Jun  4 23:48:17 2020,93,19,284,35328,3,9,10,9,20.67,0.023638,0.013816,0.009822
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf,57.86459136009216,False,Thu Jun  4 23:49:15 2020,340,48,1023,274877906944,5,39,10,10,147.00,57.8372,57.7802,0.057078
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case43.cnf,0.05392336845397949,False,Thu Jun  4 23:49:15 2020,116,17,421,16384,3,15,10,8,15.75,0.028998,0.020198,0.0088
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_ptb_1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case130.cnf,0.4302377700805664,False,Thu Jun  4 23:50:46 2020,644,96,2056,562949953421312,3,28,10,10,385.20,0.396926,0.274333,0.122593
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case15.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case8.cnf,0.07241034507751465,False,Thu Jun  4 23:52:16 2020,160,26,523,8388608,3,22,10,10,74.40,0.043743,0.027886,0.015857
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf,0.10681509971618652,False,Thu Jun  4 23:52:16 2020,393,35,1554,4294967296,5,27,10,10,94.40,0.082983,0.053928,0.029055
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case144.cnf,0.7644491195678711,False,Thu Jun  4 23:52:17 2020,765,138,2339,4835703278458516698824704,10,50,10,10,363.20,0.741463,0.334375,0.407088
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf,0.3476293087005615,False,Thu Jun  4 23:52:17 2020,837,61,2902,28311561,3,29,10,10,300.50,0.323586,0.165352,0.158234
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring40.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_even3_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case210.cnf,1.0243966579437256,False,Thu Jun  4 23:55:18 2020,872,83,2933,1208925819614629174706176,3,85,10,10,434.50,0.990792,0.232784,0.758008
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case53.cnf,0.05586981773376465,False,Thu Jun  4 23:55:18 2020,132,21,395,262144,2,11,10,7,86.29,0.03453,0.01195,0.02258
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf,0.22350192070007324,False,Thu Jun  4 23:55:19 2020,427,48,1592,134217728,7,25,10,8,141.62,0.206327,0.153574,0.052753
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case63.cnf,0.03717637062072754,False,Thu Jun  4 23:55:19 2020,96,19,298,35328,3,9,10,10,16.60,0.022358,0.011868,0.01049
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_ptb_1_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf,16.380249977111816,False,Thu Jun  4 23:57:05 2020,1099,72,3632,274408144896,3,42,10,10,302.40,16.3439,16.1463,0.197665
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring7.cnf,30.68776535987854,False,Thu Jun  4 23:57:36 2020,1628,72,5837,274408144896,3,35,10,10,281.00,30.6576,30.4885,0.169098
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_3_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case1_b14_even3.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case204.cnf,0.09656643867492676,False,Fri Jun  5 00:00:36 2020,214,49,580,70368744177664,3,14,10,9,82.78,0.064587,0.029497,0.03509
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf,0.525984525680542,False,Fri Jun  5 00:00:37 2020,238,45,680,4398046511104,2,26,10,7,137.00,0.50047,0.350333,0.150137
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_ptb_2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case207.cnf,0.8026468753814697,False,Fri Jun  5 00:02:08 2020,824,165,2128,5846006549323611672814739330865132078623730171904,2,71,10,7,619.43,0.772557,0.115114,0.657443
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf,56.96679925918579,False,Fri Jun  5 00:03:05 2020,340,48,1023,274877906944,5,39,10,10,139.50,56.9292,56.9024,0.026813
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case117.cnf,0.06920886039733887,False,Fri Jun  5 00:03:05 2020,309,18,1366,32768,3,20,10,10,12.60,0.045352,0.027562,0.01779
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_even_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case128.cnf,0.05014610290527344,False,Fri Jun  5 00:04:35 2020,36,9,104,64,0,8,10,5,12.00,0.019046,0.013797,0.005249
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case108.cnf,0.07463264465332031,False,Fri Jun  5 00:04:35 2020,205,26,800,65536,2,23,10,10,33.10,0.052216,0.037125,0.015091
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case3.cnf,0.17063689231872559,False,Fri Jun  5 00:04:35 2020,294,26,1104,4194304,4,22,10,10,89.70,0.148305,0.1075,0.040805
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf,0.12796354293823242,False,Fri Jun  5 00:04:36 2020,302,34,1129,2147483648,5,26,10,9,107.00,0.108513,0.065472,0.043041
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case118.cnf,0.08020973205566406,False,Fri Jun  5 00:04:36 2020,309,18,1366,32768,3,22,10,7,16.29,0.059913,0.037666,0.022247
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf,0.29662132263183594,False,Fri Jun  5 00:04:36 2020,710,61,2269,8388608,5,26,10,10,298.40,0.274669,0.202985,0.071684
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf,0.4456965923309326,False,Fri Jun  5 00:04:37 2020,304,40,939,137438953472,2,31,10,9,131.22,0.421086,0.24416,0.176926
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf,1.5167787075042725,False,Fri Jun  5 00:04:38 2020,427,37,1382,1073741824,3,33,10,10,132.70,1.49327,1.43117,0.062098
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf,1.9367971420288086,False,Fri Jun  5 00:04:40 2020,496,42,1947,16777216,4,40,10,9,114.11,1.92049,1.87513,0.045355
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case206.cnf,0.024524450302124023,False,Fri Jun  5 00:04:40 2020,14,5,42,4,0,3,10,1,0.00,0.009886,0.009271,0.000615
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case18.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_even3.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf,0.11915946006774902,False,Fri Jun  5 00:07:40 2020,432,36,1829,6174015488,4,23,10,10,70.00,0.089797,0.062373,0.027424
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf,5.401483774185181,False,Fri Jun  5 00:07:46 2020,885,72,2810,68719476736,2,42,10,10,219.00,5.37804,5.31287,0.065172
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf,10.446382522583008,False,Fri Jun  5 00:07:56 2020,966,72,3213,274408144896,4,38,10,10,257.90,10.4198,10.3216,0.09818
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf,0.040691375732421875,False,Fri Jun  5 00:07:56 2020,51,13,142,1024,3,8,10,6,13.33,0.020298,0.014451,0.005847
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf,0.07497143745422363,False,Fri Jun  5 00:07:57 2020,314,27,1258,16777216,5,21,10,9,65.78,0.059594,0.036949,0.022645
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case36.cnf,0.026113510131835938,False,Fri Jun  5 00:07:57 2020,64,12,208,276,2,9,10,6,11.67,0.012299,0.006434,0.005865
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf,40.984771490097046,False,Fri Jun  5 00:08:38 2020,219,64,557,70368744177664,4,37,10,9,106.11,40.9375,32.0849,8.85265
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case31.cnf,0.047527313232421875,False,Fri Jun  5 00:08:38 2020,53,13,147,1024,3,8,10,8,14.12,0.022882,0.014744,0.008138
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_device_1_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_even2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case38.cnf,0.07403731346130371,False,Fri Jun  5 00:11:38 2020,143,15,567,4096,2,15,10,10,27.30,0.044909,0.024795,0.020114
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case51.cnf,0.06387019157409668,False,Fri Jun  5 00:11:38 2020,132,21,395,262144,2,11,10,8,52.88,0.041862,0.016859,0.025003
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case42.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case49.cnf,3.9268999099731445,False,Fri Jun  5 00:13:12 2020,1510,67,6501,2305843009213693952,7,57,10,10,334.90,3.88594,3.74002,0.145923
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf,51.111754179000854,False,Fri Jun  5 00:14:03 2020,1458,72,5009,1865275930882,3,42,10,10,314.30,51.0872,50.8144,0.272746
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf,35.007118940353394,False,Fri Jun  5 00:14:38 2020,1434,72,5028,274408144896,3,40,10,10,312.60,34.9716,32.4744,2.49725
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring5.cnf,5.374596118927002,False,Fri Jun  5 00:14:44 2020,885,72,2810,68719476736,2,42,10,10,192.90,5.33981,5.28125,0.058562
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_device_1_even_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case21.cnf,0.05937075614929199,False,Fri Jun  5 00:17:44 2020,126,16,409,8192,2,12,10,8,42.50,0.027416,0.014992,0.012424
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b12_even7_linear.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case45.cnf,0.06920433044433594,False,Fri Jun  5 00:19:14 2020,116,17,421,16384,3,15,10,10,14.20,0.039996,0.023354,0.016642
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case112.cnf,0.06740546226501465,False,Fri Jun  5 00:19:14 2020,137,18,519,32768,2,13,10,10,23.80,0.04463,0.023597,0.021033
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf,0.3904440402984619,False,Fri Jun  5 00:19:15 2020,304,40,939,137438953472,2,31,10,8,145.62,0.364116,0.244255,0.119861
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf,1.692086935043335,False,Fri Jun  5 00:19:17 2020,291,48,975,274877906944,5,33,10,9,115.44,1.66546,1.17936,0.4861
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf,39.24174094200134,False,Fri Jun  5 00:19:56 2020,219,64,557,70368744177664,4,37,10,10,98.30,39.2045,32.7307,6.47384
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case138.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_even2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case213.cnf,1.3035380840301514,False,Fri Jun  5 00:22:57 2020,648,80,1891,151115727451828646838272,3,79,10,9,474.33,1.25935,0.321083,0.938269
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_ptb_1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf,0.13556551933288574,False,Fri Jun  5 00:24:28 2020,267,34,980,2147483648,4,24,10,8,88.62,0.106765,0.066342,0.040423
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf,17.487863540649414,False,Fri Jun  5 00:24:45 2020,827,45,2721,274877906944,4,39,10,10,274.80,17.4574,15.8173,1.64008
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_even.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_even3.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case56.cnf,0.07340240478515625,False,Fri Jun  5 00:27:46 2020,202,23,715,1048576,3,20,10,8,59.00,0.043786,0.027198,0.016588
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case205.cnf,0.05417275428771973,False,Fri Jun  5 00:27:46 2020,214,49,580,70368744177664,3,14,10,7,86.86,0.038812,0.01362,0.025192
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case212.cnf,1.3110079765319824,False,Fri Jun  5 00:27:47 2020,1189,122,3476,309485009821345068724781056,3,95,10,5,813.60,1.28931,0.8788,0.410506
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case27.cnf,0.025360107421875,False,Fri Jun  5 00:27:47 2020,52,13,145,1024,3,8,10,6,16.00,0.012602,0.005884,0.006718
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case59_1.cnf,0.04393815994262695,False,Fri Jun  5 00:27:47 2020,93,19,284,35328,3,9,10,10,20.50,0.024101,0.014257,0.009844
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case133.cnf,0.08365631103515625,False,Fri Jun  5 00:27:47 2020,211,42,615,549755813888,3,23,10,8,177.75,0.069351,0.020689,0.048662
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case102.cnf,0.038396596908569336,False,Fri Jun  5 00:27:47 2020,34,11,92,256,1,6,10,6,8.50,0.019806,0.013732,0.006074
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_ptb_2.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf,0.2831861972808838,False,Fri Jun  5 00:29:18 2020,438,28,1878,33554432,4,30,10,10,103.30,0.253582,0.213145,0.040437
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case200.cnf,0.01990818977355957,False,Fri Jun  5 00:29:18 2020,14,5,42,4,0,3,10,1,0.00,0.005022,0.004646,0.000376
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case23.cnf,0.03934359550476074,False,Fri Jun  5 00:29:18 2020,77,14,235,2048,2,14,10,7,24.14,0.021678,0.011758,0.00992
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring70.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case201.cnf,0.09525084495544434,False,Fri Jun  5 00:30:48 2020,200,45,544,4398046511104,2,12,10,8,81.00,0.059438,0.027173,0.032265
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case17.cnf,0.045946598052978516,False,Fri Jun  5 00:30:48 2020,77,14,235,2048,2,14,10,8,22.38,0.024966,0.014854,0.010112
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case5.cnf,0.06689119338989258,False,Fri Jun  5 00:30:48 2020,176,36,517,67108864,3,21,10,8,90.00,0.04799,0.025888,0.022102
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case24.cnf,0.03987383842468262,False,Fri Jun  5 00:30:48 2020,65,14,190,256,1,10,10,7,11.86,0.021327,0.013783,0.007544
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case1.cnf,0.043778181076049805,False,Fri Jun  5 00:30:48 2020,187,20,675,131072,2,17,10,8,46.88,0.030064,0.013559,0.016505
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case2.cnf,0.1804659366607666,False,Fri Jun  5 00:30:48 2020,296,26,1110,4194304,4,22,10,9,87.89,0.159118,0.117544,0.041574
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf,0.36700892448425293,False,Fri Jun  5 00:30:49 2020,304,40,939,137438953472,2,31,10,9,122.44,0.342896,0.243841,0.099055
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case134.cnf,0.04303574562072754,False,Fri Jun  5 00:30:49 2020,60,21,146,262144,1,17,10,2,36.00,0.024108,0.014155,0.009953
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_even.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf,0.057554006576538086,False,Fri Jun  5 00:32:19 2020,236,41,708,2097152,2,19,10,7,116.00,0.027026,0.013248,0.013778
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_4_b14_even.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_even1.cnf,90.0,True,,,,,,,,,,,,,
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case58.cnf,0.04783225059509277,False,Fri Jun  5 00:35:19 2020,96,19,298,35328,3,9,10,10,23.00,0.02071,0.010007,0.010703
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case113.cnf,0.07066988945007324,False,Fri Jun  5 00:35:20 2020,309,18,1366,32768,3,20,10,10,20.90,0.047102,0.02911,0.017992
