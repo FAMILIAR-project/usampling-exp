@@ -1,0 +1,9 @@
+log ./output.txt
+
+dimacs /home/gilles/FeatureModels/FM-3.6.1-refined.cnf
+
+solver z3
+
+hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false selection:SolverSelection number-weight-optimization:1
+
+printconfigs ./samples.txt
