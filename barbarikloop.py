@@ -6,7 +6,9 @@ import time
 import csv
 import signal
 
-fmdir = '../../samplingforfm/Benchmarks/FeatureModels/'
+# FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
+fmdir="/home/samplingfm/Benchmarks/FeatureModels/"
+#fmdir = '../../samplingforfm/Benchmarks/FeatureModels/'
 #fmdir = 'samplingfm/Benchmarks/Blasted_Real/'
 #fmdir =  '/home/gilles/FeatureModels/'
 #fmdir = '/home/gilles/samplingforfm/Benchmarks/FMEasy/'
@@ -20,7 +22,7 @@ thres=600
 fields = ['file', 'time','cmd_output','err_output','Uniform','Timeout'] 
   
 # name of csv file 
-filename = "Uniform.csv"
+filename = "Uniform-DBS.csv"
   
 # writing to csv file 
 with open(filename, 'w') as csvfile:
@@ -35,7 +37,7 @@ with open(filename, 'w') as csvfile:
             print("Processing " + b)
             start = time.time()
             c = ''
-            sampler_cmd = ["python3","barbarik.py","--seed","1","--verb","1", "--sampler","3",b]
+            sampler_cmd = ["python3","barbarik.py","--seed","1","--verb","1","--eta", "2.0","--sampler","10",b]
             proc=  Popen(sampler_cmd, stdout=PIPE, stderr=PIPE,preexec_fn=os.setsid)
             c,err= proc.communicate(timeout=thres)
             #c=check_output(sampler_cmd,timeout=10,preexec_fn=os.setsid)
