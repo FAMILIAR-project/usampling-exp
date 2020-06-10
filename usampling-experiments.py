@@ -316,7 +316,7 @@ def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,m
    
 
 # csv_pattern eg KUS
-def get_formulas_timeout(flas_dataset, csv_pattern):
+def get_formulas_timeout(resume_folder, csv_pattern):
     flas_dataset = []
     csv_files_results = [join(resume_folder, f) for f in listdir(resume_folder) if isfile(join(resume_folder, f)) and f.endswith(".csv") and csv_pattern in f]
     for csv_file_result in csv_files_results:
@@ -343,13 +343,12 @@ dataset_gilles = {'fm-gilles': FEATURE_MODELS_DATASET_FOLDER}
 OUTPUT_DIR='../usampling-data/' # assume that this folder exists... 
 
 ######## SPUR
-def launch_SPUR_experiment(timeout, nsamples):
+def launch_SPUR_experiment(timeout, nsamples, resume_folder=None):
     for dataset_key, dataset_folder in dataset_fla.items():
         print(dataset_key, dataset_folder)
         if (resume_folder is not None):
             flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
-            print(len(flas_dataset))
-            return
+            print("resuming over", len(flas_dataset), "formulas")
         else:
             flas_dataset = all_cnf_files(dataset_folder)
         exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
@@ -362,8 +361,7 @@ def launch_KUS_experiment(timeout, nsamples, resume_folder=None):
         print(dataset_key, dataset_folder)        
         if (resume_folder is not None):
             flas_dataset = get_formulas_timeout(resume_folder, "KUS")
-            print(len(flas_dataset))
-            return
+            print("resuming over", len(flas_dataset), "formulas")
         else:
             flas_dataset = all_cnf_files(dataset_folder)
         exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
@@ -408,17 +406,17 @@ args = parser.parse_args()
 timeout=args.timeout
 nsamples=args.nsamples
 pthreads=args.pthreads
-resume_folder=args.resume
+resume_dir=args.resume
 
 print("starting usampling bench")
 
 if args.kus:
     print("KUS experiment")
-    launch_KUS_experiment(timeout, nsamples, resume_folder)
+    launch_KUS_experiment(timeout, nsamples, resume_dir)
 
 if args.spur:
     print("SPUR experiment")
-    launch_SPUR_experiment(timeout, nsamples)
+    launch_SPUR_experiment(timeout, nsamples, resume_dir)
 
 if args.smarch:
     print("SMARCH experiment")
