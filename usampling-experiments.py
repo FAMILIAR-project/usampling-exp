@@ -421,7 +421,10 @@ if args.kus:
     print("KUS experiment")
     if flas_args is not None:
         print("KUS with formulas to process", flas_args)
-        experiment_KUS(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + ".csv")
+        # TODO: parameterize the name of the CSV... 
+        # the issue I'm seeing is multiple/distributed/asynchronous calls to the procedure, all pointing out to the same CSV
+        # workaround right now: we compute a hash to have an unique identifier based on the list of flas
+        experiment_KUS(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + str(hash(str(flas_args))) + ".csv")
     else:
         launch_KUS_experiment(timeout, nsamples, resume_dir)
 
@@ -429,7 +432,7 @@ if args.spur:
     print("SPUR experiment")
     if flas_args is not None:
         print("SPUR with formulas to process", flas_args)
-        experiment_SPUR(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + ".csv")
+        experiment_SPUR(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + str(hash(str(flas_args))) + ".csv")
     else:
         launch_SPUR_experiment(timeout, nsamples, resume_dir)
 
