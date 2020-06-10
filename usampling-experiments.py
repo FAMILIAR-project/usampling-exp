@@ -397,6 +397,7 @@ parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int,
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
 parser.add_argument("-p", "--pthreads", help="number of threads (SMARCH multitprocessing", type=int, default=3)
 parser.add_argument("--resume", help="resume only formulas that have previously lead to a timeout (as documented by the CSV file given as argument)", type=str, default=None)
+parser.add_argument('-flas','--formulas', nargs="+", help='formulas or feature models to process (cnf or dimacs files typically)', default=None)
 parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--smarch", help="enable SMARCH experiment over FM benchmarks selected from ICST", action="store_true")
@@ -410,16 +411,29 @@ nsamples=args.nsamples
 pthreads=args.pthreads
 resume_dir=args.resume
 
+flas_args= args.formulas
+
 print("starting usampling bench")
+if flas_args is not None:
+    print("formulas to process explicitly given", flas_args)
 
 if args.kus:
     print("KUS experiment")
-    launch_KUS_experiment(timeout, nsamples, resume_dir)
+    if flas_args is not None:
+        print("KUS with formulas to process", flas_args)
+        experiment_KUS(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + ".csv")
+    else:
+        launch_KUS_experiment(timeout, nsamples, resume_dir)
 
 if args.spur:
     print("SPUR experiment")
-    launch_SPUR_experiment(timeout, nsamples, resume_dir)
+    if flas_args is not None:
+        print("SPUR with formulas to process", flas_args)
+        experiment_SPUR(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + ".csv")
+    else:
+        launch_SPUR_experiment(timeout, nsamples, resume_dir)
 
+# TODO: flas_args 
 if args.smarch:
     print("SMARCH experiment")
     launch_SMARCH_experiment(timeout, nsamples, pthreads, mp=False)
