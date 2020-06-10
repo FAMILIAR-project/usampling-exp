@@ -23,6 +23,12 @@ Pre-built Docker image:
   * solvers above and a proper installation 
   * time and resources ;) 
 
+## Usage
+
+`docker run -it -v $(pwd):/home/usampling-exp:z -v $(pwd)/usampling-data/:/home/usampling-data/:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --kus -t 1 --resume /home/usampling-data/results-timeout90/; echo END'`
+
+is calling KUS sampler, with a timeout of 1 second, and in resume mode (formulas that previously lead to timeout are processed again)
+
 ## Architecture
 
  * all samplers are in `samplers` directory (and all utilities/dependencies are also in this folder)
