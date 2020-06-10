@@ -314,7 +314,15 @@ def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,m
 
     return exp_results
    
-  
+
+# csv_pattern eg KUS
+def get_formulas_timeout(flas_dataset, csv_pattern):
+    flas_dataset = []
+    csv_files_results = [join(resume_folder, f) for f in listdir(resume_folder) if isfile(join(resume_folder, f)) and f.endswith(".csv") and csv_pattern in f]
+    for csv_file_result in csv_files_results:
+        df_computations = pd.read_csv(csv_file_result)
+        flas_dataset.extend(list(df_computations.query('timeout == True')['formula_file'].values))
+    return flas_dataset            
   
 
 def all_cnf_files(folder):
@@ -338,14 +346,26 @@ OUTPUT_DIR='../usampling-data/' # assume that this folder exists...
 def launch_SPUR_experiment(timeout, nsamples):
     for dataset_key, dataset_folder in dataset_fla.items():
         print(dataset_key, dataset_folder)
-        flas_dataset = all_cnf_files(dataset_folder)
+        if (resume_folder is not None):
+            flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
+            print(len(flas_dataset))
+            return
+        else:
+            flas_dataset = all_cnf_files(dataset_folder)
         exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
 
 ######## KUS sampler
-def launch_KUS_experiment(timeout, nsamples):
+# resume_folder means that we only consider formulas that have lead to "timeout": the idea is to process them with increased timeout
+# resume_folder indicates the folder of CSV files that documents previous attempt
+def launch_KUS_experiment(timeout, nsamples, resume_folder=None):
     for dataset_key, dataset_folder in dataset_fla.items():
-        print(dataset_key, dataset_folder)
-        flas_dataset = all_cnf_files(dataset_folder)
+        print(dataset_key, dataset_folder)        
+        if (resume_folder is not None):
+            flas_dataset = get_formulas_timeout(resume_folder, "KUS")
+            print(len(flas_dataset))
+            return
+        else:
+            flas_dataset = all_cnf_files(dataset_folder)
         exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
 
 
@@ -376,6 +396,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
 parser.add_argument("-p", "--pthreads", help="number of threads (SMARCH multitprocessing", type=int, default=3)
+parser.add_argument("--resume", help="resume only formulas that have previously lead to a timeout (as documented by the CSV file given as argument)", type=str, default=None)
 parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--smarch", help="enable SMARCH experiment over FM benchmarks selected from ICST", action="store_true")
@@ -387,12 +408,13 @@ args = parser.parse_args()
 timeout=args.timeout
 nsamples=args.nsamples
 pthreads=args.pthreads
+resume_folder=args.resume
 
 print("starting usampling bench")
 
 if args.kus:
     print("KUS experiment")
-    launch_KUS_experiment(timeout, nsamples)
+    launch_KUS_experiment(timeout, nsamples, resume_folder)
 
 if args.spur:
     print("SPUR experiment")
