@@ -344,27 +344,29 @@ OUTPUT_DIR='../usampling-data/' # assume that this folder exists...
 
 ######## SPUR
 def launch_SPUR_experiment(timeout, nsamples, resume_folder=None):
-    for dataset_key, dataset_folder in dataset_fla.items():
-        print(dataset_key, dataset_folder)
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
-            print("resuming over", len(flas_dataset), "formulas")
-        else:
+    if (resume_folder is not None):
+        flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
+        print("resuming SPUR over", len(flas_dataset), "formulas")
+        experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "resumed" + ".csv")
+    else:
+        for dataset_key, dataset_folder in dataset_fla.items():
+            print(dataset_key, dataset_folder)
             flas_dataset = all_cnf_files(dataset_folder)
-        exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
+            exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
 
 ######## KUS sampler
 # resume_folder means that we only consider formulas that have lead to "timeout": the idea is to process them with increased timeout
 # resume_folder indicates the folder of CSV files that documents previous attempt
 def launch_KUS_experiment(timeout, nsamples, resume_folder=None):
-    for dataset_key, dataset_folder in dataset_fla.items():
-        print(dataset_key, dataset_folder)        
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "KUS")
-            print("resuming over", len(flas_dataset), "formulas")
-        else:
+    if (resume_folder is not None):
+        flas_dataset = get_formulas_timeout(resume_folder, "KUS")
+        print("resuming KUS over", len(flas_dataset), "formulas")
+        experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "resumed" + ".csv")
+    else:
+        for dataset_key, dataset_folder in dataset_fla.items():
+            print(dataset_key, dataset_folder)        
             flas_dataset = all_cnf_files(dataset_folder)
-        exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
+            exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
 
 
 ######## SPUR
