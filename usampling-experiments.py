@@ -340,7 +340,7 @@ dataset_gilles = {'fm-gilles': FEATURE_MODELS_DATASET_FOLDER}
 # OUTPUT_DIR='./'
 # useful to store results in a dedicated folder
 # we can mount a volume with Docker so that results are visible outside 
-OUTPUT_DIR='../usampling-data/' # assume that this folder exists... 
+OUTPUT_DIR='usampling-data/' # assume that this folder exists... 
 
 ######## SPUR
 def launch_SPUR_experiment(flas, timeout, nsamples, resume_folder=None):

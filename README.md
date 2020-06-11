@@ -25,15 +25,15 @@ Pre-built Docker image:
 
 ## Usage
 
-`docker run -it -v $(pwd):/home/usampling-exp:z -v $(pwd)/usampling-data/:/home/usampling-data/:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --kus -t 1 --resume /home/usampling-data/results-timeout90/; echo END'`
+`docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --kus -t 1 --resume /home/usampling-data/results-timeout90/; echo END'`
 
 is calling KUS sampler, with a timeout of 1 second, and in resume mode (formulas that previously lead to timeout are processed again)
 
-`docker run -it -v $(pwd):/home/usampling-exp:z -v $(pwd)/usampling-data/:/home/usampling-data/:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py -flas /home/samplingfm/Benchmarks/Blasted_Real/blasted_case141.cnf /home/samplingfm/Benchmarks/Blasted_Real/blasted_case142.cnf --spur -t 1; echo END'`
+`docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py -flas /home/samplingfm/Benchmarks/Blasted_Real/blasted_case141.cnf /home/samplingfm/Benchmarks/Blasted_Real/blasted_case142.cnf --spur -t 1; echo END'`
 
 is calling SPUR sampler, with a timeout of 1 second, and with formulas explicitly given (here two formulas: useful to focus on specific formulas)
 
-Without `resume` and `flas` all formulas contained in the Docker are processed (around 500).
+Without `resume` and `flas` all formulas contained in the Docker folder `/home/samplingfm/` are processed (around 500 files).
 
 ## Architecture
 
