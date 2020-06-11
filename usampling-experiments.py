@@ -343,30 +343,41 @@ dataset_gilles = {'fm-gilles': FEATURE_MODELS_DATASET_FOLDER}
 OUTPUT_DIR='../usampling-data/' # assume that this folder exists... 
 
 ######## SPUR
-def launch_SPUR_experiment(timeout, nsamples, resume_folder=None):
-    if (resume_folder is not None):
-        flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
-        print("resuming SPUR over", len(flas_dataset), "formulas")
-        experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "resumed" + ".csv")
+def launch_SPUR_experiment(flas, timeout, nsamples, resume_folder=None):
+    if flas is not None:
+        print("SPUR with formulas to process", flas)
+        experiment_SPUR(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + str(hash(str(flas))) + ".csv")
     else:
-        for dataset_key, dataset_folder in dataset_fla.items():
-            print(dataset_key, dataset_folder)
-            flas_dataset = all_cnf_files(dataset_folder)
-            exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
+        if (resume_folder is not None):
+            flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
+            print("resuming SPUR over", len(flas_dataset), "formulas")
+            experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "resumed" + ".csv")
+        else:
+            for dataset_key, dataset_folder in dataset_fla.items():
+                print(dataset_key, dataset_folder)
+                flas_dataset = all_cnf_files(dataset_folder)
+                exp_results_spur = experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
 
 ######## KUS sampler
 # resume_folder means that we only consider formulas that have lead to "timeout": the idea is to process them with increased timeout
 # resume_folder indicates the folder of CSV files that documents previous attempt
-def launch_KUS_experiment(timeout, nsamples, resume_folder=None):
-    if (resume_folder is not None):
-        flas_dataset = get_formulas_timeout(resume_folder, "KUS")
-        print("resuming KUS over", len(flas_dataset), "formulas")
-        experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "resumed" + ".csv")
+def launch_KUS_experiment(flas, timeout, nsamples, resume_folder=None):
+    if flas is not None:
+        print("KUS with formulas to process", flas)
+        # TODO: parameterize the name of the CSV... 
+        # the issue I'm seeing is multiple/distributed/asynchronous calls to the procedure, all pointing out to the same CSV
+        # workaround right now: we compute a hash to have an unique identifier based on the list of flas
+        experiment_KUS(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + str(hash(str(flas))) + ".csv")
     else:
-        for dataset_key, dataset_folder in dataset_fla.items():
-            print(dataset_key, dataset_folder)        
-            flas_dataset = all_cnf_files(dataset_folder)
-            exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
+        if (resume_folder is not None):
+            flas_dataset = get_formulas_timeout(resume_folder, "KUS")
+            print("resuming KUS over", len(flas_dataset), "formulas")
+            experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "resumed" + ".csv")
+        else:
+            for dataset_key, dataset_folder in dataset_fla.items():
+                print(dataset_key, dataset_folder)        
+                flas_dataset = all_cnf_files(dataset_folder)
+                exp_results_kus = experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
 
 
 ######## SPUR
@@ -419,22 +430,13 @@ if flas_args is not None:
 
 if args.kus:
     print("KUS experiment")
-    if flas_args is not None:
-        print("KUS with formulas to process", flas_args)
-        # TODO: parameterize the name of the CSV... 
-        # the issue I'm seeing is multiple/distributed/asynchronous calls to the procedure, all pointing out to the same CSV
-        # workaround right now: we compute a hash to have an unique identifier based on the list of flas
-        experiment_KUS(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + str(hash(str(flas_args))) + ".csv")
-    else:
-        launch_KUS_experiment(timeout, nsamples, resume_dir)
+    launch_KUS_experiment(flas_args, timeout, nsamples, resume_dir)
+
 
 if args.spur:
     print("SPUR experiment")
-    if flas_args is not None:
-        print("SPUR with formulas to process", flas_args)
-        experiment_SPUR(flas=flas_args, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + str(hash(str(flas_args))) + ".csv")
-    else:
-        launch_SPUR_experiment(timeout, nsamples, resume_dir)
+    launch_SPUR_experiment(flas_args, timeout, nsamples, resume_dir)
+        
 
 # TODO: flas_args 
 if args.smarch:
