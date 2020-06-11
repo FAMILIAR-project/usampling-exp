@@ -25,6 +25,9 @@ Pre-built Docker image:
 
 ## Usage
 
+`docker run -it -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash`
+for developping... you can edit files that are bound to the Docker file. And experiments with procedures/samplers inside the Docker. 
+
 `docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --kus -t 1 --resume /home/usampling-data/results-timeout90/; echo END'`
 
 is calling KUS sampler, with a timeout of 1 second, and in resume mode (formulas that previously lead to timeout are processed again)
