@@ -331,18 +331,21 @@ class SolutionRetriver:
         inputFileSuffix = inputFile.split('/')[-1][:-4]
         tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
        
-        # creating the file to configure the sampler 
-        with open("./samplers/distribution-aware/"+inputFileSuffix+".a",'w+') as f:
+        # creating the file to configure the sampler
+        dbsConfigFile = tempfile.gettempdir()+'/'+inputFileSuffix+".a"
+   
+        with open(dbsConfigFile,'w+') as f:
             f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
             f.write("dimacs " + str(os.path.abspath(inputFile)) + "\n")
             
             params = "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
-            params += "selection:SolverSelection number-weight-optimization:1"
+            params += " selection:SolverSelection number-weight-optimization:1"
+            params += " numConfigs:"+str(numSolutions)
             f.write(params + "\n")
             f.write("printconfigs " + tempOutputFile)
 
         cmd = "mono ./samplers/distribution-aware/CommandLine.exe " 
-        cmd += "./samplers/distribution-aware/"+inputFileSuffix+".a"
+        cmd += dbsConfigFile
         
         if args.verbose:
             print("cmd: ", cmd)
@@ -373,7 +376,11 @@ class SolutionRetriver:
 
      
 
-         # todo
+        #cleaning temporary files
+        os.unlink(str(tempOutputFile))
+        os.unlink(dbsConfigFile)
+        os.unlink(str(tempfile.gettempdir())+'/'+"output.txt")
+        os.unlink(str(tempfile.gettempdir())+'/'+"output.txt_error")
 
         return solList
 
