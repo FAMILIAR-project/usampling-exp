@@ -313,7 +313,39 @@ def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,m
 
     return exp_results
    
-  
+def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
+    output_dir = './smarch_samples'
+    exp_results = pd.DataFrame()
+    for fla in flas:
+        # prepare the script.a file
+
+        cmd = "mono CommandLine.exe ./script.a"
+
+        try:
+            start = time.time()
+            op, err = run_with_timeout(full_cmd_kus, timeout, cwd=str(os.getcwd()) + '/samplers') # execute the command in this folder (otherwise DNNF does not work)
+            end = time.time()
+            etime = end - start
+
+            if (op is None): # timeout!
+                print("TIMEOUT")
+                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': timeout}, index=[0])
+                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+            else:
+                output = op.decode("utf-8")
+                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : False, 'execution_time_in': etime, 'dnnf_time' : dnnf_time, 'sampling_time': sampling_time, 'model_count': model_count, 'counting_time' : counting_time, 'dnnfparsing_time' : dnnfparsing_time}, index=[0])
+                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+                print("DONE")
+        except CalledProcessError:
+            print("CalledProcessError error")
+            continue
+        except Exception as er:
+            print("OOOPS (unknown exception)", er)
+            continue
+        finally:
+            if savecsv_onthefly is not None:
+                exp_results.to_csv(savecsv_onthefly, index=False)
+    return exp_results
   
 
 def all_cnf_files(folder):
@@ -370,6 +402,14 @@ def launch_SMARCH_experiment(timeout, nsamples,pthreads,mp=False):
         else:
             exp_results_smarch = experiment_SMARCH(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + dataset_key + ".csv", mp=False)
 
+######## DISTANCE-BASED SAMPLING
+def launch_DBS_experiment(timeout, nsamples):
+    for dataset_key, dataset_folder in dataset_fla.items():
+        print(dataset_key, dataset_folder)
+        flas_dataset = all_dimacs_files(dataset_folder)
+        print("Launching DBS experiments");
+        exp_results_dbs = experiment_DBS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-DBS-" + dataset_key + ".csv")
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
@@ -377,6 +417,7 @@ parser.add_argument("-p", "--pthreads", help="number of threads (SMARCH multitpr
 parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--smarch", help="enable SMARCH experiment over FM benchmarks selected from ICST", action="store_true")
+parser.add_argument("--dbs", help="enable distance-based sampling experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--smarchmp", help="enable SMARCH MP experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--spurlinux", help="enable SPUR experiment over feature model Linux SPLC challenge track",  action="store_true")
 parser.add_argument("--kuslinux", help="enable KUS experiment over feature model Linux SPLC challenge track",  action="store_true")
@@ -411,6 +452,9 @@ if args.kuslinux:
     print("KUS experiment over Linux")
     launch_KUS_experiment_linux(timeout, nsamples)
 
+if args.dbs:
+    print("DBS experiment")
+    launch_DBS_experiment(timeout, nsamples)
 
 
 #### for debugging run timeout
