@@ -9,7 +9,7 @@ import re
 import sys
 from statistics import mean
 import threading
-# import multiprocessing
+import multiprocessing
 import queue
 import os
 import signal
@@ -421,7 +421,55 @@ def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,m
 
 
 ################# Formulas to process
-   
+
+def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
+    output_dir = './dbs_samples'
+    exp_results = pd.DataFrame()
+    for fla in flas:
+        # prepare the script.a file
+        inputFileSuffix = fla.split('/')[-1][:-4]
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
+
+        # creating the file to configure the sampler
+        dbsConfigFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".a"
+
+        with open(dbsConfigFile, 'w+') as f:
+            f.write("log " + tempfile.gettempdir() + '/' + "output.txt" + "\n")
+            f.write("dimacs " + str(os.path.abspath(fla)) + "\n")
+
+            params = "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
+            params += " selection:SolverSelection number-weight-optimization:1"
+            params += " numConfigs:" + str(nsamples)
+            f.write(params + "\n")
+            f.write("printconfigs " + tempOutputFile)
+
+        cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
+        cmd += dbsConfigFile
+
+        try:
+            start = time.time()
+            op, err = run_with_timeout(cmd, timeout, cwd=str(os.getcwd()) + '/samplers')
+            end = time.time()
+            etime = end - start
+            if (op is None): # timeout!
+                print("TIMEOUT")
+                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': timeout}, index=[0])
+                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+            else:
+                output = op.decode("utf-8")
+                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : False, 'execution_time_in': etime}, index=[0])
+                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+                print("DONE")
+        except CalledProcessError:
+            print("CalledProcessError error")
+            continue
+        except Exception as er:
+            print("OOOPS (unknown exception)", er)
+            continue
+        finally:
+            if savecsv_onthefly is not None:
+                exp_results.to_csv(savecsv_onthefly, index=False)
+    return exp_results
 
 # csv_pattern eg KUS
 def get_formulas_timeout(resume_folder, csv_pattern):
@@ -430,7 +478,7 @@ def get_formulas_timeout(resume_folder, csv_pattern):
     for csv_file_result in csv_files_results:
         df_computations = pd.read_csv(csv_file_result)
         flas_dataset.extend(list(df_computations.query('timeout == True')['formula_file'].values))
-    return flas_dataset            
+    return flas_dataset
   
 
 def all_cnf_files(folder):
@@ -540,6 +588,14 @@ def launch_SMARCH_experiment(timeout, nsamples,pthreads,mp=False):
         else:
             exp_results_smarch = experiment_SMARCH(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + dataset_key + ".csv", mp=False)
 
+######## DISTANCE-BASED SAMPLING
+def launch_DBS_experiment(timeout, nsamples):
+    for dataset_key, dataset_folder in dataset_fla.items():
+        print(dataset_key, dataset_folder)
+        flas_dataset = all_cnf_files(dataset_folder)
+        print("Launching DBS experiments");
+        exp_results_dbs = experiment_DBS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-DBS-" + dataset_key + ".csv")
+
 print('parsing arguments')
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
@@ -552,6 +608,7 @@ parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks"
 parser.add_argument("--unigen2", help="enable Unigen2 experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--unigen3", help="enable Unigen3 experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--smarch", help="enable SMARCH experiment over FM benchmarks selected from ICST", action="store_true")
+parser.add_argument("--dbs", help="enable distance-based sampling experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--smarchmp", help="enable SMARCH MP experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--spurlinux", help="enable SPUR experiment over feature model Linux SPLC challenge track",  action="store_true")
 parser.add_argument("--kuslinux", help="enable KUS experiment over feature model Linux SPLC challenge track",  action="store_true")
@@ -600,6 +657,10 @@ if args.spurlinux:
 if args.kuslinux:
     print("KUS experiment over Linux")
     launch_KUS_experiment_linux(timeout, nsamples)
+
+if args.dbs:
+    print("DBS experiment")
+    launch_DBS_experiment(timeout, nsamples)
 
 print('end of benchmarks')
 
