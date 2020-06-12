@@ -443,7 +443,8 @@ def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
             f.write(params + "\n")
             f.write("printconfigs " + tempOutputFile)
 
-        cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
+        # cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
+        cmd = "mono ./distribution-aware/CommandLine.exe "
         cmd += dbsConfigFile
 
         try:
