@@ -309,6 +309,7 @@ def experiment_Unigen3(flas, timeout, nsamples, savecsv_onthefly=None):
             start = time.time()
             # op, err = run_with_timeout(full_cmd_unigen3, timeout, cwd=str(os.getcwd()) + '/samplers')
             output = check_output(full_cmd_unigen3.split(" "), stderr=STDOUT, timeout=timeout, encoding='UTF-8')
+            print("still alive (TODO!)", output)
             
         except TimeoutExpired:
             df_exp = pd.DataFrame({'formula_file' : [fla], 'execution_time_in': [timeout], 'timeout' : [True]}, index=[0])
@@ -420,12 +421,11 @@ def experiment_SMARCH(flas, timeout, nsamples, pthreads, savecsv_onthefly=None,m
 
 
 
-################# Formulas to process
-
 def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
     output_dir = './dbs_samples'
     exp_results = pd.DataFrame()
     for fla in flas:
+        print(fla)
         # prepare the script.a file
         inputFileSuffix = fla.split('/')[-1][:-4]
         tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
@@ -443,34 +443,53 @@ def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
             f.write(params + "\n")
             f.write("printconfigs " + tempOutputFile)
 
-        # cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
-        cmd = "mono ./distribution-aware/CommandLine.exe "
+        cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
+        # cmd = "mono ./distribution-aware/CommandLine.exe "
         cmd += dbsConfigFile
 
         try:
-            start = time.time()
-            op, err = run_with_timeout(cmd, timeout, cwd=str(os.getcwd()) + '/samplers')
+            start = time.time()            
+            output = check_output(cmd.split(" "), stderr=STDOUT, timeout=timeout, encoding='UTF-8')
+            print("still alive, DONE!", output)
+            # not like Unigen3: it is the expected "process"
             end = time.time()
             etime = end - start
-            if (op is None): # timeout!
-                print("TIMEOUT")
-                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': timeout}, index=[0])
-                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
-            else:
-                output = op.decode("utf-8")
-                df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : False, 'execution_time_in': etime}, index=[0])
-                exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
-                print("DONE")
-        except CalledProcessError:
-            print("CalledProcessError error")
+            df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : False, 'execution_time_in': etime, 'exception_dbs': False }, index=[0]) # , 'nsolutions': nsolutions})
+            exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+            
+        except TimeoutExpired:
+            df_exp = pd.DataFrame({'formula_file' : [fla], 'execution_time_in': [timeout], 'timeout' : [True], 'exception_dbs': [False]}, index=[0])
+            exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+            print("TIMEOUT")           
             continue
-        except Exception as er:
-            print("OOOPS (unknown exception)", er)
+        except subprocess.CalledProcessError as e:
+            print(e.returncode)
+            print(e.cmd)
+
+            out_dbs = e.output
+            if out_dbs is not None:
+                if "Unhandled Exception:" in out_dbs.splitlines():
+                    print("FAILURE! not really a timeout") # TODO
+                    end = time.time()
+                    etime = end - start         
+                    # for dbs, maybe timeout is tristate: true, false, and exception...
+                    # considering that it is timeout (because it fails to return a solution) but the execution_time_in is not equals to timeout
+                    # and we set 'exception_dbs': True (false otherwise)
+                    df_exp = pd.DataFrame({'formula_file' : fla, 'timeout' : True, 'execution_time_in': etime, 'exception_dbs': True }, index=[0]) # , 'nsolutions': nsolutions})
+                    exp_results = exp_results.append(df_exp, ignore_index=True, sort=False)
+                else:
+                    print("unknow case")
+                    print(e.output)
             continue
         finally:
             if savecsv_onthefly is not None:
                 exp_results.to_csv(savecsv_onthefly, index=False)
     return exp_results
+
+
+
+
+################# Formulas to process
 
 # csv_pattern eg KUS
 def get_formulas_timeout(resume_folder, csv_pattern):
