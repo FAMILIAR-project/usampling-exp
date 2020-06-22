@@ -96,7 +96,7 @@ def compute_obs_frequencies(sampleFile,samplerType):
             return nb_samples,obs_freqs
 
         elif (samplerType == SAMPLER_QUICKSAMPLER):
-            nb_samples, obs_freqs = compute_qs_obs_frequencies(sampleFile) #TODO
+            nb_samples, obs_freqs = compute_qs_obs_frequencies(sampleFile) 
             return nb_samples, obs_freqs
 
         elif (samplerType == SAMPLER_STS):
@@ -200,7 +200,26 @@ def compute_qs_obs_frequencies(sampleFile):
     obs_freqs = {}
     nb_samples = 0
     
-    # TODO
+
+    with open(sampleFile, 'r') as f:
+        validLines = f.readlines()
+
+
+    for line in validLines:
+        sol_occ = int(line.split(':')[-1]) #how many times that same solution has been found
+        for i in range(sol_occ):
+            stripped_line = line.split(':')
+            features = stripped_line[0].split()
+            nb_samples += 1                    
+    
+            #computing feature occurrences
+            for i in features_dict.values():
+                if i in features:
+                    obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+    
+    # computing frequencies (more accurate if computed separately)
+    for k in obs_freqs.keys():
+        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
 
     return nb_samples, obs_freqs
 
