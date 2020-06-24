@@ -436,8 +436,8 @@ def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
         with open(dbsConfigFile, 'w+') as f:
             f.write("log " + tempfile.gettempdir() + '/' + "output.txt" + "\n")
             f.write("dimacs " + str(os.path.abspath(fla)) + "\n")
-
-            params = "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
+            params = " solver z3"+ "\n"
+            params += "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
             params += " selection:SolverSelection number-weight-optimization:1"
             params += " numConfigs:" + str(nsamples)
             f.write(params + "\n")

@@ -80,7 +80,7 @@ def get_sampler_string(samplerType):
     if samplerType == SAMPLER_KUS:
         return 'KUS'
     if samplerType == SAMPLER_DISTAWARE:
-        return 'DistributionAwareDistanceSampling'
+        return 'DistanceBasedSampling'
     print("ERROR: unknown sampler type")
     exit(-1)
 
@@ -231,7 +231,7 @@ class SolutionRetriver:
 
     @staticmethod
     def getSolutionFromUniGen2(inputFile, numSolutions, indVarList, newSeed):
-        # must construct ./unigen --samples=500 --verbosity=0 --threads=1  CNF-FILE SAMPLESFILE
+        
         inputFileSuffix = inputFile.split('/')[-1][:-4]
         tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
         cwd = os.getcwd()
@@ -337,8 +337,8 @@ class SolutionRetriver:
         with open(dbsConfigFile,'w+') as f:
             f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
             f.write("dimacs " + str(os.path.abspath(inputFile)) + "\n")
-            
-            params = "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
+            params= " solver z3"+ "\n"
+            params += "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
             params += " selection:SolverSelection number-weight-optimization:1"
             params += " numConfigs:"+str(numSolutions)
             f.write(params + "\n")
