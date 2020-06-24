@@ -469,7 +469,7 @@ def experiment_DBS(flas, timeout, nsamples, savecsv_onthefly=None):
             out_dbs = e.output
             if out_dbs is not None:
                 if "Unhandled Exception:" in out_dbs.splitlines():
-                    print("FAILURE! not really a timeout") # TODO
+                    print("FAILURE! not really a timeout ", out_dbs) # TODO
                     end = time.time()
                     etime = end - start         
                     # for dbs, maybe timeout is tristate: true, false, and exception...
