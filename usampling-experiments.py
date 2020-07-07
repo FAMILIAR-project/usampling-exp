@@ -515,112 +515,7 @@ dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' :
 # we can mount a volume with Docker so that results are visible outside 
 OUTPUT_DIR='usampling-data/' # assume that this folder exists... 
 
-######## SPUR
-def launch_SPUR_experiment(flas, timeout, nsamples, resume_folder=None):
-    if flas is not None:
-        print("SPUR with formulas to process", flas)
-        experiment_SPUR(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else:
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "SPUR")
-            print("resuming SPUR over", len(flas_dataset), "formulas")
-            experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "resumed" + ".csv")
-        else:
-            for dataset_key, dataset_folder in dataset_fla.items():
-                print(dataset_key, dataset_folder)
-                flas_dataset = all_cnf_files(dataset_folder)
-                experiment_SPUR(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + dataset_key + ".csv")
-
-######## KUS sampler
-# resume_folder means that we only consider formulas that have lead to "timeout": the idea is to process them with increased timeout
-# resume_folder indicates the folder of CSV files that documents previous attempt
-def launch_KUS_experiment(flas, timeout, nsamples, resume_folder=None):
-    if flas is not None:
-        print("KUS with formulas to process", flas)
-        # TODO: parameterize the name of the CSV... 
-        # the issue I'm seeing is multiple/distributed/asynchronous calls to the procedure, all pointing out to the same CSV
-        # workaround right now: we compute a hash to have an unique identifier based on the list of flas
-        experiment_KUS(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else:
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "KUS")
-            print("resuming KUS over", len(flas_dataset), "formulas")
-            experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "resumed" + ".csv")
-        else:
-            for dataset_key, dataset_folder in dataset_fla.items():
-                print(dataset_key, dataset_folder)        
-                flas_dataset = all_cnf_files(dataset_folder)
-                experiment_KUS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + dataset_key + ".csv")
-
-
-def launch_Unigen3_experiment(flas, timeout, nsamples, resume_folder=None):
-    if flas is not None:
-        print("Unigen3 with formulas to process", flas)
-        experiment_Unigen3(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen3-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else:
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "Unigen3")
-            print("resuming Unigen3 over", len(flas_dataset), "formulas")
-            experiment_Unigen3(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen3-" + "resumed" + ".csv")
-        else:
-            for dataset_key, dataset_folder in dataset_fla.items():
-                print(dataset_key, dataset_folder)        
-                flas_dataset = all_cnf_files(dataset_folder)
-                experiment_Unigen3(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen3-" + dataset_key + ".csv")
-
-def launch_Unigen2_experiment(flas, timeout, nsamples, resume_folder=None):
-    if flas is not None:
-        print("Unigen2 with formulas to process", flas)
-        experiment_Unigen2(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen2-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else:
-        if (resume_folder is not None):
-            flas_dataset = get_formulas_timeout(resume_folder, "Unigen2")
-            print("resuming Unigen2 over", len(flas_dataset), "formulas")
-            experiment_Unigen2(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen2-" + "resumed" + ".csv")
-        else:
-            for dataset_key, dataset_folder in dataset_fla.items():
-                print(dataset_key, dataset_folder)        
-                flas_dataset = all_cnf_files(dataset_folder)
-                experiment_Unigen2(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen2-" + dataset_key + ".csv")
-
-######## SPUR
-def launch_SPUR_experiment_linux(timeout, nsamples):
-    print("dimacs analysis of Linux feature model (SPUR)", FMLINUX_DATASET_FOLDER)
-    flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
-    experiment_SPUR(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR-" + "linux" + ".csv")
-
-def launch_KUS_experiment_linux(timeout, nsamples):
-    print("dimacs analysis of Linux feature model (KUS)", FMLINUX_DATASET_FOLDER)
-    flas_dataset = all_dimacs_files(FMLINUX_DATASET_FOLDER)
-    experiment_KUS(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS-" + "linux" + ".csv")
-
-
-####### SMARCH
-def launch_SMARCH_experiment(flas, timeout, nsamples,pthreads,mp=False):
-    if flas is not None:
-        print("SMARCH with specific formulas to process", flas)
-        experiment_DBS(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else: # default
-        for dataset_key, dataset_folder in dataset_fla.items():
-            print(dataset_key, dataset_folder)
-            flas_dataset = all_cnf_files(dataset_folder)
-            if mp:
-                experiment_SMARCH(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + dataset_key + ".csv", mp=True)
-            else:
-                experiment_SMARCH(flas=sorted(flas_dataset), timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-" + dataset_key + ".csv", mp=False)
-
-######## DISTANCE-BASED SAMPLING
-def launch_DBS_experiment(flas, timeout, nsamples):
-    if flas is not None:
-        print("DBS with specific formulas to process", flas)
-        experiment_DBS(flas=flas, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-DBS-" + "formulas-given" + str(hash(str(flas))) + ".csv")
-    else: # default
-        for dataset_key, dataset_folder in dataset_fla.items():
-            print(dataset_key, dataset_folder)
-            flas_dataset = all_cnf_files(dataset_folder)
-            print("Launching DBS experiments")
-            experiment_DBS(flas=flas_dataset, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-DBS-" + dataset_key + ".csv")
-
+    
 print('parsing arguments')
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
@@ -635,8 +530,6 @@ parser.add_argument("--unigen3", help="enable Unigen3 experiment over ICST bench
 parser.add_argument("--smarch", help="enable SMARCH experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--dbs", help="enable distance-based sampling experiment over FM benchmarks selected from ICST", action="store_true")
 parser.add_argument("--smarchmp", help="enable SMARCH MP experiment over FM benchmarks selected from ICST", action="store_true")
-parser.add_argument("--spurlinux", help="enable SPUR experiment over feature model Linux SPLC challenge track",  action="store_true")
-parser.add_argument("--kuslinux", help="enable KUS experiment over feature model Linux SPLC challenge track",  action="store_true")
 args = parser.parse_args()
 
 timeout=args.timeout
@@ -652,8 +545,9 @@ if flas_args is not None:
     print("formulas to process explicitly given", flas_args)
     for fla_arg in flas_args:
         if fla_arg in "fm_history_linux_dimacs":
-            print("folder of formulas", fla_arg)
-            flas_to_process.extend(all_cnf_files(FMLINUX_DATASET_FOLDER))
+            print("folder of Linux formulas (SPLC challenge track)", fla_arg)
+            print("WARNING: requires the big dataset, use the appropriate Docker image eg macher/usampling:fmlinux")            
+            flas_to_process.extend(all_dimacs_files(FMLINUX_DATASET_FOLDER))
         elif fla_arg in "Benchmarks":
             print("folder of formulas", fla_arg)
             flas_to_process.extend(all_cnf_files("/home/samplingfm/" + fla_arg))
@@ -664,6 +558,7 @@ if flas_args is not None:
             print('individual formula', fla_arg)
             flas_to_process.append(fla_arg)
 else: # by default 
+    print("default dataset/folders", dataset_fla)
     for dataset_key, dataset_folder in dataset_fla.items():
         flas_to_process.extend(all_cnf_files(dataset_folder))
 
@@ -671,41 +566,30 @@ print(len(flas_to_process), "formulas to process", flas_to_process)
 
 if args.kus:
     print("KUS experiment")
-    launch_KUS_experiment(flas_args, timeout, nsamples, resume_dir)
+    experiment_KUS(flas=flas_to_process, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-KUS.csv")
 
 if args.spur:
     print("SPUR experiment")
-    launch_SPUR_experiment(flas_args, timeout, nsamples, resume_dir)
+    experiment_SPUR(flas=flas_to_process, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-SPUR.csv")
 
 if args.unigen3:
     print("Unigen3 experiment")
-    launch_Unigen3_experiment(flas_args, timeout, nsamples, resume_dir)
+    experiment_Unigen3(flas=flas_to_process, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen3.csv")
 
 if args.unigen2:
     print("Unigen2 experiment")
-    launch_Unigen2_experiment(flas_args, timeout, nsamples, resume_dir)
+    experiment_Unigen2(flas=flas_to_process, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-Unigen2.csv")
 
 if args.dbs:
     print("DBS experiment")
-    launch_DBS_experiment(flas_args, timeout, nsamples)
+    experiment_DBS(flas=flas_to_process, timeout=timeout, nsamples=nsamples, savecsv_onthefly=OUTPUT_DIR + "experiments-DBS.csv")
         
 if args.smarch:
     print("SMARCH experiment")
-    launch_SMARCH_experiment(flas_args, timeout, nsamples, pthreads, mp=False)
+    experiment_SMARCH(flas=flas_to_process, timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH.csv", mp=False)
 if args.smarchmp:
     print("SMARCH MP experiment")
-    launch_SMARCH_experiment(flas_args, timeout, nsamples, pthreads, mp=True)
-
-# TODO: should be a specific usage of flas_args
-if args.spurlinux:
-    print("SPUR experiment over Linux")
-    launch_SPUR_experiment_linux(timeout, nsamples)
-
-if args.kuslinux:
-    print("KUS experiment over Linux")
-    launch_KUS_experiment_linux(timeout, nsamples)
-
-
+    experiment_SMARCH(flas=flas_to_process, timeout=timeout, nsamples=nsamples, pthreads=pthreads, savecsv_onthefly=OUTPUT_DIR + "experiments-SMARCH-mp.csv", mp=True)
 
 print('end of benchmarks')
 
