@@ -521,7 +521,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--timeout", help="timeout for the sampler", type=int, default=10)
 parser.add_argument("-n", "--nsamples", help="number of samples", type=int, default=10)
 parser.add_argument("-p", "--pthreads", help="number of threads (SMARCH multitprocessing", type=int, default=3)
-parser.add_argument('-flas','--formulas', nargs="+", help='formulas or feature models to process (cnf or dimacs files typically)', default=None)
+parser.add_argument('-flas','--formulas', nargs="+", help='formulas or feature models to process (cnf or dimacs files typically). You can also specify "FeatureModels", "FMEasy", "Blasted_Real", "V7", "V3", "V15", "Benchmarks", or "fm_history_linux_dimacs" to target specific folders', default=None)
 parser.add_argument("--kus", help="enable KUS experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--spur", help="enable SPUR experiment over ICST benchmarks",  action="store_true")
 parser.add_argument("--unigen2", help="enable Unigen2 experiment over ICST benchmarks",  action="store_true")
@@ -534,7 +534,6 @@ args = parser.parse_args()
 timeout=args.timeout
 nsamples=args.nsamples
 pthreads=args.pthreads
-resume_dir=args.resume
 
 flas_args = args.formulas
 
@@ -550,7 +549,7 @@ if flas_args is not None:
         elif fla_arg in "Benchmarks":
             print("folder of formulas", fla_arg)
             flas_to_process.extend(all_cnf_files("/home/samplingfm/" + fla_arg))
-        elif fla_arg in ("FeatureModels", "FMEasy", "Blasted_Real", "V7", "V3", "V15", "fm_history_linux_dimacs"):
+        elif fla_arg in ("FeatureModels", "FMEasy", "Blasted_Real", "V7", "V3", "V15"):
             print("folder of formulas", fla_arg)
             flas_to_process.extend(all_cnf_files("/home/samplingfm/Benchmarks/" + fla_arg))
         else:
