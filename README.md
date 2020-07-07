@@ -13,9 +13,9 @@
 
 Pre-built Docker image: 
  * available here https://cloud.docker.com/repository/docker/macher/usampling
- * docker pull macher/usampling
+ * docker pull macher/usampling:squashed (warning: use :fmlinux for a Docker image with th 5Gb dataset of Linux feature model)
  * contains all scripts, tools, and dataset (not feature model history)
- * `docker run -it macher/usampling /bin/bash` and then `python3 /home/usampling-exp/usampling-experiments.py` 
+ * usage example: `docker run -it -v $(pwd):/home/usampling-exp macher/usampling:squashed /bin/bash -c 'cd /home/usampling-exp/; python3 usampling-experiments.py -t 1 --unigen2 -flas Benchmarks'` for Unigen2 sampler, timeout 1 second, and only formulas contained in the Benchmarks folder
  * we're planning to provide the script to build the Docker image
  
  Requirements:
@@ -25,18 +25,15 @@ Pre-built Docker image:
 
 ## Usage
 
-`docker run -it -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash`
+`docker run -it -v $(pwd):/home/usampling-exp:z macher/usampling:squashed /bin/bash`
 for developping... you can edit files that are bound to the Docker file. And experiments with procedures/samplers inside the Docker. 
-
-`docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --kus -t 1 --resume /home/usampling-data/results-timeout90/; echo END'`
-
-is calling KUS sampler, with a timeout of 1 second, and in resume mode (formulas that previously lead to timeout are processed again)
 
 `docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py -flas /home/samplingfm/Benchmarks/Blasted_Real/blasted_case141.cnf /home/samplingfm/Benchmarks/Blasted_Real/blasted_case142.cnf --spur -t 1; echo END'`
 
-is calling SPUR sampler, with a timeout of 1 second, and with formulas explicitly given (here two formulas: useful to focus on specific formulas)
+is calling SPUR sampler, with a timeout of 1 second, and with formulas explicitly given (here two formulas: useful to focus on specific formulas). 
+You can also specify a folder.
 
-Without `resume` and `flas` all formulas contained in the Docker folder `/home/samplingfm/` are processed (around 500 files).
+Without `flas` default formulas contained in the Docker folder/subfolders `/home/samplingfm/` are processed (around 500 files).
 
 ## Architecture
 
