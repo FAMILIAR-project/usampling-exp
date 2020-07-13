@@ -17,6 +17,6 @@ gvirt start ${VM_NAME} --image /srv/tempdd/macher/usampling/docker-alpine-usampl
 VM_WAIT_DOCKER="until [ -S /var/run/docker.sock ]; do sleep 1; done"
 
 BENCH="/home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf /home/samplingfm/Benchmarks/FMEasy/2.6.33.3-2var.cnf /home/samplingfm/Benchmarks/FMEasy/freetz.cnf /home/samplingfm/Benchmarks/FMEasy/buildroot.cnf /home/samplingfm/Benchmarks/FMEasy/2.6.28.6-icse11.cnf"
-VM_CMD="docker run -v /mnt/srv/tempdd/macher/usampling-exp/:/home/usampling-exp:z macher/usampling:squashed /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --SPUR -t 8580 -flas $BENCH; echo END'"
+VM_CMD="docker run -v /mnt/srv/tempdd/macher/usampling-exp/:/home/usampling-exp:z macher/usampling:squashed /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 usampling-experiments.py --spur -t 8580 -flas $BENCH; echo END'"
 gvirt exec $VM_NAME "$VM_WAIT_DOCKER"
 gvirt exec $VM_NAME "$VM_CMD"
