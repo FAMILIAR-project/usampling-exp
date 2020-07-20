@@ -1,0 +1,3487 @@
+STARTING
+loading packages...
+parsing arguments
+starting usampling bench
+formulas to process explicitly given ['/home/samplingfm/Benchmarks/V7/s349_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/V3/s382_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf', '/home/samplingfm/Benchmarks/V7/s382_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf', '/home/samplingfm/Benchmarks/V15/s344_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf', '/home/samplingfm/Benchmarks/V15/s349_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf', '/home/samplingfm/Benchmarks/V3/s444_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf', '/home/samplingfm/Benchmarks/V3/s420_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf', '/home/samplingfm/Benchmarks/V3/s510_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf', '/home/samplingfm/Benchmarks/V7/s444_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s349_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/V3/s382_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf', '/home/samplingfm/Benchmarks/V7/s382_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf', '/home/samplingfm/Benchmarks/V15/s344_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf', '/home/samplingfm/Benchmarks/V15/s349_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf', '/home/samplingfm/Benchmarks/V3/s444_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf', '/home/samplingfm/Benchmarks/V3/s420_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf', '/home/samplingfm/Benchmarks/V3/s510_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf', '/home/samplingfm/Benchmarks/V7/s444_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf', '/home/samplingfm/Benchmarks/V7/s510_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf', '/home/samplingfm/Benchmarks/V15/s510_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s382_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s420_new_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s526_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s420_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s420_new1_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s526a_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s444_15_7.cnf', '/home/samplingfm/Benchmarks/V7/s526_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s526a_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf', '/home/samplingfm/Benchmarks/V15/s526_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s526a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf', '/home/samplingfm/Benchmarks/V3/s953a_3_2.cnf', '/home/samplingfm/Benchmarks/V7/s953a_7_4.cnf', '/home/samplingfm/Benchmarks/V15/s953a_15_7.cnf', '/home/samplingfm/Benchmarks/V7/s820a_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s832a_7_4.cnf', '/home/samplingfm/Benchmarks/V15/s820a_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s1238a_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s832a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf', '/home/samplingfm/Benchmarks/V7/s1238a_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s1196a_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf', '/home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf', '/home/samplingfm/Benchmarks/V15/s1238a_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s1196a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring40.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf', '/home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf', '/home/samplingfm/Benchmarks/IssueServiceImpl.sk_8_30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring70.cnf', '/home/samplingfm/Benchmarks/PhaseService.sk_14_27.cnf', '/home/samplingfm/Benchmarks/V3/s27_new_3_2.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/111.sk_2_36.cnf', '/home/samplingfm/Benchmarks/ConcreteActivityService.sk_13_28.cnf', '/home/samplingfm/Benchmarks/V3/s5378a_3_2.cnf', '/home/samplingfm/Benchmarks/partition.sk_22_155.cnf', '/home/samplingfm/Benchmarks/ProjectService3.sk_12_55.cnf', '/home/samplingfm/Benchmarks/NotificationServiceImpl2.sk_10_36.cnf', '/home/samplingfm/Benchmarks/109.sk_4_36.cnf', '/home/samplingfm/Benchmarks/81.sk_5_51.cnf', '/home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf', '/home/samplingfm/Benchmarks/70.sk_3_40.cnf', '/home/samplingfm/Benchmarks/ProcessBean.sk_8_64.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf', '/home/samplingfm/Benchmarks/V3/s35932_3_2.cnf', '/home/samplingfm/Benchmarks/80.sk_2_48.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/doublyLinkedList.sk_8_37.cnf', '/home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf', '/home/samplingfm/Benchmarks/LoginService.sk_20_34.cnf', '/home/samplingfm/Benchmarks/29.sk_3_45.cnf', '/home/samplingfm/Benchmarks/17.sk_3_45.cnf', '/home/samplingfm/Benchmarks/isolateRightmost.sk_7_481.cnf', '/home/samplingfm/Benchmarks/LoginService2.sk_23_36.cnf', '/home/samplingfm/Benchmarks/36.sk_3_77.cnf', '/home/samplingfm/Benchmarks/signedAvg.sk_8_1020.cnf', '/home/samplingfm/Benchmarks/enqueueSeqSK.sk_10_42.cnf', '/home/samplingfm/Benchmarks/tutorial3.sk_4_31.cnf', 'FeatureModels', 'FMEasy']
+individual formula /home/samplingfm/Benchmarks/V7/s349_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s382_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s382_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s344_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s349_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s444_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s510_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s444_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s349_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s382_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s382_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s344_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s349_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s444_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s510_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s444_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s420_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s510_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s510_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s382_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s420_new_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s526_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s420_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s420_new1_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s526a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s444_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s526_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s526a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s526_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s526a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s953a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s953a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s953a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s820a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s832a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s820a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s1238a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s832a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s1238a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/V7/s1196a_7_4.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf
+individual formula /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s1238a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/V15/s1196a_15_7.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring40.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf
+individual formula /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf
+individual formula /home/samplingfm/Benchmarks/IssueServiceImpl.sk_8_30.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf
+individual formula /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf
+individual formula /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf
+individual formula /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring70.cnf
+individual formula /home/samplingfm/Benchmarks/PhaseService.sk_14_27.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s27_new_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf
+individual formula /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf
+individual formula /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf
+individual formula /home/samplingfm/Benchmarks/111.sk_2_36.cnf
+individual formula /home/samplingfm/Benchmarks/ConcreteActivityService.sk_13_28.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s5378a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/partition.sk_22_155.cnf
+individual formula /home/samplingfm/Benchmarks/ProjectService3.sk_12_55.cnf
+individual formula /home/samplingfm/Benchmarks/NotificationServiceImpl2.sk_10_36.cnf
+individual formula /home/samplingfm/Benchmarks/109.sk_4_36.cnf
+individual formula /home/samplingfm/Benchmarks/81.sk_5_51.cnf
+individual formula /home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf
+individual formula /home/samplingfm/Benchmarks/70.sk_3_40.cnf
+individual formula /home/samplingfm/Benchmarks/ProcessBean.sk_8_64.cnf
+individual formula /home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s35932_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/80.sk_2_48.cnf
+individual formula /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf
+individual formula /home/samplingfm/Benchmarks/doublyLinkedList.sk_8_37.cnf
+individual formula /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf
+individual formula /home/samplingfm/Benchmarks/LoginService.sk_20_34.cnf
+individual formula /home/samplingfm/Benchmarks/29.sk_3_45.cnf
+individual formula /home/samplingfm/Benchmarks/17.sk_3_45.cnf
+individual formula /home/samplingfm/Benchmarks/isolateRightmost.sk_7_481.cnf
+individual formula /home/samplingfm/Benchmarks/LoginService2.sk_23_36.cnf
+individual formula /home/samplingfm/Benchmarks/36.sk_3_77.cnf
+individual formula /home/samplingfm/Benchmarks/signedAvg.sk_8_1020.cnf
+individual formula /home/samplingfm/Benchmarks/enqueueSeqSK.sk_10_42.cnf
+individual formula /home/samplingfm/Benchmarks/tutorial3.sk_4_31.cnf
+folder of formulas FeatureModels
+folder of formulas FMEasy
+320 formulas to process ['/home/samplingfm/Benchmarks/V7/s349_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/V3/s382_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf', '/home/samplingfm/Benchmarks/V7/s382_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf', '/home/samplingfm/Benchmarks/V15/s344_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf', '/home/samplingfm/Benchmarks/V15/s349_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf', '/home/samplingfm/Benchmarks/V3/s444_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf', '/home/samplingfm/Benchmarks/V3/s420_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf', '/home/samplingfm/Benchmarks/V3/s510_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf', '/home/samplingfm/Benchmarks/V7/s444_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s349_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf', '/home/samplingfm/Benchmarks/V3/s382_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf', '/home/samplingfm/Benchmarks/V7/s382_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf', '/home/samplingfm/Benchmarks/V15/s344_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf', '/home/samplingfm/Benchmarks/V15/s349_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf', '/home/samplingfm/Benchmarks/V3/s444_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf', '/home/samplingfm/Benchmarks/V3/s420_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf', '/home/samplingfm/Benchmarks/V3/s510_3_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf', '/home/samplingfm/Benchmarks/V7/s444_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s420_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf', '/home/samplingfm/Benchmarks/V7/s510_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf', '/home/samplingfm/Benchmarks/V15/s510_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s382_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s420_new_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s526_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s420_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s420_new1_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s526a_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s444_15_7.cnf', '/home/samplingfm/Benchmarks/V7/s526_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s526a_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf', '/home/samplingfm/Benchmarks/V15/s526_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s526a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf', '/home/samplingfm/Benchmarks/V3/s953a_3_2.cnf', '/home/samplingfm/Benchmarks/V7/s953a_7_4.cnf', '/home/samplingfm/Benchmarks/V15/s953a_15_7.cnf', '/home/samplingfm/Benchmarks/V7/s820a_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s832a_7_4.cnf', '/home/samplingfm/Benchmarks/V15/s820a_15_7.cnf', '/home/samplingfm/Benchmarks/V3/s1238a_3_2.cnf', '/home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf', '/home/samplingfm/Benchmarks/V15/s832a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf', '/home/samplingfm/Benchmarks/V7/s1238a_7_4.cnf', '/home/samplingfm/Benchmarks/V7/s1196a_7_4.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf', '/home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf', '/home/samplingfm/Benchmarks/V15/s1238a_15_7.cnf', '/home/samplingfm/Benchmarks/V15/s1196a_15_7.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring40.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf', '/home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf', '/home/samplingfm/Benchmarks/IssueServiceImpl.sk_8_30.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf', '/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring70.cnf', '/home/samplingfm/Benchmarks/PhaseService.sk_14_27.cnf', '/home/samplingfm/Benchmarks/V3/s27_new_3_2.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf', '/home/samplingfm/Benchmarks/111.sk_2_36.cnf', '/home/samplingfm/Benchmarks/ConcreteActivityService.sk_13_28.cnf', '/home/samplingfm/Benchmarks/V3/s5378a_3_2.cnf', '/home/samplingfm/Benchmarks/partition.sk_22_155.cnf', '/home/samplingfm/Benchmarks/ProjectService3.sk_12_55.cnf', '/home/samplingfm/Benchmarks/NotificationServiceImpl2.sk_10_36.cnf', '/home/samplingfm/Benchmarks/109.sk_4_36.cnf', '/home/samplingfm/Benchmarks/81.sk_5_51.cnf', '/home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf', '/home/samplingfm/Benchmarks/70.sk_3_40.cnf', '/home/samplingfm/Benchmarks/ProcessBean.sk_8_64.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf', '/home/samplingfm/Benchmarks/V3/s35932_3_2.cnf', '/home/samplingfm/Benchmarks/80.sk_2_48.cnf', '/home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf', '/home/samplingfm/Benchmarks/doublyLinkedList.sk_8_37.cnf', '/home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf', '/home/samplingfm/Benchmarks/LoginService.sk_20_34.cnf', '/home/samplingfm/Benchmarks/29.sk_3_45.cnf', '/home/samplingfm/Benchmarks/17.sk_3_45.cnf', '/home/samplingfm/Benchmarks/isolateRightmost.sk_7_481.cnf', '/home/samplingfm/Benchmarks/LoginService2.sk_23_36.cnf', '/home/samplingfm/Benchmarks/36.sk_3_77.cnf', '/home/samplingfm/Benchmarks/signedAvg.sk_8_1020.cnf', '/home/samplingfm/Benchmarks/enqueueSeqSK.sk_10_42.cnf', '/home/samplingfm/Benchmarks/tutorial3.sk_4_31.cnf', '/home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf', '/home/samplingfm/Benchmarks/FeatureModels/viper.cnf', '/home/samplingfm/Benchmarks/FeatureModels/phycore.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cq7708.cnf', '/home/samplingfm/Benchmarks/FeatureModels/psim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/aeb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sh7708.cnf', '/home/samplingfm/Benchmarks/FeatureModels/vrc4375.cnf', '/home/samplingfm/Benchmarks/FeatureModels/malta_mips32_4kc.cnf', '/home/samplingfm/Benchmarks/FeatureModels/rattler.cnf', '/home/samplingfm/Benchmarks/FeatureModels/asb2305.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pc_usb_d12.cnf', '/home/samplingfm/Benchmarks/FeatureModels/vads.cnf', '/home/samplingfm/Benchmarks/FeatureModels/calm32_ceb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/se77x9.cnf', '/home/samplingfm/Benchmarks/FeatureModels/se7751.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mb93093.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sparc_erc32.cnf', '/home/samplingfm/Benchmarks/FeatureModels/lpcmt.cnf', '/home/samplingfm/Benchmarks/FeatureModels/vrc4373.cnf', '/home/samplingfm/Benchmarks/FeatureModels/integrator_arm7.cnf', '/home/samplingfm/Benchmarks/FeatureModels/eb55.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ec555.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sh4_202_md.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mb93091.cnf', '/home/samplingfm/Benchmarks/FeatureModels/atlas_mips64_5kc.cnf', '/home/samplingfm/Benchmarks/FeatureModels/eb42.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ea2468.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cma230.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sparc_leon.cnf', '/home/samplingfm/Benchmarks/FeatureModels/olpch2294.cnf', '/home/samplingfm/Benchmarks/FeatureModels/dreamcast.cnf', '/home/samplingfm/Benchmarks/FeatureModels/excalibur_arm9.cnf', '/home/samplingfm/Benchmarks/FeatureModels/frv400.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ipaq.cnf', '/home/samplingfm/Benchmarks/FeatureModels/nano.cnf', '/home/samplingfm/Benchmarks/FeatureModels/stm3210e_eval.cnf', '/home/samplingfm/Benchmarks/FeatureModels/aki3068net.cnf', '/home/samplingfm/Benchmarks/FeatureModels/integrator_arm9.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mac7100evb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/p2106.cnf', '/home/samplingfm/Benchmarks/FeatureModels/prpmc1100.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sparclite_sim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/edb7xxx.cnf', '/home/samplingfm/Benchmarks/FeatureModels/eb40.cnf', '/home/samplingfm/Benchmarks/FeatureModels/stb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/h8300h_sim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/skmb91302.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ixdp425.cnf', '/home/samplingfm/Benchmarks/FeatureModels/grg.cnf', '/home/samplingfm/Benchmarks/FeatureModels/h8s_sim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/eb40a.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sleb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/jmr3904.cnf', '/home/samplingfm/Benchmarks/FeatureModels/jtst.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pc_i82559.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cq7750.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mace1.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ref4955.cnf', '/home/samplingfm/Benchmarks/FeatureModels/m5272c3.cnf', '/home/samplingfm/Benchmarks/FeatureModels/gps4020.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mbx.cnf', '/home/samplingfm/Benchmarks/FeatureModels/atlas_mips32_4kc.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ts1000.cnf', '/home/samplingfm/Benchmarks/FeatureModels/at91sam7sek.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf', '/home/samplingfm/Benchmarks/FeatureModels/phycore229x.cnf', '/home/samplingfm/Benchmarks/FeatureModels/flexanet.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mcb2100.cnf', '/home/samplingfm/Benchmarks/FeatureModels/innovator.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ocelot.cnf', '/home/samplingfm/Benchmarks/FeatureModels/malta_mips64_5kc.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ts6.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cma28x.cnf', '/home/samplingfm/Benchmarks/FeatureModels/aim711.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ebsa285.cnf', '/home/samplingfm/Benchmarks/FeatureModels/aaed2000.cnf', '/home/samplingfm/Benchmarks/FeatureModels/picasso.cnf', '/home/samplingfm/Benchmarks/FeatureModels/olpcl2294.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pati.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pc_i82544.cnf', '/home/samplingfm/Benchmarks/FeatureModels/e7t.cnf', '/home/samplingfm/Benchmarks/FeatureModels/olpce2294.cnf', '/home/samplingfm/Benchmarks/FeatureModels/am31_sim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/stdeval1.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pc_rltk8139.cnf', '/home/samplingfm/Benchmarks/FeatureModels/adder.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cme555.cnf', '/home/samplingfm/Benchmarks/FeatureModels/refidt334.cnf', '/home/samplingfm/Benchmarks/FeatureModels/calm16_ceb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pid.cnf', '/home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf', '/home/samplingfm/Benchmarks/FeatureModels/asb.cnf', '/home/samplingfm/Benchmarks/FeatureModels/iq80310.cnf', '/home/samplingfm/Benchmarks/FeatureModels/fads.cnf', '/home/samplingfm/Benchmarks/FeatureModels/adderII.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cerf.cnf', '/home/samplingfm/Benchmarks/FeatureModels/assabet.cnf', '/home/samplingfm/Benchmarks/FeatureModels/iq80321.cnf', '/home/samplingfm/Benchmarks/FeatureModels/tx39_sim.cnf', '/home/samplingfm/Benchmarks/FeatureModels/sa1100mm.cnf', '/home/samplingfm/Benchmarks/FeatureModels/npwr.cnf', '/home/samplingfm/Benchmarks/FeatureModels/brutus.cnf', '/home/samplingfm/Benchmarks/FeatureModels/cerfpda.cnf', '/home/samplingfm/Benchmarks/FeatureModels/ceb_v850.cnf', '/home/samplingfm/Benchmarks/FeatureModels/mpc50.cnf', '/home/samplingfm/Benchmarks/FeatureModels/at91sam7xek.cnf', '/home/samplingfm/Benchmarks/FeatureModels/edosk2674.cnf', '/home/samplingfm/Benchmarks/FeatureModels/pc_vmWare.cnf', '/home/samplingfm/Benchmarks/FeatureModels/csb281.cnf', '/home/samplingfm/Benchmarks/FeatureModels/uE250.cnf', '/home/samplingfm/Benchmarks/FeatureModels/moab.cnf', '/home/samplingfm/Benchmarks/FeatureModels/h8max.cnf', '/home/samplingfm/Benchmarks/FeatureModels/smdk2410.cnf', '/home/samplingfm/Benchmarks/FeatureModels/snds.cnf', '/home/samplingfm/Benchmarks/FeatureModels/linux.cnf', '/home/samplingfm/Benchmarks/FeatureModels/hs7729pci.cnf', '/home/samplingfm/Benchmarks/FMEasy/coreboot.cnf', '/home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf', '/home/samplingfm/Benchmarks/FMEasy/freebsd-icse11.cnf', '/home/samplingfm/Benchmarks/FMEasy/2.6.33.3-2var.cnf', '/home/samplingfm/Benchmarks/FMEasy/embtoolkit.cnf', '/home/samplingfm/Benchmarks/FMEasy/freetz.cnf', '/home/samplingfm/Benchmarks/FMEasy/fiasco.cnf', '/home/samplingfm/Benchmarks/FMEasy/buildroot.cnf', '/home/samplingfm/Benchmarks/FMEasy/2.6.28.6-icse11.cnf', '/home/samplingfm/Benchmarks/FMEasy/uClinux.cnf', '/home/samplingfm/Benchmarks/FMEasy/busybox-1.18.0.cnf', '/home/samplingfm/Benchmarks/FMEasy/axTLS.cnf', '/home/samplingfm/Benchmarks/FMEasy/ecos-icse11.cnf', '/home/samplingfm/Benchmarks/FMEasy/uClinux-config.cnf', '/home/samplingfm/Benchmarks/FMEasy/toybox2.cnf', '/home/samplingfm/Benchmarks/FMEasy/toybox.cnf']
+SMARCH experiment
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s349_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s349_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 68259779543369 - sampling time: 12.583355188369751
+Sampling 1 with 23927996497591 - sampling time: 12.288336038589478
+Sampling 2 with 67403702114405 - sampling time: 11.302535057067871
+Sampling 3 with 65508833008884 - sampling time: 12.257556200027466
+Sampling 4 with 27848231645949 - sampling time: 12.794967412948608
+Sampling 5 with 6071582124420 - sampling time: 12.211690187454224
+Sampling 6 with 41407953890995 - sampling time: 13.595212936401367
+Sampling 7 with 65755249777955 - sampling time: 11.190618515014648
+Sampling 8 with 45515558543818 - sampling time: 12.375258207321167
+Sampling 9 with 60312075478663 - sampling time: 12.167050838470459
+--- total time: 122.77468347549438 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case146_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 22791901770767 - sampling time: 13.368004560470581
+Sampling 1 with 51522585105614 - sampling time: 11.947636365890503
+Sampling 2 with 16157998515951 - sampling time: 13.04680061340332
+Sampling 3 with 10227137694240 - sampling time: 12.935056686401367
+Sampling 4 with 20743235809141 - sampling time: 12.472304105758667
+Sampling 5 with 15074906421680 - sampling time: 12.5089750289917
+Sampling 6 with 43325583180470 - sampling time: 13.301087379455566
+Sampling 7 with 39998023761452 - sampling time: 12.911394119262695
+Sampling 8 with 9247353763949 - sampling time: 11.222668170928955
+Sampling 9 with 11765608229993 - sampling time: 10.603601694107056
+--- total time: 124.32464694976807 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case145_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2097152
+Sampling 0 with 535242 - sampling time: 5.75268030166626
+Sampling 1 with 1365105 - sampling time: 4.582867383956909
+Sampling 2 with 41882 - sampling time: 6.3281450271606445
+Sampling 3 with 746510 - sampling time: 5.7550458908081055
+Sampling 4 with 79863 - sampling time: 6.216414451599121
+Sampling 5 with 589109 - sampling time: 5.711243152618408
+Sampling 6 with 1317212 - sampling time: 4.455823659896851
+Sampling 7 with 471681 - sampling time: 5.6895458698272705
+Sampling 8 with 865339 - sampling time: 5.363655090332031
+Sampling 9 with 171655 - sampling time: 5.445870637893677
+--- total time: 55.30953311920166 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case132_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2097152
+Sampling 0 with 1552214 - sampling time: 5.512325286865234
+Sampling 1 with 395075 - sampling time: 4.098636627197266
+Sampling 2 with 720067 - sampling time: 5.828573226928711
+Sampling 3 with 115324 - sampling time: 6.329292297363281
+Sampling 4 with 231493 - sampling time: 5.8833770751953125
+Sampling 5 with 303542 - sampling time: 5.588236331939697
+Sampling 6 with 448155 - sampling time: 5.148725509643555
+Sampling 7 with 329479 - sampling time: 4.152832269668579
+Sampling 8 with 576149 - sampling time: 5.5601677894592285
+Sampling 9 with 1276218 - sampling time: 4.284929513931274
+--- total time: 52.39401459693909 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case135_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 1965680648998 - sampling time: 12.291959047317505
+Sampling 1 with 1406232635577 - sampling time: 11.334027290344238
+Sampling 2 with 2259937980789 - sampling time: 10.468193769454956
+Sampling 3 with 3948529156254 - sampling time: 11.999679565429688
+Sampling 4 with 367440498942 - sampling time: 12.610690116882324
+Sampling 5 with 1298450758367 - sampling time: 12.10006332397461
+Sampling 6 with 1058561578511 - sampling time: 11.56846833229065
+Sampling 7 with 734078404550 - sampling time: 10.43346905708313
+Sampling 8 with 2107641811227 - sampling time: 12.664358139038086
+Sampling 9 with 2099458641513 - sampling time: 11.76575231552124
+--- total time: 117.24407696723938 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 2844337707009 - sampling time: 12.675170421600342
+Sampling 1 with 3975513285115 - sampling time: 11.637476444244385
+Sampling 2 with 3954890033475 - sampling time: 12.293980598449707
+Sampling 3 with 462942781140 - sampling time: 12.492548942565918
+Sampling 4 with 1855908395223 - sampling time: 11.513028144836426
+Sampling 5 with 611292512835 - sampling time: 10.779164552688599
+Sampling 6 with 1544688462914 - sampling time: 10.629570960998535
+Sampling 7 with 2216245689580 - sampling time: 11.405571222305298
+Sampling 8 with 1073974781828 - sampling time: 12.449050903320312
+Sampling 9 with 2480201362916 - sampling time: 12.686240911483765
+--- total time: 118.56984400749207 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 1339041677148 - sampling time: 11.017922163009644
+Sampling 1 with 2968320255463 - sampling time: 10.527480125427246
+Sampling 2 with 1734810238354 - sampling time: 11.733562707901001
+Sampling 3 with 1085717464509 - sampling time: 11.15619421005249
+Sampling 4 with 83155926022 - sampling time: 12.629942417144775
+Sampling 5 with 814868462901 - sampling time: 12.45728611946106
+Sampling 6 with 591346241327 - sampling time: 12.14592432975769
+Sampling 7 with 2530710198582 - sampling time: 11.026440620422363
+Sampling 8 with 910308353015 - sampling time: 12.457586526870728
+Sampling 9 with 3375074391831 - sampling time: 12.462957859039307
+--- total time: 117.62344551086426 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1048576
+Sampling 0 with 854887 - sampling time: 4.429542779922485
+Sampling 1 with 301903 - sampling time: 4.1948401927948
+Sampling 2 with 639280 - sampling time: 3.449239730834961
+Sampling 3 with 661881 - sampling time: 3.5670108795166016
+Sampling 4 with 182119 - sampling time: 4.780168533325195
+Sampling 5 with 152277 - sampling time: 4.224432945251465
+Sampling 6 with 666265 - sampling time: 3.4078314304351807
+Sampling 7 with 1037343 - sampling time: 4.465546607971191
+Sampling 8 with 444562 - sampling time: 5.194413423538208
+Sampling 9 with 354822 - sampling time: 6.665651559829712
+--- total time: 44.38600945472717 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case109_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 5144420661750 - sampling time: 13.29972219467163
+Sampling 1 with 34965705544982 - sampling time: 12.54005479812622
+Sampling 2 with 21490780271701 - sampling time: 12.701266288757324
+Sampling 3 with 62175765834058 - sampling time: 10.470963716506958
+Sampling 4 with 39119933376499 - sampling time: 12.277776718139648
+Sampling 5 with 39187260519089 - sampling time: 13.037294387817383
+Sampling 6 with 65456741990719 - sampling time: 11.960642099380493
+Sampling 7 with 28266633316991 - sampling time: 11.70225715637207
+Sampling 8 with 308611865914 - sampling time: 11.172851800918579
+Sampling 9 with 45200698641183 - sampling time: 12.256595849990845
+--- total time: 121.42550325393677 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case145_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s382_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s382_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2147483648
+Sampling 0 with 511262261 - sampling time: 5.784837484359741
+Sampling 1 with 755255431 - sampling time: 7.914623737335205
+Sampling 2 with 1017236206 - sampling time: 5.7682881355285645
+Sampling 3 with 1748168239 - sampling time: 7.536264657974243
+Sampling 4 with 1995604317 - sampling time: 7.13950514793396
+Sampling 5 with 164798351 - sampling time: 7.06295108795166
+Sampling 6 with 1384377362 - sampling time: 7.2153472900390625
+Sampling 7 with 1861456134 - sampling time: 7.045062303543091
+Sampling 8 with 1234084555 - sampling time: 6.991460084915161
+Sampling 9 with 1014277740 - sampling time: 6.995394706726074
+--- total time: 69.46162939071655 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case123_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 35184372088832
+Sampling 0 with 6127569774319 - sampling time: 8.417429208755493
+Sampling 1 with 23318196311423 - sampling time: 9.67128038406372
+Sampling 2 with 8775647349568 - sampling time: 8.42676854133606
+Sampling 3 with 14627985815877 - sampling time: 12.506218433380127
+Sampling 4 with 31410790863330 - sampling time: 8.41210389137268
+Sampling 5 with 6198644994456 - sampling time: 9.408376693725586
+Sampling 6 with 16867469520985 - sampling time: 8.101937770843506
+Sampling 7 with 12635775683978 - sampling time: 11.000144004821777
+Sampling 8 with 31748408778098 - sampling time: 8.42089056968689
+Sampling 9 with 485637595458 - sampling time: 11.146884679794312
+--- total time: 95.52056407928467 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case119_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 212972767791 - sampling time: 11.399118185043335
+Sampling 1 with 18030346615 - sampling time: 11.92079496383667
+Sampling 2 with 548880906463 - sampling time: 11.412036180496216
+Sampling 3 with 729505097963 - sampling time: 11.230074167251587
+Sampling 4 with 783134796872 - sampling time: 9.652743101119995
+Sampling 5 with 700215109092 - sampling time: 11.481527090072632
+Sampling 6 with 430915515630 - sampling time: 11.417816400527954
+Sampling 7 with 574960111216 - sampling time: 13.299825191497803
+Sampling 8 with 629563314196 - sampling time: 12.217530012130737
+Sampling 9 with 767853924459 - sampling time: 8.35596489906311
+--- total time: 112.39464926719666 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 829140771821 - sampling time: 11.752451658248901
+Sampling 1 with 777256304979 - sampling time: 9.850228786468506
+Sampling 2 with 378608990145 - sampling time: 9.000755548477173
+Sampling 3 with 93736453063 - sampling time: 11.140672445297241
+Sampling 4 with 165693376832 - sampling time: 11.175342082977295
+Sampling 5 with 231195756620 - sampling time: 11.526646852493286
+Sampling 6 with 749273020432 - sampling time: 8.26431155204773
+Sampling 7 with 863000585657 - sampling time: 11.684427261352539
+Sampling 8 with 661017718644 - sampling time: 11.179367303848267
+Sampling 9 with 987385877003 - sampling time: 11.039639472961426
+--- total time: 106.62116837501526 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 288445584573 - sampling time: 11.798923969268799
+Sampling 1 with 908167175847 - sampling time: 11.775532245635986
+Sampling 2 with 602620170021 - sampling time: 12.723978281021118
+Sampling 3 with 15802663406 - sampling time: 10.836539268493652
+Sampling 4 with 509569925491 - sampling time: 11.135160446166992
+Sampling 5 with 180210940599 - sampling time: 11.264587163925171
+Sampling 6 with 820635657055 - sampling time: 11.56233811378479
+Sampling 7 with 392013511950 - sampling time: 11.381984233856201
+Sampling 8 with 675148743204 - sampling time: 12.272911548614502
+Sampling 9 with 823908483246 - sampling time: 12.53131651878357
+--- total time: 117.29166650772095 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 562949953421312
+Sampling 0 with 436122473394697 - sampling time: 8.289093494415283
+Sampling 1 with 156936733106998 - sampling time: 11.260689973831177
+Sampling 2 with 466718396383528 - sampling time: 9.56825065612793
+Sampling 3 with 535558211517129 - sampling time: 8.461694717407227
+Sampling 4 with 123859537428666 - sampling time: 12.762451410293579
+Sampling 5 with 98677373753690 - sampling time: 11.16311502456665
+Sampling 6 with 155401143003803 - sampling time: 10.770015954971313
+Sampling 7 with 25132756915342 - sampling time: 13.301653861999512
+Sampling 8 with 219067894277647 - sampling time: 8.222620248794556
+Sampling 9 with 212702733882790 - sampling time: 8.150201797485352
+--- total time: 101.95770239830017 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case9_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s382_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s382_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 281474976710656
+Sampling 0 with 208435795736560 - sampling time: 6.745202302932739
+Sampling 1 with 60898443938396 - sampling time: 10.610283851623535
+Sampling 2 with 93703264954740 - sampling time: 12.02338981628418
+Sampling 3 with 64631616406894 - sampling time: 13.694396257400513
+Sampling 4 with 29259440545120 - sampling time: 12.33194875717163
+Sampling 5 with 173314271543043 - sampling time: 11.083613157272339
+Sampling 6 with 124354570522983 - sampling time: 12.176573753356934
+Sampling 7 with 123646777941645 - sampling time: 11.441468238830566
+Sampling 8 with 263036890497575 - sampling time: 7.157400131225586
+Sampling 9 with 116507022231 - sampling time: 8.498095512390137
+--- total time: 105.76971983909607 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case61_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s344_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s344_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 5609171940198 - sampling time: 13.532681941986084
+Sampling 1 with 8766563706334 - sampling time: 10.452350616455078
+Sampling 2 with 28906444685826 - sampling time: 14.652257204055786
+Sampling 3 with 22655801606119 - sampling time: 11.994581937789917
+Sampling 4 with 32313937887206 - sampling time: 13.474104642868042
+Sampling 5 with 14793784175701 - sampling time: 10.14299464225769
+Sampling 6 with 42457239680476 - sampling time: 13.5770902633667
+Sampling 7 with 61404914219514 - sampling time: 12.243755102157593
+Sampling 8 with 42334964495345 - sampling time: 11.522970199584961
+Sampling 9 with 11277962745349 - sampling time: 15.940300703048706
+--- total time: 127.54066729545593 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case120_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s349_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s349_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 536870912
+Sampling 0 with 368483631 - sampling time: 7.319915294647217
+Sampling 1 with 79069849 - sampling time: 7.292909383773804
+Sampling 2 with 6273033 - sampling time: 7.78285813331604
+Sampling 3 with 146080293 - sampling time: 7.670307636260986
+Sampling 4 with 158004317 - sampling time: 7.616878509521484
+Sampling 5 with 174429724 - sampling time: 7.4205543994903564
+Sampling 6 with 342109396 - sampling time: 7.630917310714722
+Sampling 7 with 528037819 - sampling time: 6.167912006378174
+Sampling 8 with 506194781 - sampling time: 7.688154935836792
+Sampling 9 with 141617058 - sampling time: 7.028965473175049
+--- total time: 73.62738275527954 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case57_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s444_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s444_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274877906944
+Sampling 0 with 247721050843 - sampling time: 11.399075746536255
+Sampling 1 with 222667044757 - sampling time: 10.027956247329712
+Sampling 2 with 172846218258 - sampling time: 10.328771352767944
+Sampling 3 with 92337059998 - sampling time: 10.372602939605713
+Sampling 4 with 111401519546 - sampling time: 8.878237247467041
+Sampling 5 with 161523183826 - sampling time: 9.921054601669312
+Sampling 6 with 42212622285 - sampling time: 8.564585208892822
+Sampling 7 with 270719491270 - sampling time: 8.533951044082642
+Sampling 8 with 142177222419 - sampling time: 10.05026626586914
+Sampling 9 with 4358293304 - sampling time: 11.525213956832886
+--- total time: 99.61036086082458 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case121_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1073741824
+Sampling 0 with 365434565 - sampling time: 8.690386533737183
+Sampling 1 with 221023374 - sampling time: 8.598459959030151
+Sampling 2 with 398808104 - sampling time: 7.274483919143677
+Sampling 3 with 1048460663 - sampling time: 7.560940980911255
+Sampling 4 with 904065939 - sampling time: 7.41565465927124
+Sampling 5 with 184365251 - sampling time: 7.984782457351685
+Sampling 6 with 319528376 - sampling time: 8.098045349121094
+Sampling 7 with 575598798 - sampling time: 7.131162405014038
+Sampling 8 with 371748588 - sampling time: 7.5680460929870605
+Sampling 9 with 163464900 - sampling time: 6.989947319030762
+--- total time: 77.31991720199585 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case62_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1024
+Sampling 0 with 938 - sampling time: 1.4041476249694824
+Sampling 1 with 628 - sampling time: 1.417686939239502
+Sampling 2 with 417 - sampling time: 1.4589765071868896
+Sampling 3 with 175 - sampling time: 1.5115852355957031
+Sampling 4 with 692 - sampling time: 0.5084578990936279
+Sampling 5 with 488 - sampling time: 1.1832773685455322
+Sampling 6 with 174 - sampling time: 1.4725756645202637
+Sampling 7 with 645 - sampling time: 1.2835395336151123
+Sampling 8 with 428 - sampling time: 1.40836763381958
+Sampling 9 with 128 - sampling time: 1.472029685974121
+--- total time: 13.128680229187012 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case33_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 3052650428138 - sampling time: 10.693528652191162
+Sampling 1 with 4074484594679 - sampling time: 9.467095375061035
+Sampling 2 with 567901598504 - sampling time: 9.604861736297607
+Sampling 3 with 1272032042332 - sampling time: 11.115903377532959
+Sampling 4 with 3555991612329 - sampling time: 10.786162614822388
+Sampling 5 with 962698977516 - sampling time: 10.67279601097107
+Sampling 6 with 2871937459373 - sampling time: 11.253751516342163
+Sampling 7 with 535241457278 - sampling time: 11.09407663345337
+Sampling 8 with 1762038371171 - sampling time: 10.219537019729614
+Sampling 9 with 1999701690909 - sampling time: 10.584371328353882
+--- total time: 105.49963116645813 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case202_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s510_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s510_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2147483648
+Sampling 0 with 2121994677 - sampling time: 8.837438821792603
+Sampling 1 with 328712970 - sampling time: 8.097633361816406
+Sampling 2 with 383501238 - sampling time: 8.20353078842163
+Sampling 3 with 786905244 - sampling time: 8.219162225723267
+Sampling 4 with 62138738 - sampling time: 8.784007549285889
+Sampling 5 with 1959445523 - sampling time: 6.609198570251465
+Sampling 6 with 962728894 - sampling time: 8.867877721786499
+Sampling 7 with 260602530 - sampling time: 8.657177448272705
+Sampling 8 with 1210129283 - sampling time: 8.83844518661499
+Sampling 9 with 910406457 - sampling time: 7.892741680145264
+--- total time: 83.01484513282776 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case126_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 39413277756 - sampling time: 11.12086272239685
+Sampling 1 with 111227436637 - sampling time: 9.843821287155151
+Sampling 2 with 83819265702 - sampling time: 10.941173791885376
+Sampling 3 with 73822453724 - sampling time: 9.195863246917725
+Sampling 4 with 59605032706 - sampling time: 10.231200695037842
+Sampling 5 with 112811927074 - sampling time: 10.572856187820435
+Sampling 6 with 74194877289 - sampling time: 9.388947248458862
+Sampling 7 with 71526742634 - sampling time: 8.541657209396362
+Sampling 8 with 78431582678 - sampling time: 13.054472923278809
+Sampling 9 with 113039796937 - sampling time: 10.386881828308105
+--- total time: 103.28519535064697 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 133635668146 - sampling time: 9.299514293670654
+Sampling 1 with 10663356735 - sampling time: 10.675944805145264
+Sampling 2 with 88897135948 - sampling time: 11.088194608688354
+Sampling 3 with 67711352568 - sampling time: 10.405458688735962
+Sampling 4 with 34745801357 - sampling time: 10.947516679763794
+Sampling 5 with 135739111011 - sampling time: 8.742233276367188
+Sampling 6 with 112838382028 - sampling time: 10.125007152557373
+Sampling 7 with 7923220541 - sampling time: 10.168099641799927
+Sampling 8 with 30557793945 - sampling time: 10.87944746017456
+Sampling 9 with 100758076629 - sampling time: 8.804517984390259
+--- total time: 101.1439380645752 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 117343703461 - sampling time: 9.32771611213684
+Sampling 1 with 76974308995 - sampling time: 11.611904382705688
+Sampling 2 with 48100422520 - sampling time: 9.971737623214722
+Sampling 3 with 2998942162 - sampling time: 10.302913665771484
+Sampling 4 with 84445621551 - sampling time: 11.00403094291687
+Sampling 5 with 124772864528 - sampling time: 10.330909013748169
+Sampling 6 with 35984299440 - sampling time: 11.103332042694092
+Sampling 7 with 34748470202 - sampling time: 11.654747724533081
+Sampling 8 with 57240229748 - sampling time: 9.844985246658325
+Sampling 9 with 117087560707 - sampling time: 8.946384191513062
+--- total time: 104.10640478134155 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s444_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s444_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s349_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s349_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case146.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 24860007821684 - sampling time: 12.173896074295044
+Sampling 1 with 55416818468995 - sampling time: 13.13991641998291
+Sampling 2 with 9937976401505 - sampling time: 12.500817060470581
+Sampling 3 with 21137951022737 - sampling time: 12.395827770233154
+Sampling 4 with 42370780167689 - sampling time: 13.936012506484985
+Sampling 5 with 47116025367040 - sampling time: 12.361785650253296
+Sampling 6 with 7454220246417 - sampling time: 13.574971675872803
+Sampling 7 with 41289027215172 - sampling time: 12.677978754043579
+Sampling 8 with 42891704682761 - sampling time: 13.361469745635986
+Sampling 9 with 45488070656421 - sampling time: 12.811367273330688
+--- total time: 128.94063258171082 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case146_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 10721887591318 - sampling time: 12.508376121520996
+Sampling 1 with 37023320803229 - sampling time: 9.423949956893921
+Sampling 2 with 31725917402759 - sampling time: 12.811858177185059
+Sampling 3 with 49469953377652 - sampling time: 12.821625471115112
+Sampling 4 with 44822413298814 - sampling time: 13.433250188827515
+Sampling 5 with 66596078347175 - sampling time: 12.058445453643799
+Sampling 6 with 19060529404512 - sampling time: 12.615842819213867
+Sampling 7 with 11342113050730 - sampling time: 12.56049633026123
+Sampling 8 with 65314413351312 - sampling time: 11.960422039031982
+Sampling 9 with 12233177723492 - sampling time: 12.187859296798706
+--- total time: 122.38856911659241 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case145_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case132.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2097152
+Sampling 0 with 1339904 - sampling time: 4.617999792098999
+Sampling 1 with 1968330 - sampling time: 4.607897043228149
+Sampling 2 with 1861964 - sampling time: 4.208581447601318
+Sampling 3 with 554195 - sampling time: 5.434970140457153
+Sampling 4 with 1992748 - sampling time: 4.397155284881592
+Sampling 5 with 1303116 - sampling time: 4.493413686752319
+Sampling 6 with 1731507 - sampling time: 4.320346832275391
+Sampling 7 with 916783 - sampling time: 5.375369548797607
+Sampling 8 with 1247277 - sampling time: 4.352746963500977
+Sampling 9 with 997729 - sampling time: 5.6530046463012695
+--- total time: 47.46804237365723 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case132_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case135.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2097152
+Sampling 0 with 828277 - sampling time: 5.589505910873413
+Sampling 1 with 1210367 - sampling time: 4.803404092788696
+Sampling 2 with 940567 - sampling time: 5.517563104629517
+Sampling 3 with 893737 - sampling time: 6.379188537597656
+Sampling 4 with 1821560 - sampling time: 3.9502370357513428
+Sampling 5 with 792579 - sampling time: 5.271003246307373
+Sampling 6 with 1819849 - sampling time: 4.098299264907837
+Sampling 7 with 1105058 - sampling time: 5.662614822387695
+Sampling 8 with 1937070 - sampling time: 4.545147180557251
+Sampling 9 with 91131 - sampling time: 6.213852643966675
+--- total time: 52.038307428359985 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case135_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 4219844573061 - sampling time: 12.10567569732666
+Sampling 1 with 2586938818896 - sampling time: 12.133218050003052
+Sampling 2 with 2356053814581 - sampling time: 12.218482494354248
+Sampling 3 with 302179057494 - sampling time: 11.31847596168518
+Sampling 4 with 3331117113833 - sampling time: 11.380839347839355
+Sampling 5 with 1409318305382 - sampling time: 11.066666603088379
+Sampling 6 with 2899675990571 - sampling time: 12.391300678253174
+Sampling 7 with 118189103467 - sampling time: 13.082122087478638
+Sampling 8 with 1823337655290 - sampling time: 12.592365503311157
+Sampling 9 with 3743579618803 - sampling time: 8.801836967468262
+--- total time: 117.0973014831543 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 3566392612040 - sampling time: 11.058680295944214
+Sampling 1 with 1418997059868 - sampling time: 11.375409603118896
+Sampling 2 with 3488332347832 - sampling time: 9.583351612091064
+Sampling 3 with 25392691519 - sampling time: 12.049845218658447
+Sampling 4 with 2911403366976 - sampling time: 11.34536862373352
+Sampling 5 with 2797815056922 - sampling time: 12.454935312271118
+Sampling 6 with 2271249518848 - sampling time: 11.134941101074219
+Sampling 7 with 3124987100192 - sampling time: 10.998042821884155
+Sampling 8 with 2588200916747 - sampling time: 12.207916498184204
+Sampling 9 with 102870049606 - sampling time: 13.164196252822876
+--- total time: 115.37957572937012 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 769556998488 - sampling time: 12.097034215927124
+Sampling 1 with 2552085082269 - sampling time: 11.818845272064209
+Sampling 2 with 3606466432010 - sampling time: 12.268478631973267
+Sampling 3 with 3540897820645 - sampling time: 11.673865556716919
+Sampling 4 with 3051439593570 - sampling time: 10.860731840133667
+Sampling 5 with 3244589320293 - sampling time: 11.059496879577637
+Sampling 6 with 2566481511135 - sampling time: 11.379233598709106
+Sampling 7 with 4192600972937 - sampling time: 11.433337688446045
+Sampling 8 with 3644272032910 - sampling time: 11.357733726501465
+Sampling 9 with 3142462055439 - sampling time: 9.464902639389038
+--- total time: 113.41938042640686 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case109.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1048576
+Sampling 0 with 481537 - sampling time: 4.414196729660034
+Sampling 1 with 504883 - sampling time: 4.343146800994873
+Sampling 2 with 901072 - sampling time: 2.9197428226470947
+Sampling 3 with 772076 - sampling time: 5.8784263134002686
+Sampling 4 with 555695 - sampling time: 4.1625049114227295
+Sampling 5 with 568488 - sampling time: 4.121330738067627
+Sampling 6 with 4286 - sampling time: 4.440061569213867
+Sampling 7 with 731583 - sampling time: 5.8436737060546875
+Sampling 8 with 23005 - sampling time: 4.342061281204224
+Sampling 9 with 161715 - sampling time: 4.28955864906311
+--- total time: 44.76125407218933 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case109_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case145.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 67224627363178 - sampling time: 12.79001235961914
+Sampling 1 with 12041849072299 - sampling time: 10.76694631576538
+Sampling 2 with 2634763953576 - sampling time: 12.344164371490479
+Sampling 3 with 24311077917351 - sampling time: 10.993481397628784
+Sampling 4 with 59389016571755 - sampling time: 12.798280000686646
+Sampling 5 with 65548667806045 - sampling time: 11.960269927978516
+Sampling 6 with 30680709484472 - sampling time: 12.592190265655518
+Sampling 7 with 13665470132498 - sampling time: 11.849688529968262
+Sampling 8 with 14636412294213 - sampling time: 12.150216341018677
+Sampling 9 with 61330217352249 - sampling time: 11.089618921279907
+--- total time: 119.34201431274414 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case145_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s382_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s382_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case123.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2147483648
+Sampling 0 with 2084968852 - sampling time: 5.530471086502075
+Sampling 1 with 1310167041 - sampling time: 6.996844291687012
+Sampling 2 with 171910012 - sampling time: 7.2431557178497314
+Sampling 3 with 1985706718 - sampling time: 7.022262334823608
+Sampling 4 with 187739825 - sampling time: 7.096402406692505
+Sampling 5 with 1094341914 - sampling time: 7.066671848297119
+Sampling 6 with 1168801337 - sampling time: 8.41838002204895
+Sampling 7 with 959595565 - sampling time: 6.921416759490967
+Sampling 8 with 622332627 - sampling time: 6.6617326736450195
+Sampling 9 with 804076394 - sampling time: 8.859657049179077
+--- total time: 71.8237419128418 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case123_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case119.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 35184372088832
+Sampling 0 with 56775833737 - sampling time: 11.35002851486206
+Sampling 1 with 13455179663019 - sampling time: 9.518739700317383
+Sampling 2 with 33684769233962 - sampling time: 8.225263833999634
+Sampling 3 with 26239988774285 - sampling time: 8.070192813873291
+Sampling 4 with 23786914933014 - sampling time: 11.33910083770752
+Sampling 5 with 2082662045449 - sampling time: 12.546524286270142
+Sampling 6 with 13660807421248 - sampling time: 13.09231162071228
+Sampling 7 with 10148383744847 - sampling time: 13.250120878219604
+Sampling 8 with 19964452883457 - sampling time: 11.381279945373535
+Sampling 9 with 10515988232628 - sampling time: 11.277219533920288
+--- total time: 110.0591254234314 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case119_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 545238188504 - sampling time: 11.231552362442017
+Sampling 1 with 527214862464 - sampling time: 11.07639765739441
+Sampling 2 with 401083637464 - sampling time: 11.604631185531616
+Sampling 3 with 889637080997 - sampling time: 11.569692134857178
+Sampling 4 with 706927553165 - sampling time: 11.696546792984009
+Sampling 5 with 828419353936 - sampling time: 11.493584632873535
+Sampling 6 with 212771804372 - sampling time: 11.650595903396606
+Sampling 7 with 173009451462 - sampling time: 11.494939804077148
+Sampling 8 with 945512224884 - sampling time: 11.492720603942871
+Sampling 9 with 365953487496 - sampling time: 9.92457914352417
+--- total time: 113.24219846725464 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 33410521857 - sampling time: 11.569160223007202
+Sampling 1 with 890856993451 - sampling time: 11.485454320907593
+Sampling 2 with 37420273546 - sampling time: 10.946527481079102
+Sampling 3 with 506025713047 - sampling time: 11.485037326812744
+Sampling 4 with 378234372529 - sampling time: 11.584740161895752
+Sampling 5 with 332092016208 - sampling time: 11.187505722045898
+Sampling 6 with 34286040369 - sampling time: 11.134953737258911
+Sampling 7 with 769030752100 - sampling time: 10.917303800582886
+Sampling 8 with 83786981434 - sampling time: 11.759796619415283
+Sampling 9 with 727594584895 - sampling time: 10.91787576675415
+--- total time: 112.9946699142456 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1099511627776
+Sampling 0 with 818198211290 - sampling time: 11.58089566230774
+Sampling 1 with 95429507974 - sampling time: 11.120469808578491
+Sampling 2 with 689118498350 - sampling time: 12.152619361877441
+Sampling 3 with 10980581087 - sampling time: 11.523459434509277
+Sampling 4 with 178006033888 - sampling time: 10.963201999664307
+Sampling 5 with 18976038011 - sampling time: 11.719650745391846
+Sampling 6 with 1096702975351 - sampling time: 8.634377717971802
+Sampling 7 with 1005866092365 - sampling time: 11.2239670753479
+Sampling 8 with 727297947221 - sampling time: 11.403348922729492
+Sampling 9 with 489901183385 - sampling time: 11.35654616355896
+--- total time: 111.6856586933136 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 562949953421312
+Sampling 0 with 444633575200638 - sampling time: 8.646257400512695
+Sampling 1 with 278180141319169 - sampling time: 8.482107400894165
+Sampling 2 with 532333585021862 - sampling time: 8.418330907821655
+Sampling 3 with 488378713778705 - sampling time: 8.334380149841309
+Sampling 4 with 416812601339231 - sampling time: 9.575221538543701
+Sampling 5 with 4364351738590 - sampling time: 13.36562991142273
+Sampling 6 with 29176078263161 - sampling time: 12.961368083953857
+Sampling 7 with 194302286001803 - sampling time: 7.844935894012451
+Sampling 8 with 28980423174182 - sampling time: 12.929339170455933
+Sampling 9 with 356229231477124 - sampling time: 8.10396146774292
+--- total time: 98.66867589950562 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case9_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s382_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s382_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 281474976710656
+Sampling 0 with 109647393748406 - sampling time: 12.611441612243652
+Sampling 1 with 112086319703148 - sampling time: 12.373830556869507
+Sampling 2 with 108898113756513 - sampling time: 10.856728792190552
+Sampling 3 with 165642391261202 - sampling time: 12.092474937438965
+Sampling 4 with 180007158464866 - sampling time: 8.344859600067139
+Sampling 5 with 156170104719932 - sampling time: 10.812258958816528
+Sampling 6 with 127874762103840 - sampling time: 11.33588433265686
+Sampling 7 with 272470921708760 - sampling time: 7.283738374710083
+Sampling 8 with 165924577307815 - sampling time: 10.776973724365234
+Sampling 9 with 252580438987133 - sampling time: 13.31598162651062
+--- total time: 109.8114800453186 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case61_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s344_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s344_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case120.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 70368744177664
+Sampling 0 with 36890050964186 - sampling time: 11.470843076705933
+Sampling 1 with 46210151118870 - sampling time: 11.802190065383911
+Sampling 2 with 48735078864226 - sampling time: 13.40524411201477
+Sampling 3 with 30196714827767 - sampling time: 12.267174482345581
+Sampling 4 with 10431376992830 - sampling time: 9.933293581008911
+Sampling 5 with 41722965359498 - sampling time: 11.41219162940979
+Sampling 6 with 57913551688576 - sampling time: 12.916495561599731
+Sampling 7 with 22794040761793 - sampling time: 12.555529594421387
+Sampling 8 with 12559936218090 - sampling time: 9.949620008468628
+Sampling 9 with 66991644583687 - sampling time: 11.767514705657959
+--- total time: 117.48753666877747 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case120_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s349_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s349_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case57.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 536870912
+Sampling 0 with 452379403 - sampling time: 7.764954566955566
+Sampling 1 with 377870054 - sampling time: 7.417375087738037
+Sampling 2 with 376714399 - sampling time: 7.381406545639038
+Sampling 3 with 95714611 - sampling time: 7.133999586105347
+Sampling 4 with 432646206 - sampling time: 7.813796758651733
+Sampling 5 with 127614652 - sampling time: 7.060274362564087
+Sampling 6 with 183563032 - sampling time: 7.682640552520752
+Sampling 7 with 512011887 - sampling time: 7.5684287548065186
+Sampling 8 with 378066892 - sampling time: 7.65777587890625
+Sampling 9 with 32731957 - sampling time: 7.688207387924194
+--- total time: 75.17513060569763 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case57_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s444_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s444_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case121.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274877906944
+Sampling 0 with 169278031615 - sampling time: 10.148029327392578
+Sampling 1 with 75834862460 - sampling time: 9.953267097473145
+Sampling 2 with 267989464141 - sampling time: 9.82292652130127
+Sampling 3 with 240867828376 - sampling time: 9.66525936126709
+Sampling 4 with 72160779971 - sampling time: 11.41624641418457
+Sampling 5 with 195768002406 - sampling time: 9.804997682571411
+Sampling 6 with 182206700533 - sampling time: 8.731496810913086
+Sampling 7 with 263546202923 - sampling time: 10.227074384689331
+Sampling 8 with 140345870063 - sampling time: 9.90914249420166
+Sampling 9 with 127368696840 - sampling time: 8.422956228256226
+--- total time: 98.10861206054688 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case121_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case62.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1073741824
+Sampling 0 with 486304101 - sampling time: 5.8397791385650635
+Sampling 1 with 279920493 - sampling time: 7.232377529144287
+Sampling 2 with 780359272 - sampling time: 7.458928346633911
+Sampling 3 with 548346337 - sampling time: 8.614063262939453
+Sampling 4 with 487777976 - sampling time: 7.246000051498413
+Sampling 5 with 603656193 - sampling time: 6.958914518356323
+Sampling 6 with 245179290 - sampling time: 8.20417833328247
+Sampling 7 with 513726628 - sampling time: 6.293242454528809
+Sampling 8 with 396603926 - sampling time: 6.67301869392395
+Sampling 9 with 771711484 - sampling time: 7.81731915473938
+--- total time: 72.34405899047852 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case62_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_new1_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s420_new_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case33.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1024
+Sampling 0 with 942 - sampling time: 1.4474713802337646
+Sampling 1 with 391 - sampling time: 1.401202917098999
+Sampling 2 with 261 - sampling time: 1.4363839626312256
+Sampling 3 with 131 - sampling time: 1.5504415035247803
+Sampling 4 with 783 - sampling time: 1.417646884918213
+Sampling 5 with 375 - sampling time: 1.281632661819458
+Sampling 6 with 212 - sampling time: 1.4699339866638184
+Sampling 7 with 592 - sampling time: 1.4465713500976562
+Sampling 8 with 514 - sampling time: 1.314448356628418
+Sampling 9 with 988 - sampling time: 0.3581202030181885
+--- total time: 13.130707502365112 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case33_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case202.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4398046511104
+Sampling 0 with 3447260178081 - sampling time: 11.178774118423462
+Sampling 1 with 3529010659875 - sampling time: 10.530315160751343
+Sampling 2 with 1444477234961 - sampling time: 10.686913967132568
+Sampling 3 with 3263797963332 - sampling time: 9.384604930877686
+Sampling 4 with 2213883672953 - sampling time: 10.998326539993286
+Sampling 5 with 2541688637043 - sampling time: 10.773115396499634
+Sampling 6 with 1110868222697 - sampling time: 10.908242225646973
+Sampling 7 with 2362196208842 - sampling time: 9.531214952468872
+Sampling 8 with 1425469195783 - sampling time: 9.32615613937378
+Sampling 9 with 1208056517649 - sampling time: 12.085182666778564
+--- total time: 105.40962624549866 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case202_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s510_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s510_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 2147483648
+Sampling 0 with 1974494131 - sampling time: 9.698029041290283
+Sampling 1 with 2033343442 - sampling time: 9.461430072784424
+Sampling 2 with 1510825561 - sampling time: 8.848572015762329
+Sampling 3 with 1995067442 - sampling time: 8.476696014404297
+Sampling 4 with 1227474728 - sampling time: 8.669769763946533
+Sampling 5 with 703815389 - sampling time: 8.849733114242554
+Sampling 6 with 144998636 - sampling time: 8.788711547851562
+Sampling 7 with 1088569066 - sampling time: 9.012290477752686
+Sampling 8 with 1597219278 - sampling time: 7.435439825057983
+Sampling 9 with 960929079 - sampling time: 8.55237603187561
+--- total time: 87.79965233802795 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case126_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 5977905863 - sampling time: 10.67246150970459
+Sampling 1 with 99735566939 - sampling time: 8.881922245025635
+Sampling 2 with 96974799979 - sampling time: 9.88640308380127
+Sampling 3 with 83994435907 - sampling time: 10.255620241165161
+Sampling 4 with 45855205856 - sampling time: 9.567897081375122
+Sampling 5 with 68808344746 - sampling time: 10.488176584243774
+Sampling 6 with 38431709461 - sampling time: 10.578968524932861
+Sampling 7 with 65357018880 - sampling time: 10.678024768829346
+Sampling 8 with 108200753451 - sampling time: 9.988557577133179
+Sampling 9 with 18269776695 - sampling time: 10.272754430770874
+--- total time: 101.27727699279785 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 133488646358 - sampling time: 8.921101331710815
+Sampling 1 with 15759654768 - sampling time: 10.150211095809937
+Sampling 2 with 51031155294 - sampling time: 10.038708925247192
+Sampling 3 with 128102466146 - sampling time: 10.25123929977417
+Sampling 4 with 106546719834 - sampling time: 10.368577480316162
+Sampling 5 with 81132360472 - sampling time: 11.809602737426758
+Sampling 6 with 135441624816 - sampling time: 9.017473936080933
+Sampling 7 with 104677491228 - sampling time: 10.747385740280151
+Sampling 8 with 83348925804 - sampling time: 10.712295055389404
+Sampling 9 with 41235702082 - sampling time: 10.833147525787354
+--- total time: 102.85716462135315 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 137438953472
+Sampling 0 with 72858901766 - sampling time: 7.646813869476318
+Sampling 1 with 30317376838 - sampling time: 10.99621868133545
+Sampling 2 with 28516579769 - sampling time: 10.389294862747192
+Sampling 3 with 85810442452 - sampling time: 11.10020661354065
+Sampling 4 with 18008591527 - sampling time: 10.501487731933594
+Sampling 5 with 55310971040 - sampling time: 10.174263000488281
+Sampling 6 with 36773673455 - sampling time: 11.524903535842896
+Sampling 7 with 32646793710 - sampling time: 10.87697458267212
+Sampling 8 with 8579078415 - sampling time: 10.1334068775177
+Sampling 9 with 101588055519 - sampling time: 7.153717517852783
+--- total time: 100.50947213172913 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_3_b14_3_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s444_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s444_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_new1_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_new_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s420_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s420_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case122.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16777216
+Sampling 0 with 10461978 - sampling time: 6.462397575378418
+Sampling 1 with 8321931 - sampling time: 6.08149528503418
+Sampling 2 with 7541428 - sampling time: 4.925218343734741
+Sampling 3 with 3880135 - sampling time: 5.880056619644165
+Sampling 4 with 16722374 - sampling time: 5.655822277069092
+Sampling 5 with 8183546 - sampling time: 5.683075428009033
+Sampling 6 with 10889610 - sampling time: 7.1229424476623535
+Sampling 7 with 11927285 - sampling time: 5.5851616859436035
+Sampling 8 with 7417090 - sampling time: 4.5709710121154785
+Sampling 9 with 1931898 - sampling time: 4.620579481124878
+--- total time: 56.59522342681885 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case122_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s510_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s510_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case60.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16
+Sampling 0 with 14 - sampling time: 0.00027489662170410156
+Sampling 1 with 4 - sampling time: 0.00010585784912109375
+Sampling 2 with 8 - sampling time: 8.606910705566406e-05
+Sampling 3 with 9 - sampling time: 8.869171142578125e-05
+Sampling 4 with 12 - sampling time: 8.225440979003906e-05
+Sampling 5 with 7 - sampling time: 7.295608520507812e-05
+Sampling 6 with 2 - sampling time: 7.200241088867188e-05
+Sampling 7 with 3 - sampling time: 7.128715515136719e-05
+Sampling 8 with 6 - sampling time: 7.128715515136719e-05
+Sampling 9 with 5 - sampling time: 7.43865966796875e-05
+--- total time: 0.0079345703125 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case60_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b11_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274877906784
+Sampling 0 with 222552480365 - sampling time: 11.210391998291016
+Sampling 1 with 104195592185 - sampling time: 16.06306219100952
+Sampling 2 with 77417043480 - sampling time: 17.85736107826233
+Sampling 3 with 539320299 - sampling time: 9.53527283668518
+Sampling 4 with 77641899979 - sampling time: 17.025369882583618
+Sampling 5 with 146133027856 - sampling time: 14.817542314529419
+Sampling 6 with 264395628069 - sampling time: 9.877883911132812
+Sampling 7 with 238230845592 - sampling time: 10.542911767959595
+Sampling 8 with 221062863476 - sampling time: 10.467773675918579
+Sampling 9 with 101104509582 - sampling time: 16.831278800964355
+--- total time: 134.23647570610046 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_0_b11_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b11_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274877906784
+Sampling 0 with 265081064793 - sampling time: 10.876455068588257
+Sampling 1 with 134903393978 - sampling time: 14.9557945728302
+Sampling 2 with 183801907546 - sampling time: 11.27381420135498
+Sampling 3 with 79180055072 - sampling time: 14.796274900436401
+Sampling 4 with 94738417531 - sampling time: 15.723654508590698
+Sampling 5 with 16925019101 - sampling time: 17.45062565803528
+Sampling 6 with 87349367830 - sampling time: 15.902693033218384
+Sampling 7 with 125585247210 - sampling time: 16.35986566543579
+Sampling 8 with 83901053966 - sampling time: 13.861429691314697
+Sampling 9 with 261889703463 - sampling time: 10.027078628540039
+--- total time: 141.2351574897766 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b11_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s510_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s510_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s382_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s382_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s420_new_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s420_new_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s526_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s526_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s420_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s420_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s420_new1_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s420_new1_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s526a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s526a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s444_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s444_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s526_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s526_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s526a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s526a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case125.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 4294967296
+Sampling 0 with 1890975273 - sampling time: 8.538116216659546
+Sampling 1 with 882004240 - sampling time: 9.914454460144043
+Sampling 2 with 2724761820 - sampling time: 9.169036865234375
+Sampling 3 with 2054010419 - sampling time: 7.735325574874878
+Sampling 4 with 3032163708 - sampling time: 7.764199733734131
+Sampling 5 with 2789972584 - sampling time: 8.996061563491821
+Sampling 6 with 578404987 - sampling time: 8.817184209823608
+Sampling 7 with 1277805134 - sampling time: 8.896284103393555
+Sampling 8 with 4291974602 - sampling time: 6.892733812332153
+Sampling 9 with 2698730079 - sampling time: 8.25776720046997
+--- total time: 84.98917555809021 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case125_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case35.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 8796093022208
+Sampling 0 with 2694189749258 - sampling time: 12.906280755996704
+Sampling 1 with 8194390994703 - sampling time: 11.924490690231323
+Sampling 2 with 7106822716299 - sampling time: 12.953421115875244
+Sampling 3 with 8560366311944 - sampling time: 11.829330682754517
+Sampling 4 with 6372183628091 - sampling time: 12.828360319137573
+Sampling 5 with 5282025520623 - sampling time: 10.991429567337036
+Sampling 6 with 6826339500246 - sampling time: 13.6757333278656
+Sampling 7 with 3560233715132 - sampling time: 14.311684370040894
+Sampling 8 with 6766813604650 - sampling time: 11.505940675735474
+Sampling 9 with 984999408803 - sampling time: 11.526591062545776
+--- total time: 124.46665096282959 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case35_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case34.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 68719476736
+Sampling 0 with 18453253968 - sampling time: 9.040002822875977
+Sampling 1 with 45669286375 - sampling time: 12.141676902770996
+Sampling 2 with 42287431621 - sampling time: 10.618652105331421
+Sampling 3 with 19572505805 - sampling time: 9.175154685974121
+Sampling 4 with 51193230800 - sampling time: 9.22424864768982
+Sampling 5 with 31416805510 - sampling time: 12.127486228942871
+Sampling 6 with 17505686679 - sampling time: 9.234252214431763
+Sampling 7 with 29936023709 - sampling time: 10.977124691009521
+Sampling 8 with 66236683570 - sampling time: 9.504221200942993
+Sampling 9 with 45979536009 - sampling time: 10.322636127471924
+--- total time: 102.37350916862488 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case34_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case143.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 134217728
+Sampling 0 with 64021084 - sampling time: 8.126791954040527
+Sampling 1 with 108934138 - sampling time: 7.462312459945679
+Sampling 2 with 29404890 - sampling time: 6.770222902297974
+Sampling 3 with 33186022 - sampling time: 5.806960344314575
+Sampling 4 with 60028149 - sampling time: 5.92501163482666
+Sampling 5 with 89896867 - sampling time: 5.638200998306274
+Sampling 6 with 101638137 - sampling time: 5.765010356903076
+Sampling 7 with 32988720 - sampling time: 7.982621431350708
+Sampling 8 with 31433841 - sampling time: 6.591267108917236
+Sampling 9 with 29534134 - sampling time: 7.618661165237427
+--- total time: 67.69475293159485 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case143_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1073741824
+Sampling 0 with 744794821 - sampling time: 7.540019273757935
+Sampling 1 with 436242468 - sampling time: 9.148415565490723
+Sampling 2 with 114722006 - sampling time: 8.173488855361938
+Sampling 3 with 636093982 - sampling time: 9.346802949905396
+Sampling 4 with 534639177 - sampling time: 6.7053751945495605
+Sampling 5 with 685865388 - sampling time: 8.184728384017944
+Sampling 6 with 199744414 - sampling time: 8.920809507369995
+Sampling 7 with 164269090 - sampling time: 7.67406702041626
+Sampling 8 with 416023830 - sampling time: 9.374288320541382
+Sampling 9 with 604809733 - sampling time: 9.426551342010498
+--- total time: 84.50157189369202 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_0_b12_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1073741824
+Sampling 0 with 688687689 - sampling time: 7.978768348693848
+Sampling 1 with 797931255 - sampling time: 10.99683690071106
+Sampling 2 with 690526207 - sampling time: 7.872810125350952
+Sampling 3 with 619914351 - sampling time: 7.752385139465332
+Sampling 4 with 156157558 - sampling time: 8.822640180587769
+Sampling 5 with 548121637 - sampling time: 9.171837568283081
+Sampling 6 with 462584760 - sampling time: 8.98803186416626
+Sampling 7 with 328828908 - sampling time: 8.35000205039978
+Sampling 8 with 990394700 - sampling time: 8.666327714920044
+Sampling 9 with 1003511962 - sampling time: 10.622811079025269
+--- total time: 89.23104691505432 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_2_b12_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_1.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 1073741824
+Sampling 0 with 872249180 - sampling time: 8.132876873016357
+Sampling 1 with 1004266877 - sampling time: 7.869961261749268
+Sampling 2 with 965283066 - sampling time: 9.287119626998901
+Sampling 3 with 420874530 - sampling time: 8.8499116897583
+Sampling 4 with 493415909 - sampling time: 7.473715305328369
+Sampling 5 with 123333581 - sampling time: 8.494513988494873
+Sampling 6 with 1061946227 - sampling time: 7.763331413269043
+Sampling 7 with 262399940 - sampling time: 7.658539295196533
+Sampling 8 with 642079211 - sampling time: 8.049290418624878
+Sampling 9 with 431074810 - sampling time: 9.582024335861206
+--- total time: 83.16896843910217 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case_1_b12_1_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case115.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 33554432
+Sampling 0 with 33278318 - sampling time: 6.406747341156006
+Sampling 1 with 32008269 - sampling time: 6.563780069351196
+Sampling 2 with 26821838 - sampling time: 7.020012855529785
+Sampling 3 with 2795977 - sampling time: 6.625539064407349
+Sampling 4 with 7524970 - sampling time: 6.168318748474121
+Sampling 5 with 15768237 - sampling time: 6.712958812713623
+Sampling 6 with 31881982 - sampling time: 7.8224170207977295
+Sampling 7 with 9569568 - sampling time: 6.667107105255127
+Sampling 8 with 27458959 - sampling time: 7.345599889755249
+Sampling 9 with 19457810 - sampling time: 6.701730251312256
+--- total time: 68.0419499874115 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case115_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case114.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 33554432
+Sampling 0 with 16286073 - sampling time: 7.622622489929199
+Sampling 1 with 15218874 - sampling time: 7.154131650924683
+Sampling 2 with 25638950 - sampling time: 8.023321628570557
+Sampling 3 with 26564809 - sampling time: 8.221453666687012
+Sampling 4 with 895529 - sampling time: 7.7846479415893555
+Sampling 5 with 12941483 - sampling time: 7.964016437530518
+Sampling 6 with 15506172 - sampling time: 5.265634059906006
+Sampling 7 with 32734458 - sampling time: 6.874514818191528
+Sampling 8 with 19746481 - sampling time: 6.622820615768433
+Sampling 9 with 25252299 - sampling time: 6.751209020614624
+--- total time: 72.29282808303833 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case114_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case131.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 6174015488
+Sampling 0 with 1510251635 - sampling time: 7.729481220245361
+Sampling 1 with 3041579547 - sampling time: 8.900830745697021
+Sampling 2 with 620337422 - sampling time: 9.918288946151733
+Sampling 3 with 2225382884 - sampling time: 8.42856502532959
+Sampling 4 with 844284624 - sampling time: 9.911807775497437
+Sampling 5 with 5391069723 - sampling time: 7.970333576202393
+Sampling 6 with 3752094521 - sampling time: 9.063003301620483
+Sampling 7 with 4184734531 - sampling time: 9.310098648071289
+Sampling 8 with 2252624735 - sampling time: 8.967012882232666
+Sampling 9 with 5274036718 - sampling time: 8.477979183197021
+--- total time: 88.68600249290466 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case131_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case116.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 33554432
+Sampling 0 with 6154707 - sampling time: 6.78887677192688
+Sampling 1 with 31531211 - sampling time: 7.081870794296265
+Sampling 2 with 22393498 - sampling time: 8.066005945205688
+Sampling 3 with 3556569 - sampling time: 6.760807514190674
+Sampling 4 with 22217030 - sampling time: 8.067962169647217
+Sampling 5 with 14341523 - sampling time: 7.731396675109863
+Sampling 6 with 625373 - sampling time: 8.129112958908081
+Sampling 7 with 12510365 - sampling time: 5.4953014850616455
+Sampling 8 with 16728130 - sampling time: 6.385022878646851
+Sampling 9 with 5800029 - sampling time: 7.365903854370117
+--- total time: 71.88093781471252 seconds ---
+Output samples created on:  ./smarch_samples/blasted_case116_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s526_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s526_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s526a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s526a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16777216
+Sampling 0 with 6377730 - sampling time: 7.657989501953125
+Sampling 1 with 6304658 - sampling time: 6.584544658660889
+Sampling 2 with 9580236 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring50.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16777216
+Sampling 0 with 11016794 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s953a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s953a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s953a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s953a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s953a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s953a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s820a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s820a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s832a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s832a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s820a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s820a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s1238a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s1238a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s832a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s832a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring24.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring20.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring21.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s1238a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s1238a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V7/s1196a_7_4.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V7/s1196a_7_4.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring23.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 3251598930961498112
+Sampling 0 with 869722476062239577 - sampling time: 17.456446647644043
+Sampling 1 with 2612408267868017490 - sampling time: 17.856194734573364
+Sampling 2 with 587824233863091244 - sampling time: 17.58421516418457
+Sampling 3 with 1508971509286661317 - sampling time: 17.066077947616577
+Sampling 4 with 692770891517900041 - sampling time: 17.985216856002808
+Sampling 5 with 822381799483691843 - sampling time: 17.92128086090088
+Sampling 6 with 1769581104372852354 - sampling time: 18.154086351394653
+Sampling 7 with 540500081365914810 - sampling time: 17.703407764434814
+Sampling 8 with 1916637916988382769 - sampling time: 17.442946672439575
+Sampling 9 with 2690764884529040884 - sampling time: 17.57361888885498
+--- total time: 176.7510244846344 seconds ---
+Output samples created on:  ./smarch_samples/GuidanceService2.sk_2_27_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s1238a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s1238a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V15/s1196a_15_7.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V15/s1196a_15_7.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274881112804
+Sampling 0 with 47046228061 - sampling time: 13.98279881477356
+Sampling 1 with 193011681925 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_2_b12_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274881112804
+Sampling 0 with 80668770956 - sampling time: 15.503868341445923
+Sampling 1 with 20232464585 - sampling time: 14.332491874694824
+Sampling 2 with 24064922979 - sampling time: 14.453457117080688
+Sampling 3 with 165137891395 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_case_1_b12_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274881112804
+Sampling 0 with 189290629130 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring27.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring25.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring22.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring6.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring51.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16777216
+Sampling 0 with 4037030 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274408144896
+Sampling 0 with 120538752690 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring40.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring26.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring11.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274408144896
+Sampling 0 with 119237622564 - sampling time: 17.131685733795166
+Sampling 1 with 93497577976 - sampling time: 18.377168893814087
+Sampling 2 with 239209845191 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/GuidanceService2.sk_2_27.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 3251598930961498112
+Sampling 0 with 229489183341631731 - sampling time: 17.648696422576904
+Sampling 1 with 1728197881829206704 - sampling time: 18.27262544631958
+Sampling 2 with 3224996808229799601 - sampling time: 18.082229614257812
+Sampling 3 with 2414875864541319152 - sampling time: 16.10814118385315
+Sampling 4 with 3052952262998904381 - sampling time: 18.107205867767334
+Sampling 5 with 3084048040582962786 - sampling time: 16.363898754119873
+Sampling 6 with 655288161493627893 - sampling time: 17.457154750823975
+Sampling 7 with 917637573091518648 - sampling time: 17.699736833572388
+Sampling 8 with 726975398975371446 - sampling time: 17.27366828918457
+Sampling 9 with 2190176740556061772 - sampling time: 17.996154308319092
+--- total time: 175.0156466960907 seconds ---
+Output samples created on:  ./smarch_samples/GuidanceService2.sk_2_27_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring30.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring28.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring10.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 274408144896
+Sampling 0 with 206845703627 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring8.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring29.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/IssueServiceImpl.sk_8_30.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring9.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring14.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring12.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring16.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring70.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/PhaseService.sk_14_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s27_new_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s27_new_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ActivityService2.sk_10_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/111.sk_2_36.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/111.sk_2_36.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 536870912
+Sampling 0 with 23398090 - sampling time: 8.220718383789062
+Sampling 1 with 407967587 - sampling time: 11.487568378448486
+Sampling 2 with 220422885 - sampling time: 6.0533599853515625
+Sampling 3 with 17384984 - sampling time: 8.574797630310059
+Sampling 4 with 11829141 - sampling time: 8.687625885009766
+Sampling 5 with 399287149 - sampling time: 10.172030687332153
+Sampling 6 with 410513627 - sampling time: 10.363406419754028
+Sampling 7 with 458166265 - sampling time: 8.913871049880981
+Sampling 8 with 423133335 - sampling time: 5.942397117614746
+Sampling 9 with 373046949 - sampling time: 7.777324676513672
+--- total time: 86.20044016838074 seconds ---
+Output samples created on:  ./smarch_samples/111.sk_2_36_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ConcreteActivityService.sk_13_28.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/ConcreteActivityService.sk_13_28.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s5378a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s5378a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/partition.sk_22_155.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/partition.sk_22_155.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ProjectService3.sk_12_55.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/NotificationServiceImpl2.sk_10_36.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/109.sk_4_36.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/109.sk_4_36.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 889192448
+Sampling 0 with 731445942 - sampling time: 14.684763193130493
+Sampling 1 with 1424674 - sampling time: 8.923872709274292
+Sampling 2 with 679157232 - sampling time: 8.758726358413696
+Sampling 3 with 125296991 - sampling time: 8.891395568847656
+Sampling 4 with 745768077 - sampling time: 13.144420862197876
+Sampling 5 with 325449441 - sampling time: 5.5831615924835205
+Sampling 6 with 649088626 - sampling time: 8.373539924621582
+Sampling 7 with 760524362 - sampling time: 14.80018401145935
+Sampling 8 with 881732700 - sampling time: 12.229614973068237
+Sampling 9 with 869067488 - sampling time: 11.716124773025513
+--- total time: 107.11389446258545 seconds ---
+Output samples created on:  ./smarch_samples/109.sk_4_36_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/81.sk_5_51.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/70.sk_3_40.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/70.sk_3_40.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 8589934592
+Sampling 0 with 5436887330 - sampling time: 19.105721712112427
+Sampling 1 with 5621872034 - sampling time: 18.845627307891846
+Sampling 2 with 6354188333 - sampling time: 18.66796374320984
+Sampling 3 with 1011232455 - sampling time: 16.553860664367676
+Sampling 4 with 3887022079 - sampling time: 17.13108730316162
+Sampling 5 with 6167417739 - sampling time: 18.86546754837036
+Sampling 6 with 4238231753 - sampling time: 16.52751636505127
+Sampling 7 with 5320362287 - sampling time: 16.049002408981323
+Sampling 8 with 3342928745 - sampling time: 16.13803482055664
+Sampling 9 with 1141394103 - sampling time: 16.69064688682556
+--- total time: 174.5832211971283 seconds ---
+Output samples created on:  ./smarch_samples/70.sk_3_40_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/ProcessBean.sk_8_64.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s35932_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s35932_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/80.sk_2_48.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/IterationService.sk_12_27.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/doublyLinkedList.sk_8_37.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/doublyLinkedList.sk_8_37.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/V3/s1196a_3_2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/LoginService.sk_20_34.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/LoginService.sk_20_34.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 126476067702571008000
+Sampling 0 with 23036837395574285363 - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/29.sk_3_45.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/17.sk_3_45.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/isolateRightmost.sk_7_481.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/LoginService2.sk_23_36.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/36.sk_3_77.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/36.sk_3_77.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/signedAvg.sk_8_1020.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/enqueueSeqSK.sk_10_42.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/tutorial3.sk_4_31.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/viper.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/phycore.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cq7708.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/psim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/aeb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sh7708.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/vrc4375.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/malta_mips32_4kc.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/rattler.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/asb2305.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pc_usb_d12.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/vads.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/calm32_ceb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/se77x9.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/se7751.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mb93093.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sparc_erc32.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/lpcmt.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/vrc4373.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/integrator_arm7.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/eb55.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ec555.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sh4_202_md.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mb93091.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/atlas_mips64_5kc.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/eb42.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ea2468.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cma230.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sparc_leon.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/olpch2294.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/dreamcast.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/excalibur_arm9.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/frv400.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ipaq.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/nano.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/stm3210e_eval.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/aki3068net.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/integrator_arm9.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mac7100evb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/p2106.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/prpmc1100.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sparclite_sim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/edb7xxx.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/eb40.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/stb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/h8300h_sim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/skmb91302.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ixdp425.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/grg.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/h8s_sim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/eb40a.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sleb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/jmr3904.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/jtst.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pc_i82559.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cq7750.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mace1.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ref4955.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/m5272c3.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/gps4020.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mbx.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/atlas_mips32_4kc.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ts1000.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/at91sam7sek.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sam7ex256.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/phycore229x.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/flexanet.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mcb2100.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/innovator.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ocelot.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/malta_mips64_5kc.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ts6.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cma28x.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/aim711.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ebsa285.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/aaed2000.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/picasso.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/olpcl2294.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pati.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pc_i82544.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/e7t.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/olpce2294.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/am31_sim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/stdeval1.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pc_rltk8139.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/adder.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cme555.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/refidt334.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/calm16_ceb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pid.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 26256
+Sampling 0 with 11267 - sampling time: 2.6004347801208496
+Sampling 1 with 18894 - sampling time: 2.522655963897705
+Sampling 2 with 25398 - sampling time: 1.6164956092834473
+Sampling 3 with 20810 - sampling time: 2.635446548461914
+Sampling 4 with 21095 - sampling time: 2.6734819412231445
+Sampling 5 with 5786 - sampling time: 2.531257390975952
+Sampling 6 with 14921 - sampling time: 2.6127898693084717
+Sampling 7 with 3616 - sampling time: 2.6030359268188477
+Sampling 8 with 2395 - sampling time: 2.6124958992004395
+Sampling 9 with 3957 - sampling time: 2.5399622917175293
+--- total time: 24.9546799659729 seconds ---
+Output samples created on:  ./smarch_samples/FM-3.6.1-refined_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/asb.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/iq80310.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/fads.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/adderII.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cerf.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/assabet.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/iq80321.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/tx39_sim.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/sa1100mm.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/npwr.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/brutus.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/cerfpda.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/ceb_v850.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/mpc50.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/at91sam7xek.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/edosk2674.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/pc_vmWare.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/csb281.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/uE250.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/moab.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/h8max.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/smdk2410.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/snds.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/linux.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FeatureModels/hs7729pci.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/coreboot.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/coreboot.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/freebsd-icse11.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/2.6.33.3-2var.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/2.6.33.3-2var.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/embtoolkit.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/freetz.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/freetz.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/fiasco.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/fiasco.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 358108536766464
+Sampling 0 with 70527048171598 - sampling time: 17.290175676345825
+Sampling 1 with 167773135543296 - sampling time: 18.947933197021484
+Sampling 2 with 168325337281460 - sampling time: 18.84926986694336
+Sampling 3 with 295042718272677 - sampling time: 17.86747455596924
+Sampling 4 with 239560097898828 - sampling time: 18.485286712646484
+Sampling 5 with 184990524302829 - sampling time: 18.21898651123047
+Sampling 6 with 37088547781056 - sampling time: 18.264135360717773
+Sampling 7 with 250306327032726 - sampling time: 7.666165828704834
+Sampling 8 with 247157855574639 - sampling time: 18.324321031570435
+Sampling 9 with 81498781053272 - sampling time: 18.029031991958618
+--- total time: 171.94984102249146 seconds ---
+Output samples created on:  ./smarch_samples/fiasco_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/buildroot.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/buildroot.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/2.6.28.6-icse11.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/2.6.28.6-icse11.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - 
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/uClinux.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/uClinux.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 16296287810675888690147565507275025288411747149327490005089123594835050398106693649467179008
+Sampling 0 with 10249676048879795840281129954974002364096306589485884810302526569408666138552747256175889781 - sampling time: 0.006035566329956055
+Sampling 1 with 13105990040782743831529161515213997248162553379298015110485313453035007042651132776278966061 - sampling time: 0.005151033401489258
+Sampling 2 with 5034826639585819122126841248849076762206077860380792077202825721446171739687342263991151036 - sampling time: 0.0037670135498046875
+Sampling 3 with 2388870612862733210819618399562086293748202849822549539957442157749464358416619111092327189 - sampling time: 0.0020780563354492188
+Sampling 4 with 8410150241124472684485372961854233103536302832028028028295257852687137070780650737026349541 - sampling time: 0.0020880699157714844
+Sampling 5 with 9793005584531313826301904597345840939711010814121193168819060548529924119902378322105261579 - sampling time: 0.002115964889526367
+Sampling 6 with 8252199792727256880701858421224670839806695243467251721752153710177195593548257793797237213 - sampling time: 0.002111673355102539
+Sampling 7 with 14615105309593838134593124694694523978883871234820982268874464680396930958576434004908204907 - sampling time: 0.0020253658294677734
+Sampling 8 with 13309788370287899563625244476828031252082715244148918506388461600437923677829886269891202851 - sampling time: 0.0020246505737304688
+Sampling 9 with 1512194489059801166548951680215820223692735589080469678810004551167976570600123860749800188 - sampling time: 0.0020172595977783203
+--- total time: 0.037564992904663086 seconds ---
+Output samples created on:  ./smarch_samples/uClinux_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/busybox-1.18.0.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/axTLS.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/ecos-icse11.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/uClinux-config.cnf 10
+Starting the smarch command
+TIMEOUT REACHED
+printing command output:
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/toybox2.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/toybox2.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 144991790900969472
+Sampling 0 with 108145367955865739 - sampling time: 14.093068361282349
+Sampling 1 with 34034440387246862 - sampling time: 13.705211639404297
+Sampling 2 with 11052876171264009 - sampling time: 15.17126202583313
+Sampling 3 with 122502381335740161 - sampling time: 14.676069259643555
+Sampling 4 with 124914714724091490 - sampling time: 13.909585237503052
+Sampling 5 with 107480974990490232 - sampling time: 15.307048082351685
+Sampling 6 with 108718944775272580 - sampling time: 15.828075885772705
+Sampling 7 with 135060898087941829 - sampling time: 14.206946849822998
+Sampling 8 with 19407180887794348 - sampling time: 15.29013705253601
+Sampling 9 with 56192121623514138 - sampling time: 16.07887077331543
+--- total time: 148.28892254829407 seconds ---
+Output samples created on:  ./smarch_samples/toybox2_10.samples
+
+DONE
+python3 ./samplers/smarch.py -o ./smarch_samples /home/samplingfm/Benchmarks/FMEasy/toybox.cnf 10
+Starting the smarch command
+printing command output:
+Input file:  /home/samplingfm/Benchmarks/FMEasy/toybox.cnf
+Number of samples:  10
+Output directory: ./smarch_samples/smarch
+Counting - Total configurations: 144991790900969472
+Sampling 0 with 14361430783035837 - sampling time: 15.86075234413147
+Sampling 1 with 116021526322279834 - sampling time: 15.850083351135254
+Sampling 2 with 124133421551475257 - sampling time: 15.361152410507202
+Sampling 3 with 122682737392843548 - sampling time: 14.548146486282349
+Sampling 4 with 36353121414032782 - sampling time: 15.72440218925476
+Sampling 5 with 125851212182849273 - sampling time: 14.216987609863281
+Sampling 6 with 82569451180408754 - sampling time: 16.579020738601685
+Sampling 7 with 139070961185777244 - sampling time: 14.916796445846558
+Sampling 8 with 22153075584853401 - sampling time: 15.384661674499512
+Sampling 9 with 52008970337430744 - sampling time: 15.524507999420166
+--- total time: 153.97391772270203 seconds ---
+Output samples created on:  ./smarch_samples/toybox_10.samples
+
+DONE
+end of benchmarks
+END

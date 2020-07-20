@@ -1,0 +1,17 @@
+formula_file,timeout,execution_time_in,exception_dbs
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case9.cnf,False,2411.0501306056976,False
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case106.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case14.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case61.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/coreboot.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/2.6.32-2var.cnf,True,45.79453492164612,True
+/home/samplingfm/Benchmarks/FMEasy/2.6.33.3-2var.cnf,True,49.280263900756836,True
+/home/samplingfm/Benchmarks/FMEasy/embtoolkit.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/freetz.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/buildroot.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/2.6.28.6-icse11.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/uClinux.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/busybox-1.18.0.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/uClinux-config.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/toybox2.cnf,True,5064.0,False
+/home/samplingfm/Benchmarks/FMEasy/toybox.cnf,True,5064.0,False
