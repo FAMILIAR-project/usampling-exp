@@ -1,5 +1,0 @@
-log /tmp/output.txt
-dimacs /home/gilles/samplingforfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf
- solver z3
-hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false selection:SolverSelection number-weight-optimization:1 numConfigs:20000
-printconfigs /tmp/FM-3.6.1-refined.txt
