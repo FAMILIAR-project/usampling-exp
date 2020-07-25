@@ -33,20 +33,22 @@ def read_dimacs(dimacsfile_):
     with open(dimacsfile_) as f:
         for line in f:
             # read variables in comments
-            if line.startswith("c ind"): #we do not deal with independant variables produced by other tool - modification w.r.t original SMARCH
-                continue
+            if line.startswith("c ind"): #we do not deal with independant variables produced by other tool - modification w.r.t original SMARCH MP 
+                continue        
             elif line.startswith("c"):
                 line = line[0:len(line) - 1]
                 _feature = line.split(" ", 4)
                 del _feature[0]
-                # handling non-numeric feature IDs -  modification w.r.t original SMARCH
-                if (_feature[0].isdigit()):
-                  _feature[0] = int(_feature[0])
-                else:
-                  # num_filter = filter(_feature[0].isdigit(), _feature[0])
-                  num_feature = "".join(c for c in _feature[0] if c.isdigit())
-                  _feature[0] = int(num_feature)
-                _features.append(tuple(_feature))
+                # handling non-numeric feature IDs -  modification w.r.t original SMARCH MP, necessary to parse os-like models with $ in feature names...
+                if len(_feature) <= 2 and len(_feature) > 0: # needs to deal with literate comments, e.g., in V15 models
+                    
+                    if (_feature[0].isdigit()):
+                        _feature[0] = int(_feature[0])
+                    else:
+                        # num_filter = filter(_feature[0].isdigit(), _feature[0])
+                        num_feature = "".join(c for c in _feature[0] if c.isdigit())
+                        _feature[0] = int(num_feature)
+                    _features.append(tuple(_feature))
             # read dimacs properties
             elif line.startswith("p"):
                 info = line.split()
@@ -56,8 +58,6 @@ def read_dimacs(dimacsfile_):
                 info = line.split()
                 if len(info) != 0:
                     _clauses.append(list(map(int, info[:len(info)-1])))
-                    #_clauses.append(line.strip('\n'))
-
     return _features, _clauses, _vcount
 
 

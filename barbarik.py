@@ -47,17 +47,35 @@ P_THREADS = 4
 features_dict = {}
 
 def create_features_dict(inputFile):
-
+    nb_vars = 0
     with open(inputFile,'r') as f:
          lines = f.readlines()
     for line in lines:
-        if line.startswith("c"):
+        if line.startswith("c") and not line.startswith("c ind"):
             line = line[0:len(line) - 1]
             _feature = line.split(" ", 4)
             del _feature[0]
-            # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
-            global features_dict
-            features_dict.update({str(_feature[1]):str(_feature[0])})
+            # handling non-numeric feature IDs, necessary to parse os-like models with $ in feature names...
+            if len(_feature) <= 2 and len(_feature) > 0: # needs to deal with literate comments, e.g., in V15 models
+                if (_feature[0].isdigit()):
+                    _feature[0] = int(_feature[0])
+                else:
+                    # num_filter = filter(_feature[0].isdigit(), _feature[0])
+                    num_feature = "".join(c for c in _feature[0] if c.isdigit())
+                    _feature[0] = int(num_feature)
+                    # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
+                    global features_dict
+                features_dict.update({str(_feature[1]):str(_feature[0])})
+        elif line.startswith('p cnf'):
+            _line = line.split(" ", 4)
+            nb_vars = int(_line[2])
+            print("there are : " + str(nb_vars) + " integer variables")
+    if (len(features_dict.keys())==0):
+        print("could not create dict from comments, faking it with integer variables in the 'p cnf' header")
+        for i in range(1,nb_vars+1):
+            #global features_dict
+            features_dict.update({str(i):str(i)})         
+                 
       
 
 def get_sampler_string(samplerType):
@@ -371,7 +389,6 @@ class SolutionRetriver:
                     solution += ' ' + str(v)
                 else:
                     solution += ' -' + str(v)
-            #print(solution)
             solList.append(solution)
 
      
@@ -668,10 +685,23 @@ def chainFormulaSetup(sampleSol, unifSol, numSolutions):
     sampleLitList = random.sample(sampleSol.split(), len(countList))
     unifLitList = []
     unifSolMap = unifSol.split()
+    #since the reference is not always spur, some adapations are required here
     for lit in sampleLitList:
-        unifLitList.append(unifSolMap[abs(int(lit))-1])
+        if lit in unifSolMap:
+            unifLitList.append(lit)
+        elif int(lit)>0 and str('-'+lit) in unifSolMap:
+            unifLitList.append(str('-'+lit))
+        elif int(lit)<0 and str(abs(int(lit))) in unifSolMap:
+            unifLitList.append(str(abs(int(lit))))
+        else:
+            print("ERROR in Sampling ! ")     
+        #print("appending: " +  unifSolMap[abs(int(lit))-1]+  " for "+  lit) 
+        #unifLitList.append(unifSolMap[abs(int(lit))-1])
 
     assert len(unifLitList) == len(sampleLitList)
+    #print(unifLitList)
+    #print(sampleLitList)
+
     for a, b in zip(unifLitList, sampleLitList):
         assert abs(int(a)) == abs(int(b))
 
@@ -934,8 +964,13 @@ class Experiment:
 
         # get uniform sampler's solutions
         # get uniform sampler's solutions
+        #unifSol = SolutionRetriver.getSolutionFromSampler(
+         #   self.inputFile, 1, SAMPLER_SPUR, self.indVarList, newSeed)
+        #self.totalUniformSamples += 1
+
+        #Changed the reference sampler SPUR for KUS: faster and likely to be more uniform 
         unifSol = SolutionRetriver.getSolutionFromSampler(
-            self.inputFile, 1, SAMPLER_SPUR, self.indVarList, newSeed)
+            self.inputFile, 1, SAMPLER_KUS, self.indVarList, newSeed)
         self.totalUniformSamples += 1
 
         chainFormulaConf = chainFormulaSetup(sampleSol, unifSol, self.numSolutions)

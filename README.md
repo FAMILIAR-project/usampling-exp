@@ -23,7 +23,7 @@ Pre-built Docker image:
   * solvers above and a proper installation 
   * time and resources ;) 
 
-## Usage
+## Usage (Sampling)
 
 `docker run -it -v $(pwd):/home/usampling-exp:z macher/usampling:squashed /bin/bash`
 for developping... you can edit files that are bound to the Docker file. And experiments with procedures/samplers inside the Docker. 
@@ -35,10 +35,19 @@ You can also specify a folder.
 
 Without `flas` default formulas contained in the Docker folder/subfolders `/home/samplingfm/` are processed (around 500 files).
 
+## Usage (Uniformity)
+
+We assess uniformity in two ways:
+
+ * Barbarik (https://github.com/meelgroup/barbarik).  To compute uniformity for a set of models: `python3 barbarikloop.py -flas gilles --sampler 10  --seed 1 --timeout 60` where sampler is the sampler to be assessed (1=Unigen, 2=QuickSampler, 3=STS, 4=CMS, 5=UniGen3, 6=SPUR, 7=SMARCH, 8=UniGen2,9=KUS, 10=Distance-based Sampling), seed an integer seed and a timeout in seconds. it supports all the parameters of barbarik (use --help to see a description of all the options).   
+  
+
 ## Architecture
 
  * all samplers are in `samplers` directory (and all utilities/dependencies are also in this folder)
  * `usampling-experiments.py` pilots the scalability study of samplers over different datasets 
- * `barbarik.py` pilots the uniformity checking of samplers over different datasets
+ * `barbarik.py` pilots the uniformity checking of samplers over different datasets. It is based on the barbarik tool from Kuldeep Meel et al: https://github.com/meelgroup/barbarik. This version supports uniformity check for all the 10 solvers above and uses KUS as a reference uniform solver
+ * `barbarikloop.py` allows to run uniformity checks on set fo files (using the same flas technique as above) and report the results in a CSV file
+ * `computeDeviations.py` computes feature deviation graphs as proposed in the paper: "Uniform Sampling of SAT Solutions for Configurable Systems: Are We There Yet?" by Plazar et al., ICST 2019 (https://hal.inria.fr/hal-01991857). Under re-construction to support all solvers and improve usability.    
  * Docker image is up to date with the current git
 

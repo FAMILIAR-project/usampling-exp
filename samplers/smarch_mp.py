@@ -38,13 +38,15 @@ def read_dimacs(dimacsfile_):
                 _feature = line.split(" ", 4)
                 del _feature[0]
                 # handling non-numeric feature IDs -  modification w.r.t original SMARCH MP, necessary to parse os-like models with $ in feature names...
-                if (_feature[0].isdigit()):
-                  _feature[0] = int(_feature[0])
-                else:
-                  # num_filter = filter(_feature[0].isdigit(), _feature[0])
-                  num_feature = "".join(c for c in _feature[0] if c.isdigit())
-                  _feature[0] = int(num_feature)
-                _features.append(tuple(_feature))
+                if len(_feature) <= 2 and len(_feature) > 0: # needs to deal with literate comments, e.g., in V15 models
+                    
+                    if (_feature[0].isdigit()):
+                        _feature[0] = int(_feature[0])
+                    else:
+                        # num_filter = filter(_feature[0].isdigit(), _feature[0])
+                        num_feature = "".join(c for c in _feature[0] if c.isdigit())
+                        _feature[0] = int(num_feature)
+                    _features.append(tuple(_feature))
             # read dimacs properties
             elif line.startswith("p"):
                 info = line.split()
@@ -54,7 +56,7 @@ def read_dimacs(dimacsfile_):
                 info = line.split()
                 if len(info) != 0:
                     _clauses.append(list(map(int, info[:len(info)-1])))
-
+    
     return _features, _clauses, _vcount
 
 
