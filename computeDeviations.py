@@ -13,6 +13,7 @@ import math
 import tempfile
 import pandas as pd
 from decimal import *
+import random
 
 outputDir = './' # fix for docker image
 tmpDir = tempfile.gettempdir() + '/'
@@ -80,15 +81,16 @@ def create_features_dict(inputFile):
             _feature = line.split(" ", 4)
             del _feature[0]
             # handling non-numeric feature IDs, necessary to parse os-like models with $ in feature names...
-            if (_feature[0].isdigit()):
-                _feature[0] = int(_feature[0])
-            else:
-                # num_filter = filter(_feature[0].isdigit(), _feature[0])
-                num_feature = "".join(c for c in _feature[0] if c.isdigit())
-                _feature[0] = int(num_feature)
-            # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
-            global features_dict
-            features_dict.update({str(_feature[1]):str(_feature[0])})
+            if len(_feature) <= 2 and len(_feature) > 0: # needs to deal with literate comments, e.g., in V15 models
+                if (_feature[0].isdigit()):
+                    _feature[0] = int(_feature[0])
+                else:
+                     # num_filter = filter(_feature[0].isdigit(), _feature[0])
+                    num_feature = "".join(c for c in _feature[0] if c.isdigit())
+                    _feature[0] = int(num_feature)
+                    # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
+                global features_dict
+                features_dict.update({str(_feature[1]):str(_feature[0])})
         elif line.startswith('p cnf'):
             _line = line.split(" ", 4)
             nb_vars = int(_line[2])
@@ -97,52 +99,52 @@ def create_features_dict(inputFile):
         print("could not create dict from comments, faking it with integer variables in the 'p cnf' header")
         for i in range(1,nb_vars+1):
             #global features_dict
-            features_dict.update({'feature_'+str(i):str(i)})         
+            features_dict.update({str(i):str(i)})         
                  
       
 
 # interface method for getting frequencies from samples
 # for each sampler
-def compute_obs_frequencies(sampleFile,samplerType):
+def compute_obs_frequencies(sampleFile,nbSolutions,inputFile,samplerType):
 
         if (samplerType == SAMPLER_UNIGEN):
-            nb_samples, obs_freqs = compute_ugen_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_ugen_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs
 
         elif (samplerType == SAMPLER_UNIGEN3):
-            nb_samples, obs_freqs = compute_ugen3_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_ugen3_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples,obs_freqs
 
         elif (samplerType == SAMPLER_QUICKSAMPLER):
-            nb_samples, obs_freqs = compute_qs_obs_frequencies(sampleFile) 
+            nb_samples, obs_freqs = compute_qs_obs_frequencies(sampleFile,nbSolutions,inputFile) 
             return nb_samples, obs_freqs
 
         elif (samplerType == SAMPLER_STS):
-            nb_samples, obs_freqs = compute_sts_obs_frequencies(sampleFile)#TODO
+            nb_samples, obs_freqs = compute_sts_obs_frequencies(sampleFile)#TODO: STS only support sampling for indvidual support variables
             return nb_samples, obs_freqs
 
         elif (samplerType == SAMPLER_CMS):
-            nb_samples, obs_freqs = compute_cms_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_cms_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs
 
         elif (samplerType == SAMPLER_SPUR):
-            nb_samples, obs_freqs = compute_spur_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_spur_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs
         
         elif (samplerType == SAMPLER_SMARCH):
-            nb_samples, obs_freqs = compute_smarch_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_smarch_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs
         
         elif (samplerType == SAMPLER_UNIGEN2):
-            nb_samples, obs_freqs = compute_ugen2_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_ugen2_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs
         
         elif (samplerType == SAMPLER_KUS):
-            nb_samples, obs_freqs = compute_kus_obs_frequencies(sampleFile) 
+            nb_samples, obs_freqs = compute_kus_obs_frequencies(sampleFile,nbSolutions,inputFile) 
             return nb_samples, obs_freqs 
 
         elif (samplerType == SAMPLER_DISTAWARE):
-            nb_samples, obs_freqs = compute_dbs_obs_frequencies(sampleFile)
+            nb_samples, obs_freqs = compute_dbs_obs_frequencies(sampleFile,nbSolutions,inputFile)
             return nb_samples, obs_freqs            
 
         else:
@@ -151,10 +153,21 @@ def compute_obs_frequencies(sampleFile,samplerType):
 
 
 #compute observed frequencies for Unigen 1
-def compute_ugen_obs_frequencies(sampleFile):
+def compute_ugen_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+
+    if sampleFile is None:
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+
+        cmd = './samplers/unigen --samples='+str(nbSolutions)
+        cmd += ' ' + inputFile + ' ' + str(sampleFile) + ' > /dev/null 2>&1'
+        
+        print("cmd: ", cmd)
+        os.system(cmd)
+    
+    nb_samples = Decimal(0)
     with open(sampleFile, 'r') as f:
         lines = f.readlines()    
 
@@ -171,21 +184,36 @@ def compute_ugen_obs_frequencies(sampleFile):
                     #computing feature occurrences
                     for i in features_dict.values():
                         if i in features:
-                            obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+                            obs_freqs.update({i:Decimal(obs_freqs.get(i,0)+1)})
     
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq = Decimal(obs_freqs.get(k)) / Decimal(nb_samples) 
+        obs_freqs.update({k:freq})
 
 
     return nb_samples, obs_freqs
 
 
 # compute observed frequencies for Ugen3
-def compute_ugen3_obs_frequencies(sampleFile):
+def compute_ugen3_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+
+    if sampleFile is None:
+        seed = random.randint(0,nbSolutions)
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+
+        cmd = './samplers/approxmc3 -s ' + str(int(seed)) + ' -v 0 --samples ' + str(nbSolutions)
+        cmd += ' --sampleout ' + str(sampleFile)
+        cmd += ' ' + inputFile + ' > /dev/null 2>&1'
+        
+        print("cmd: ", cmd)
+        os.system(cmd)
+    
+
+    nb_samples = Decimal(0)
     
     with open(sampleFile, 'r') as f:
         lines = f.readlines()
@@ -212,9 +240,22 @@ def compute_ugen3_obs_frequencies(sampleFile):
 
 
 #computation of observed frequencies for QuickSampler
-def compute_qs_obs_frequencies(sampleFile):
+def compute_qs_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
+
+    if sampleFile is None:
+        cmd = "./samplers/quicksampler -n "+str(nbSolutions)+' '+str(inputFile) + ' > /dev/null 2>&1'
+       
+        print("cmd: ", cmd)
+        os.system(cmd)
+        cmd = "./samplers/z3-quicksampler/z3 sat.quicksampler_check=true sat.quicksampler_check.timeout=3600.0 "+str(inputFile)+' > /dev/null 2>&1'
+       
+        print("cmd: ", cmd)
+        os.system(cmd)
+        sampleFile=inputFile+'.samples.valid'
+
+
     nb_samples = 0
     
 
@@ -232,11 +273,12 @@ def compute_qs_obs_frequencies(sampleFile):
             #computing feature occurrences
             for i in features_dict.values():
                 if i in features:
-                    obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+                    obs_freqs.update({i:Decimal(obs_freqs.get(i,0)+1)})
     
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq=Decimal(obs_freqs.get(k)) / Decimal(nb_samples)  
+        obs_freqs.update({k:freq})
 
     return nb_samples, obs_freqs
 
@@ -247,17 +289,63 @@ def compute_sts_obs_frequencies(sampleFile):
     obs_freqs = {}
     nb_samples = 0
     
-    # TODO
+    with open(outputFile, 'r') as f:
+        lines = f.readlines()
+
+        solList = []
+        shouldStart = False
+        #baseList = {}
+        for j in range(len(lines)):
+            if(lines[j].strip() == 'Outputting samples:' or lines[j].strip() == 'start'):
+                shouldStart = True
+                continue
+            if (lines[j].strip().startswith('Log') or lines[j].strip() == 'end'):
+                shouldStart = False
+            if (shouldStart):
+
+
+                '''if lines[j].strip() not in baseList:
+                    baseList[lines[j].strip()] = 1
+                else:
+                    baseList[lines[j].strip()] += 1'''
+                sol = ''
+                i = 0
+                # valutions are 0 and 1 and in the same order as c ind.
+                for x in list(lines[j].strip()):
+                    if (x == '0'):
+                        sol += ' -'+str(indVarList[i])
+                    else:
+                        sol += ' '+str(indVarList[i])
+                    i += 1
+                solList.append(sol)
+                if len(solList) == numSolutions:
+                    break
 
     return nb_samples, obs_freqs     
 
 
 
 #computation of observed frequencies for CMS
-def compute_cms_obs_frequencies(sampleFile):
+def compute_cms_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+
+    if sampleFile is None:
+        seed = random.randint(0,nbSolutions)
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+        cmd = "./samplers/cryptominisat5 --restart luby --maple 0 --verb 10 --nobansol"
+        cmd += " --scc 1 -n1 --presimp 0 --polar rnd --freq 0.9999"
+        cmd += " --random " + str(int(seed)) + " --maxsol " + str(nbSolutions)
+        cmd += " " + inputFile
+        cmd += " --dumpresult " + sampleFile + " > /dev/null 2>&1"
+
+        print("cmd: ", cmd)
+        os.system(cmd)
+
+
+
+    nb_samples = Decimal(0)
     
 
     with open(sampleFile, 'r') as f:
@@ -273,11 +361,12 @@ def compute_cms_obs_frequencies(sampleFile):
             #computing feature occurrences
             for i in features_dict.values():
                 if i in features:
-                    obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+                    obs_freqs.update({i:Decimal(obs_freqs.get(i,0)+1)})
     
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq = Decimal(obs_freqs.get(k)) / Decimal(nb_samples)
+        obs_freqs.update({k:freq})
 
     return nb_samples, obs_freqs
 
@@ -286,10 +375,22 @@ def compute_cms_obs_frequencies(sampleFile):
 
 
 #computation of observed frequencies for SPUR
-def compute_spur_obs_frequencies(sampleFile):
+def compute_spur_obs_frequencies(sampleFile,numSolutions,inputFile):
 
     obs_freqs = {}
+
+    if sampleFile is None:
+        seed = random.randint(0,numSolutions)
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+        cmd = './samplers/spur -seed %d -q -s %d -out %s -cnf %s' % (
+            seed, numSolutions, sampleFile, inputFile)
+       
+        print("cmd: ", cmd)
+        os.system(cmd)    
+    
     nb_samples = Decimal(0)
+
     with open(sampleFile, 'r') as f:
         lines = f.readlines()
 
@@ -333,10 +434,20 @@ def compute_spur_obs_frequencies(sampleFile):
     return nb_samples, obs_freqs
 
 #computation of observes frequencies for SMARCH
-def compute_smarch_obs_frequencies(sampleFile):
+def compute_smarch_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+
+    if sampleFile is None:
+        cmd = ("python3 ./samplers/smarch_mp.py -p 4 "  + " -o " + tempfile.gettempdir() + " " + inputFile + 
+        " " + str(nbSolutions) + " > /dev/null 2>&1")
+        
+        print("cmd: ", cmd)
+        os.system(cmd)
+
+        sampleFile = inputFile.replace('.cnf','_'+ str(nbSolutions))+'.samples'        
+
+    nb_samples = Decimal(0)
     
     df= pd.read_csv(sampleFile,header=None)
     for x in df.values:
@@ -346,11 +457,12 @@ def compute_smarch_obs_frequencies(sampleFile):
         #computing feature occurrences
         for i in features_dict.values():
             if float(i) in features:
-                obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+                obs_freqs.update({i:Decimal(obs_freqs.get(i,0)+1)})
     
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq = Decimal(obs_freqs.get(k) / nb_samples)
+        obs_freqs.update({k:freq})
 
 
     return nb_samples, obs_freqs
@@ -359,10 +471,23 @@ def compute_smarch_obs_frequencies(sampleFile):
 
 
 #computation of observed frequencies for Unigen2
-def compute_ugen2_obs_frequencies(sampleFile):
+def compute_ugen2_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+
+    if sampleFile is None:
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+        cwd = os.getcwd()
+        cmd = 'python3  UniGen2.py -samples='+str(nbSolutions)
+        cmd += ' ' + str(os.path.abspath(inputFile)) + ' ' + str(tempfile.gettempdir()) + ' > /dev/null 2>&1'
+        
+        print("cmd: ", cmd)
+        os.chdir(str(os.getcwd())+'/samplers')        
+        os.system(cmd)
+        os.chdir(str(cwd))
+
+    nb_samples = Decimal(0)
     with open(sampleFile, 'r') as f:
         lines = f.readlines()    
 
@@ -379,20 +504,35 @@ def compute_ugen2_obs_frequencies(sampleFile):
                     #computing feature occurrences
                     for i in features_dict.values():
                         if i in features:
-                            obs_freqs.update({int(i):float(obs_freqs.get(int(i),0)+1)})
+                            obs_freqs.update({i:Decimal(obs_freqs.get(i,0)+1)})
     
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq = Decimal(obs_freqs.get(k)) / Decimal(nb_samples)
+        obs_freqs.update({k:freq})
 
 
     return nb_samples, obs_freqs
        
 #computation of observed frequencies for KUS
-def compute_kus_obs_frequencies(sampleFile):
+def compute_kus_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
+    
+    if sampleFile is None:
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+        cwd = os.getcwd()
+        cmd = 'python3  KUS.py --samples='+str(nbSolutions) + ' ' + '--outputfile ' +  sampleFile
+        cmd += ' ' + str(os.path.abspath(inputFile)) + ' > /dev/null 2>&1'
+        
+        print("cmd: ", cmd)
+        os.chdir(str(os.getcwd())+'/samplers')        
+        os.system(cmd)
+        os.chdir(str(cwd))
+
+
+    nb_samples = Decimal(0)
     with open(sampleFile, 'r') as f:
         lines = f.readlines()
         nb_samples = len(lines)     
@@ -416,11 +556,38 @@ def compute_kus_obs_frequencies(sampleFile):
 
 
 # computation of observed frequencies for distance-based sampling
-def compute_dbs_obs_frequencies(sampleFile):
+def compute_dbs_obs_frequencies(sampleFile,nbSolutions,inputFile):
 
     obs_freqs = {}
-    nb_samples = 0
-    with open(inputFile,'r') as f:
+
+    if sampleFile is None:
+        sampleFileSuffix = inputFile.split('/')[-1][:-4]
+        sampleFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".txt"
+       
+        # creating the file to configure the sampler
+        dbsConfigFile = tempfile.gettempdir()+'/'+sampleFileSuffix+".a"
+   
+        with open(dbsConfigFile,'w+') as f:
+            f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
+            f.write("dimacs " + str(os.path.abspath(inputFile)) + "\n")
+            params= " solver z3"+ "\n"
+            params += "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
+            params += " selection:SolverSelection number-weight-optimization:1"
+            params += " numConfigs:"+str(nbSolutions)
+            f.write(params + "\n")
+            f.write("printconfigs " + sampleFile)
+
+        cmd = "mono ./samplers/distribution-aware/CommandLine.exe " 
+        cmd += dbsConfigFile
+        
+        print("cmd: ", cmd)
+        os.system(cmd)        
+        os.unlink(dbsConfigFile)
+
+
+
+    nb_samples = Decimal(0)
+    with open(sampleFile,'r') as f:
          lines = f.readlines()
          nb_samples = len(lines)   
     for line in lines:
@@ -434,11 +601,12 @@ def compute_dbs_obs_frequencies(sampleFile):
         #computing feature occurrences
         for k,v in features_dict.items():
             if k in sol:
-                obs_freqs.update({int(v):float(obs_freqs.get(int(v),0)+1)})
+                obs_freqs.update({v:Decimal(obs_freqs.get(v,0)+1)})
      
     # computing frequencies (more accurate if computed separately)
     for k in obs_freqs.keys():
-        obs_freqs.update({int(k):float(float(obs_freqs.get(int(k))) / float(nb_samples))})
+        freq = Decimal(obs_freqs.get(k) / Decimal(nb_samples))
+        obs_freqs.update({k: freq})
      
     return nb_samples, obs_freqs
 
@@ -538,13 +706,16 @@ def displayResults(fileName,nb_samples,modelCount,featureIndex,samplerType, obsF
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--cnf",type=str, help="cnf file", dest='cnf')
-    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" +
-                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n", default=SAMPLER_STS, dest='sampler')
-    parser.add_argument("input", help="samples file from DBS")
+    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
+                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
+                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
+                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='sampler')
+    parser.add_argument("--nbSolutions",type=int,help="in case no sample file is provided, number of solutions to sample",dest='nbSolutions')
+    parser.add_argument("--sampleFile", help="samples file",dest='sampleFile')
 
-    getcontext().prec =6
+    getcontext().prec =28
     args = parser.parse_args()
-    inputFile = args.input
+   
     create_features_dict(args.cnf)
  
     modelCount = sharpSatCall(args.cnf, [])
@@ -554,13 +725,13 @@ if __name__ == "__main__":
         print('model count: ' +  str(modelCount))
         #feature_index = makeFeatureIndex(args.cnf)
         th_freqs = calculateThFreqs(args.cnf, modelCount)
-        nb_samples,obs_freqs = compute_obs_frequencies(inputFile,args.sampler)
+        nb_samples,obs_freqs = compute_obs_frequencies(args.sampleFile,args.nbSolutions,args.cnf,args.sampler)
         print_frequencies(obs_freqs)
         
         for k in features_dict.values():
-            
+           
             thFreq = th_freqs.get(k, 0)
-            freq = obs_freqs.get(k, 0)
+            freq = obs_freqs.get(k,0)
             print(str(k) + ' ' + list(features_dict.keys())[list(features_dict.values()).index(str(k))] + '\n obs : ' 
                 + str(freq) + '\n th  : ' + str(thFreq) + '\n')
             if(thFreq != 0):

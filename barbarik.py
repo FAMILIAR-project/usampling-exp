@@ -589,7 +589,7 @@ class SolutionRetriver:
     
     @staticmethod
     def getSolutionFromSMARCH(inputFile, numSolutions, indVarList, newSeed):
-        cmd = "python3 ./samplers/smarch_mp.py -p " + str(P_THREADS) + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions) #+ " > /dev/null 2>&1"
+        cmd = "python3 ./samplers/smarch_mp.py -p " + str(P_THREADS) + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions) + " > /dev/null 2>&1"
         #cmd = "python3 /home/gilles/ICST2019-EMSE-Ext/Kclause_Smarch-local/Smarch/smarch.py " + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions)
         if args.verbose:
             print("cmd: ", cmd)
