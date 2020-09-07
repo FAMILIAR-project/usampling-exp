@@ -548,10 +548,10 @@ if flas_args is not None:
             flas_to_process.extend(all_dimacs_files(FMLINUX_DATASET_FOLDER))
         elif fla_arg in "Benchmarks":
             print("folder of formulas", fla_arg)
-            flas_to_process.extend(all_cnf_files("/home/samplingfm/" + fla_arg))
+            flas_to_process.extend(all_cnf_files("/home/samplingfm/" + fla_arg)) # TODO: variable for "/home/samplingfm/"?
         elif fla_arg in ("FeatureModels", "FMEasy", "Blasted_Real", "V7", "V3", "V15"):
             print("folder of formulas", fla_arg)
-            flas_to_process.extend(all_cnf_files("/home/samplingfm/Benchmarks/" + fla_arg))
+            flas_to_process.extend(all_cnf_files("/home/samplingfm/Benchmarks/" + fla_arg)) # fixme: why not FLA_DATASET_FOLDER instead of /home/samplingfm/Benchmarks/
         else:
             print('individual formula', fla_arg)
             flas_to_process.append(fla_arg)

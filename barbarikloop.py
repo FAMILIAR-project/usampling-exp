@@ -24,17 +24,28 @@ SAMPLER_DISTAWARE = 10
 
 
 
-FM_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/FeatureModels/"
+# FM_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/FeatureModels/"
+# keep it for Gilles' debugging
 FM_GILLES_FOLDER ="/home/gilles/GillesTestModels/"
-FM2_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/FMEasy/"
-FLA_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/"
-FLABLASTED_DATASET_FOLDER="/home//gilles/samplingforfm/Benchmarks/Blasted_Real/"
-FLAV7_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V7/"
-BENCH_ROOT_FOLDER="/home/gilles/samplingforfm/"
-ALL_BENCH_DATASET_FOLDER = "/home/gilles/samplingforfm/Benchmarks/"
-FLAV3_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V3/"
-FLAV15_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V15/"
-FMLINUX_DATASET_FOLDER="/home/gilles/fm_history_linux_dimacs/"
+# FM2_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/FMEasy/"
+# FLA_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/"
+# FLABLASTED_DATASET_FOLDER="/home//gilles/samplingforfm/Benchmarks/Blasted_Real/"
+# FLAV7_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V7/"
+# BENCH_ROOT_FOLDER="/home/gilles/samplingforfm/" # deprecated/unused
+# ALL_BENCH_DATASET_FOLDER = "/home/gilles/samplingforfm/Benchmarks/"  # deprecated/unused
+# FLAV3_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V3/"
+# FLAV15_DATASET_FOLDER="/home/gilles/samplingforfm/Benchmarks/V15/"
+# FMLINUX_DATASET_FOLDER="/home/gilles/fm_history_linux_dimacs/"
+
+FM_DATASET_FOLDER="/home/samplingfm/Benchmarks/FeatureModels/"
+FM2_DATASET_FOLDER="/home/samplingfm/Benchmarks/FMEasy/"
+FLA_DATASET_FOLDER="/home/samplingfm/Benchmarks/"
+FLABLASTED_DATASET_FOLDER="/home/samplingfm/Benchmarks/Blasted_Real/"
+FLAV7_DATASET_FOLDER="/home/samplingfm/Benchmarks/V7/"
+FLAV3_DATASET_FOLDER="/home/samplingfm/Benchmarks/V3/"
+FLAV15_DATASET_FOLDER="/home/samplingfm/Benchmarks/V15/"
+FMLINUX_DATASET_FOLDER="/home/fm_history_linux_dimacs/"
+
 
 dataset_fla = { 'fla' : FLA_DATASET_FOLDER, 'fm' : FM_DATASET_FOLDER, 'fmeasy' : FM2_DATASET_FOLDER, 'V15' : FLAV15_DATASET_FOLDER, 'blasted_real' : FLABLASTED_DATASET_FOLDER, 'gilles': FM_GILLES_FOLDER }
 
@@ -113,12 +124,13 @@ if flas_args is not None:
         elif fla_arg in 'gilles': #debug
             print("selection of FMs selected by Gilles, for debug")
             flas_to_process.extend(all_cnf_files(FM_GILLES_FOLDER))   
-        elif fla_arg in "Benchmarks":
+        elif fla_arg in "Benchmarks": # debug or deprecated? 
             print("folder of formulas", fla_arg)
-            flas_to_process.extend(all_cnf_files(BENCH_ROOT_FOLDER + fla_arg))
+            # flas_to_process.extend(all_cnf_files(BENCH_ROOT_FOLDER + fla_arg))
+            flas_to_process.extend(all_cnf_files("/home/samplingfm/" + fla_arg))            
         elif fla_arg in ("FeatureModels", "FMEasy", "Blasted_Real", "V7", "V3", "V15"):
             print("folder of formulas", fla_arg)
-            flas_to_process.extend(all_cnf_files(ALL_BENCH_DATASET_FOLDER + fla_arg))
+            flas_to_process.extend(all_cnf_files(FLA_DATASET_FOLDER + fla_arg))
         else:
             print('individual formula', fla_arg)
             flas_to_process.append(fla_arg)
