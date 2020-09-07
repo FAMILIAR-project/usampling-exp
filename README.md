@@ -40,7 +40,7 @@ Without `flas` default formulas contained in the Docker folder/subfolders `/home
 We assess uniformity in two ways:
 
  * Barbarik (https://github.com/meelgroup/barbarik).  To compute uniformity for a set of models: `python3 barbarikloop.py -flas gilles --sampler 10  --seed 1 --timeout 60` where sampler is the sampler to be assessed (1=Unigen, 2=QuickSampler, 3=STS, 4=CMS, 5=UniGen3, 6=SPUR, 7=SMARCH, 8=UniGen2,9=KUS, 10=Distance-based Sampling), seed an integer seed and a timeout in seconds. it supports all the parameters of barbarik (use --help to see a description of all the options).   
-  
+ * usage example: `docker run -v $(pwd):/home/usampling-exp:z macher/usampling /bin/bash -c 'cd /home/usampling-exp/; echo STARTING; python3 barbarikloop.py -flas /home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf --sampler 9 --seed 1 --timeout 100; echo END'` (QuickSampler with JHipster feature model and timeout=100 seconds... end eta/epsilon defaut values `cmd: ['python3', 'barbarik.py', '--seed', '1', '--verb', '1', '--eta', '0.9', '--epsilon', '0.3', '--delta', '0.05', '--reverse', '0', '--exp', '1', '--minSamples', '0', '--maxSamples', '9223372036854775807', '--sampler', '9', '/home/samplingfm/Benchmarks/FeatureModels/FM-3.6.1-refined.cnf']` 
 
 ## Architecture
 
