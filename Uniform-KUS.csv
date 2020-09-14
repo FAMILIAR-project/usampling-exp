@@ -1,12 +1,2 @@
 file,time,cmd_output,err_output,Uniform,Timeout
-/home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf,3600.074,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/viper.cnf,3600.027,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/phycore.cnf,3600.107,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/cq7708.cnf,3600.085,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/psim.cnf,3600.054,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/aeb.cnf,3600.050,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/sh7708.cnf,3600.105,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/vrc4375.cnf,3600.105,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/malta_mips32_4kc.cnf,3600.108,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/rattler.cnf,3600.091,,,N/A,TRUE
-/home/samplingfm/Benchmarks/FeatureModels/asb2305.cnf,3600.112,,,N/A,TRUE
+/home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf,43000.107,,,N/A,TRUE
