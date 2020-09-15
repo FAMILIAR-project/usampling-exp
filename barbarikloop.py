@@ -9,6 +9,7 @@ import argparse
 import sys
 from os import listdir, chdir
 from os.path import isfile, join
+import uuid
 
 SAMPLER_UNIGEN = 1
 SAMPLER_QUICKSAMPLER = 2
