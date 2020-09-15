@@ -106,8 +106,13 @@ if __name__ == "__main__":
 
 args = parser.parse_args()
 
+
+output_directory = "output/" + str(uuid.uuid4().hex) 
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
+
 # name of csv file 
-filename = 'Uniform-' + get_sampler_string(args.sampler) + '.csv'
+filename = os.path.join(output_directory, 'Uniform-' + get_sampler_string(args.sampler) + '.csv')
 
 
 flas_args = args.formulas
