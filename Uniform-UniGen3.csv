@@ -1,2 +1,12 @@
 file,time,cmd_output,err_output,Uniform,Timeout
-/home/samplingfm/Benchmarks/FeatureModels/XSEngine.cnf,43000.107,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case126.cnf,3600.034,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case117.cnf,3600.043,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case43.cnf,3600.021,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case21.cnf,3600.050,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case140.cnf,3600.058,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case128.cnf,3600.040,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_0_b12_2.cnf,3600.060,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case_3_b14_3.cnf,3600.070,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_case201.cnf,3600.035,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_TR_b14_1_linear.cnf,3600.108,,,N/A,TRUE
+/home/samplingfm/Benchmarks/Blasted_Real/blasted_squaring1.cnf,3600.109,,,N/A,TRUE
