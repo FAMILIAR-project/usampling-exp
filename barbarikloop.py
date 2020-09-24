@@ -115,6 +115,11 @@ if not os.path.exists(output_directory):
 # name of csv file 
 filename = os.path.join(output_directory, 'Uniform-' + get_sampler_string(args.sampler) + '.csv')
 
+info_experiment_file = os.path.join(output_directory, 'README.md')
+with open(info_experiment_file, 'w') as expfile:
+    expfile.write(str(args))
+
+
 
 flas_args = args.formulas
 
