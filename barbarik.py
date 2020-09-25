@@ -677,9 +677,9 @@ def chainFormulaSetup(sampleSol, unifSol, numSolutions):
     assert len(countList) == len(newVarList)
 
     # picking selector literals, i.e. k1, k2, k3, randomly
-    #if args.verbose:
-     #   print("len count list: " +  str(len(countList)))
-      #  print("#num of samples" + str(len(sampleSol.split())))
+    if args.verbose:
+        print("len count list: " +  str(len(countList)))
+        print("#num of samples" + str(len(sampleSol.split())))
     
     assert len(sampleSol.split()) > len(countList), "There are not enough samples to proceed, sampler failed ?" 
     sampleLitList = random.sample(sampleSol.split(), len(countList))
@@ -904,7 +904,7 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
 
 
 class Experiment:
-    def __init__(self, inputFile, maxSamples, minSamples, samplerType):
+    def __init__(self, inputFile, maxSamples, minSamples, samplerType, refSamplerType):
         inputFileSuffix = inputFile.split('/')[-1][:-4]
         self.tempFile = tempfile.gettempdir() + "/" + inputFileSuffix+"_t.cnf"
         self.indVarList = parseIndSupport(inputFile)
@@ -914,6 +914,7 @@ class Experiment:
         self.minSamples = minSamples
 
         self.samplerString = get_sampler_string(samplerType)
+        self.ref_sampler_type = refSamplerType
 
     # Returns True if uniform and False otherwise
     def testUniformity(self, solList, indVarList):
@@ -968,9 +969,9 @@ class Experiment:
          #   self.inputFile, 1, SAMPLER_SPUR, self.indVarList, newSeed)
         #self.totalUniformSamples += 1
 
-        #Changed the reference sampler SPUR for KUS: faster and likely to be more uniform 
+        #The reference sampler is a now a parameter of barbarik  
         unifSol = SolutionRetriver.getSolutionFromSampler(
-            self.inputFile, 1, SAMPLER_KUS, self.indVarList, newSeed)
+            self.inputFile, 1, self.ref_sampler_type, self.indVarList, newSeed)
         self.totalUniformSamples += 1
 
         chainFormulaConf = chainFormulaSetup(sampleSol, unifSol, self.numSolutions)
@@ -1014,8 +1015,14 @@ if __name__ == "__main__":
     parser.add_argument('--eta', type=float, help="default = 0.9", default=0.9, dest='eta')
     parser.add_argument('--epsilon', type=float, help="default = 0.3", default=0.3, dest='epsilon')
     parser.add_argument('--delta', type=float, help="default = 0.05", default=0.05, dest='delta')
-    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" +
-                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n", default=SAMPLER_STS, dest='sampler')
+    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
+                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
+                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
+                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='sampler')
+    parser.add_argument('--ref-sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
+                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
+                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
+                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='ref_sampler')
     parser.add_argument('--reverse', type=int, default=0, help="order to search in", dest='searchOrder')
     parser.add_argument('--minSamples', type=int, default=0, help="min samples", dest='minSamples')
     parser.add_argument('--maxSamples', type=int, default=sys.maxsize, help="max samples", dest='maxSamples')
@@ -1055,7 +1062,7 @@ if __name__ == "__main__":
 
     exp = Experiment(
         minSamples=minSamples, maxSamples=maxSamples, inputFile=inputFile,
-        samplerType=args.sampler)
+        samplerType=args.sampler,refSamplerType=args.ref_sampler)
 
     for experiment in range(numExperiments):
         print("Experiment: {:<5} of {:>5}".format(experiment, numExperiments))

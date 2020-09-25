@@ -96,6 +96,10 @@ if __name__ == "__main__":
                         str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
                         str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
                         str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='sampler')
+    parser.add_argument('--ref-sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
+                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
+                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
+                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='ref_sampler')
     parser.add_argument('--reverse', type=int, default=0, help="order to search in", dest='searchOrder')
     parser.add_argument('--minSamples', type=int, default=0, help="min samples", dest='minSamples')
     parser.add_argument('--maxSamples', type=int, default=sys.maxsize, help="max samples", dest='maxSamples')
@@ -167,7 +171,7 @@ with open(filename, 'w') as csvfile:
             start = time.time()
             c = ''
             err = ''
-            sampler_cmd = ["python3","barbarik.py","--seed",str(args.seed),"--verb",str(args.verbose),"--eta",str(args.eta),"--epsilon",str(args.epsilon),"--delta",str(args.delta),"--reverse",str(args.searchOrder),"--exp",str(args.exp),"--minSamples",str(args.minSamples),"--maxSamples",str(args.maxSamples),"--sampler",str(args.sampler),b]
+            sampler_cmd = ["python3","barbarik.py","--seed",str(args.seed),"--verb",str(args.verbose),"--eta",str(args.eta),"--epsilon",str(args.epsilon),"--delta",str(args.delta),"--reverse",str(args.searchOrder),"--exp",str(args.exp),"--minSamples",str(args.minSamples),"--maxSamples",str(args.maxSamples),"--sampler",str(args.sampler),"--ref-sampler",str(args.ref_sampler),"--verb",str(args.verbose),b]
             print("cmd: "+ str(sampler_cmd)) 
             proc=  Popen(sampler_cmd, stdout=PIPE, stderr=PIPE,preexec_fn=os.setsid)
             c,err= proc.communicate(timeout=args.thres)
