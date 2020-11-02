@@ -40,23 +40,26 @@ SAMPLER_UNIGEN2 = 8
 SAMPLER_KUS = 9
 SAMPLER_DISTAWARE = 10
 
+CURR_REF_SAMPLER = 6  # default is SPUR
+
 P_THREADS = 4
 
-#We need a dictionary for Distribution-aware distance sampling 
-#which records names and not feature ids in outputted samples
+# We need a dictionary for Distribution-aware distance sampling
+# which records names and not feature ids in outputted samples
 features_dict = {}
+
 
 def create_features_dict(inputFile):
     nb_vars = 0
-    with open(inputFile,'r') as f:
-         lines = f.readlines()
+    with open(inputFile, 'r') as f:
+        lines = f.readlines()
     for line in lines:
         if line.startswith("c") and not line.startswith("c ind"):
             line = line[0:len(line) - 1]
             _feature = line.split(" ", 4)
             del _feature[0]
             # handling non-numeric feature IDs, necessary to parse os-like models with $ in feature names...
-            if len(_feature) <= 2 and len(_feature) > 0: # needs to deal with literate comments, e.g., in V15 models
+            if len(_feature) <= 2 and len(_feature) > 0:  # needs to deal with literate comments, e.g., in V15 models
                 if (_feature[0].isdigit()):
                     _feature[0] = int(_feature[0])
                 else:
@@ -65,18 +68,17 @@ def create_features_dict(inputFile):
                     _feature[0] = int(num_feature)
                     # print('key ' +  str(_feature[1]) +  ' value ' + str(_feature[0])) -- debug
                     global features_dict
-                features_dict.update({str(_feature[1]):str(_feature[0])})
+                features_dict.update({str(_feature[1]): str(_feature[0])})
         elif line.startswith('p cnf'):
             _line = line.split(" ", 4)
             nb_vars = int(_line[2])
             print("there are : " + str(nb_vars) + " integer variables")
-    if (len(features_dict.keys())==0):
+    if (len(features_dict.keys()) == 0):
         print("could not create dict from comments, faking it with integer variables in the 'p cnf' header")
-        for i in range(1,nb_vars+1):
-            #global features_dict
-            features_dict.update({str(i):str(i)})         
-                 
-      
+        for i in range(1, nb_vars + 1):
+            # global features_dict
+            features_dict.update({str(i): str(i)})
+
 
 def get_sampler_string(samplerType):
     if samplerType == SAMPLER_UNIGEN:
@@ -109,6 +111,7 @@ class ChainFormulaSetup:
         self.newVarList = newVarList
         self.indicatorLits = indicatorLits
 
+
 def check_cnf(fname):
     with open(fname, 'r') as f:
         lines = f.readlines()
@@ -137,7 +140,7 @@ def check_cnf(fname):
         if line[0] == "c":
             continue
 
-        cls +=1
+        cls += 1
         for l in line:
             var = abs(int(l))
             max_var = max(var, max_var)
@@ -166,7 +169,6 @@ class SolutionRetriver:
             print("File is: %s" % inputFile)
             exit(-1)
 
-
         print("Using sampler: %s" % get_sampler_string(samplerType))
         if (samplerType == SAMPLER_UNIGEN):
             sols = SolutionRetriver.getSolutionFromUniGen(*topass_withseed)
@@ -185,18 +187,18 @@ class SolutionRetriver:
 
         elif (samplerType == SAMPLER_SPUR):
             sols = SolutionRetriver.getSolutionFromSpur(*topass_withseed)
-        
+
         elif (samplerType == SAMPLER_SMARCH):
             sols = SolutionRetriver.getSolutionFromSMARCH(*topass_withseed)
-        
+
         elif (samplerType == SAMPLER_UNIGEN2):
             sols = SolutionRetriver.getSolutionFromUniGen2(*topass_withseed)
-        
+
         elif (samplerType == SAMPLER_KUS):
             sols = SolutionRetriver.getSolutionFromKUS(*topass_withseed)
-        
+
         elif (samplerType == SAMPLER_DISTAWARE):
-            sols =  SolutionRetriver.getSolutionFromDistAware(*topass_withseed)            
+            sols = SolutionRetriver.getSolutionFromDistAware(*topass_withseed)
 
         else:
             print("Error: No such sampler!")
@@ -209,17 +211,17 @@ class SolutionRetriver:
                 sols[i] = sols[i][:-2]
 
         print("Number of solutions returned by sampler:", len(sols))
-        #if args.verbose:
-            #print("Solutions:", sols)
+        # if args.verbose:
+        # print("Solutions:", sols)
         return sols
-    
+
     @staticmethod
     def getSolutionFromUniGen(inputFile, numSolutions, indVarList, newSeed):
         # must construct ./unigen --samples=500 --verbosity=0 --threads=1  CNF-FILE SAMPLESFILE
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
 
-        cmd = './samplers/unigen --samples='+str(numSolutions)
+        cmd = './samplers/unigen --samples=' + str(numSolutions)
         cmd += ' ' + inputFile + ' ' + str(tempOutputFile) + ' > /dev/null 2>&1'
         if args.verbose:
             print("cmd: ", cmd)
@@ -246,18 +248,17 @@ class SolutionRetriver:
         os.unlink(str(tempOutputFile))
         return solreturnList
 
-
     @staticmethod
     def getSolutionFromUniGen2(inputFile, numSolutions, indVarList, newSeed):
-        
+
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
         cwd = os.getcwd()
-        cmd = 'python3  UniGen2.py -samples='+str(numSolutions)
+        cmd = 'python3  UniGen2.py -samples=' + str(numSolutions)
         cmd += ' ' + str(os.path.abspath(inputFile)) + ' ' + str(tempfile.gettempdir()) + ' > /dev/null 2>&1'
         if args.verbose:
             print("cmd: ", cmd)
-        os.chdir(str(os.getcwd())+'/samplers')        
+        os.chdir(str(os.getcwd()) + '/samplers')
         os.system(cmd)
         os.chdir(str(cwd))
 
@@ -284,36 +285,36 @@ class SolutionRetriver:
 
     @staticmethod
     def getSolutionFromKUS(inputFile, numSolutions, indVarList, newSeed):
-        
+
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
         cwd = os.getcwd()
-        cmd = 'python3  KUS.py --samples='+str(numSolutions) + ' ' + '--outputfile ' +  tempOutputFile
+        cmd = 'python3  KUS.py --samples=' + str(numSolutions) + ' ' + '--outputfile ' + tempOutputFile
         cmd += ' ' + str(os.path.abspath(inputFile)) + ' > /dev/null 2>&1'
         if args.verbose:
             print("cmd: ", cmd)
-        os.chdir(str(os.getcwd())+'/samplers')        
+        os.chdir(str(os.getcwd()) + '/samplers')
         os.system(cmd)
         os.chdir(str(cwd))
 
         with open(tempOutputFile, 'r') as f:
             lines = f.readlines()
-        
+
         solList = []
 
         for line in lines:
-            sol = re.sub('[0-9]*,','',line)
+            sol = re.sub('[0-9]*,', '', line)
             solList.append(sol)
-        
+
         os.unlink(str(tempOutputFile))
 
-        return solList        
+        return solList
 
     @staticmethod
     def getSolutionFromUniGen3(inputFile, numSolutions, indVarList, newSeed):
         # must construct: ./approxmc3 -s 1 -v2 --sampleout /dev/null --samples 500
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
 
         cmd = './samplers/approxmc3 -s ' + str(int(newSeed)) + ' -v 0 --samples ' + str(numSolutions)
         cmd += ' --sampleout ' + str(tempOutputFile)
@@ -342,89 +343,84 @@ class SolutionRetriver:
 
         os.unlink(str(tempOutputFile))
         return solreturnList
-    
+
     @staticmethod
     def getSolutionFromDistAware(inputFile, numSolutions, indVarList, newSeed):
 
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".txt"
-       
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".txt"
+
         # creating the file to configure the sampler
-        dbsConfigFile = tempfile.gettempdir()+'/'+inputFileSuffix+".a"
-   
-        with open(dbsConfigFile,'w+') as f:
-            f.write("log " + tempfile.gettempdir()+'/'+"output.txt"+"\n")
+        dbsConfigFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".a"
+
+        with open(dbsConfigFile, 'w+') as f:
+            f.write("log " + tempfile.gettempdir() + '/' + "output.txt" + "\n")
             f.write("dimacs " + str(os.path.abspath(inputFile)) + "\n")
-            params= " solver z3"+ "\n"
+            params = " solver z3" + "\n"
             params += "hybrid distribution-aware distance-metric:manhattan distribution:uniform onlyBinary:true onlyNumeric:false"
             params += " selection:SolverSelection number-weight-optimization:1"
-            params += " numConfigs:"+str(numSolutions)
+            params += " numConfigs:" + str(numSolutions)
             f.write(params + "\n")
             f.write("printconfigs " + tempOutputFile)
 
-        cmd = "mono ./samplers/distribution-aware/CommandLine.exe " 
+        cmd = "mono ./samplers/distribution-aware/CommandLine.exe "
         cmd += dbsConfigFile
-        
+
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
-        
+
         with open(tempOutputFile, 'r') as f:
             lines = f.readlines()
 
         solList = []
-        
+
         for line in lines:
-            features = re.findall("%\w+%",line)
+            features = re.findall("%\w+%", line)
             sol = []
 
             for feature in features:
-                feat =  feature[1:-1]
+                feat = feature[1:-1]
                 sol.append(feat)
-            
+
             solution = ''
 
-            for k,v in features_dict.items():
+            for k, v in features_dict.items():
                 if k in sol:
                     solution += ' ' + str(v)
                 else:
                     solution += ' -' + str(v)
             solList.append(solution)
 
-     
-
-        #cleaning temporary files
+        # cleaning temporary files
         os.unlink(str(tempOutputFile))
         os.unlink(dbsConfigFile)
-        os.unlink(str(tempfile.gettempdir())+'/'+"output.txt")
-        os.unlink(str(tempfile.gettempdir())+'/'+"output.txt_error")
+        os.unlink(str(tempfile.gettempdir()) + '/' + "output.txt")
+        os.unlink(str(tempfile.gettempdir()) + '/' + "output.txt_error")
 
         return solList
 
-
-  
-
-
     @staticmethod
     def getSolutionFromQuickSampler(inputFile, numSolutions, indVarList, newSeed):
-        cmd = "./samplers/quicksampler -n "+str(numSolutions*5)+' '+str(inputFile) + ' > /dev/null 2>&1'
+        cmd = "./samplers/quicksampler -n " + str(numSolutions * 5) + ' ' + str(inputFile) + ' > /dev/null 2>&1'
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
-        cmd = "./samplers/z3-quicksampler/z3 sat.quicksampler_check=true sat.quicksampler_check.timeout=3600.0 "+str(inputFile)+' > /dev/null 2>&1'
-        #os.system(cmd)
-        
-        #cmd = "./samplers/z3 "+str(inputFile)#+' > /dev/null 2>&1'
+        cmd = "./samplers/z3-quicksampler/z3 sat.quicksampler_check=true sat.quicksampler_check.timeout=3600.0 " + str(
+            inputFile) + ' > /dev/null 2>&1'
+        # os.system(cmd)
+
+        # cmd = "./samplers/z3 "+str(inputFile)#+' > /dev/null 2>&1'
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
         if (numSolutions > 1):
             i = 0
 
-        with open(inputFile+'.samples', 'r') as f:
+        with open(inputFile + '.samples', 'r') as f:
             lines = f.readlines()
 
-        with open(inputFile+'.samples.valid', 'r') as f:
+        with open(inputFile + '.samples.valid', 'r') as f:
             validLines = f.readlines()
 
         solList = []
@@ -437,16 +433,16 @@ class SolutionRetriver:
             # valutions are 0 and 1 and in the same order as c ind.
             for x in list(fields[1].strip()):
                 if (x == '0'):
-                    sol += ' -'+str(indVarList[i])
+                    sol += ' -' + str(indVarList[i])
                 else:
-                    sol += ' '+str(indVarList[i])
+                    sol += ' ' + str(indVarList[i])
                 i += 1
             solList.append(sol)
             if (len(solList) == numSolutions):
                 break
 
-        os.unlink(inputFile+'.samples')
-        os.unlink(inputFile+'.samples.valid')
+        os.unlink(inputFile + '.samples')
+        os.unlink(inputFile + '.samples.valid')
 
         if len(solList) != numSolutions:
             print("Did not find required number of solutions")
@@ -457,7 +453,7 @@ class SolutionRetriver:
     @staticmethod
     def getSolutionFromSpur(inputFile, numSolutions, indVarList, newSeed):
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        tempOutputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".out"
+        tempOutputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".out"
         cmd = './samplers/spur -seed %d -q -s %d -out %s -cnf %s' % (
             newSeed, numSolutions, tempOutputFile, inputFile)
         if args.verbose:
@@ -473,7 +469,7 @@ class SolutionRetriver:
             if (line.startswith('#START_SAMPLES')):
                 startParse = True
                 continue
-            if (not(startParse)):
+            if (not (startParse)):
                 continue
             if (line.startswith('#END_SAMPLES')):
                 startParse = False
@@ -484,9 +480,9 @@ class SolutionRetriver:
             i = 1
             for x in list(fields[1]):
                 if (x == '0'):
-                    sol += ' -'+str(i)
+                    sol += ' -' + str(i)
                 else:
-                    sol += ' '+str(i)
+                    sol += ' ' + str(i)
                 i += 1
             for i in range(solCount):
                 solList.append(sol)
@@ -497,11 +493,11 @@ class SolutionRetriver:
     @staticmethod
     def getSolutionFromSTS(inputFile, numSolutions, indVarList, newSeed):
         kValue = 50
-        samplingRounds = numSolutions/kValue + 1
+        samplingRounds = numSolutions / kValue + 1
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        outputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".out"
-        cmd = './samplers/STS -k='+str(kValue)+' -nsamples='+str(samplingRounds)+' '+str(inputFile)
-        cmd += ' > '+str(outputFile)
+        outputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".out"
+        cmd = './samplers/STS -k=' + str(kValue) + ' -nsamples=' + str(samplingRounds) + ' ' + str(inputFile)
+        cmd += ' > ' + str(outputFile)
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
@@ -511,15 +507,14 @@ class SolutionRetriver:
 
         solList = []
         shouldStart = False
-        #baseList = {}
+        # baseList = {}
         for j in range(len(lines)):
-            if(lines[j].strip() == 'Outputting samples:' or lines[j].strip() == 'start'):
+            if (lines[j].strip() == 'Outputting samples:' or lines[j].strip() == 'start'):
                 shouldStart = True
                 continue
             if (lines[j].strip().startswith('Log') or lines[j].strip() == 'end'):
                 shouldStart = False
             if (shouldStart):
-
 
                 '''if lines[j].strip() not in baseList:
                     baseList[lines[j].strip()] = 1
@@ -530,9 +525,9 @@ class SolutionRetriver:
                 # valutions are 0 and 1 and in the same order as c ind.
                 for x in list(lines[j].strip()):
                     if (x == '0'):
-                        sol += ' -'+str(indVarList[i])
+                        sol += ' -' + str(indVarList[i])
                     else:
-                        sol += ' '+str(indVarList[i])
+                        sol += ' ' + str(indVarList[i])
                     i += 1
                 solList.append(sol)
                 if len(solList) == numSolutions:
@@ -545,11 +540,11 @@ class SolutionRetriver:
 
         os.unlink(outputFile)
         return solList
-    
+
     @staticmethod
     def getSolutionFromCMSsampler(inputFile, numSolutions, indVarList, newSeed):
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        outputFile = tempfile.gettempdir()+'/'+inputFileSuffix+".out"
+        outputFile = tempfile.gettempdir() + '/' + inputFileSuffix + ".out"
         cmd = "./samplers/cryptominisat5 --restart luby --maple 0 --verb 10 --nobansol"
         cmd += " --scc 1 -n1 --presimp 0 --polar rnd --freq 0.9999"
         cmd += " --random " + str(int(newSeed)) + " --maxsol " + str(numSolutions)
@@ -586,44 +581,43 @@ class SolutionRetriver:
             sys.exit(1)
         os.unlink(outputFile)
         return solreturnList
-    
+
     @staticmethod
     def getSolutionFromSMARCH(inputFile, numSolutions, indVarList, newSeed):
-        cmd = "python3 ./samplers/smarch_mp.py -p " + str(P_THREADS) + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions) + " > /dev/null 2>&1"
-        #cmd = "python3 /home/gilles/ICST2019-EMSE-Ext/Kclause_Smarch-local/Smarch/smarch.py " + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions)
+        cmd = "python3 ./samplers/smarch_mp.py -p " + str(P_THREADS) + " -o " + os.path.dirname(
+            inputFile) + " " + inputFile + " " + str(numSolutions) + " > /dev/null 2>&1"
+        # cmd = "python3 /home/gilles/ICST2019-EMSE-Ext/Kclause_Smarch-local/Smarch/smarch.py " + " -o " + os.path.dirname(inputFile) + " " + inputFile + " " + str(numSolutions)
         if args.verbose:
             print("cmd: ", cmd)
         os.system(cmd)
-        #if (numSolutions > 1):
-         #   i = 0
+        # if (numSolutions > 1):
+        #   i = 0
         solList = []
-        tempFile = inputFile.replace('.cnf','_'+ str(numSolutions))+'.samples'
+        tempFile = inputFile.replace('.cnf', '_' + str(numSolutions)) + '.samples'
         if args.verbose:
-            print(tempFile) 
-        
-        df= pd.read_csv(tempFile,header=None)
+            print(tempFile)
 
-        #with open(inputFile+'.samples', 'r') as f:
-         #   lines = f.readlines()
+        df = pd.read_csv(tempFile, header=None)
+
+        # with open(inputFile+'.samples', 'r') as f:
+        #   lines = f.readlines()
         for x in df.values:
-            #tmpLst = []
+            # tmpLst = []
             lst = x.tolist()
             sol = ''
             for i in lst:
                 if not math.isnan(i):
                     sol += ' ' + str(int(i))
-            #tmpList = [str(int(i)) for i in lst if not math.isnan(i)] 
-           # if args.verbose:
-            #    print(sol)
-           
-            #solList.append(tmpList)
-        #solList = [x for x in df.values]
+            # tmpList = [str(int(i)) for i in lst if not math.isnan(i)]
+        # if args.verbose:
+        #    print(sol)
+
+        # solList.append(tmpList)
+        # solList = [x for x in df.values]
         os.unlink(tempFile)
-        solList.append(sol)        
+        solList.append(sol)
 
         return solList
-
-
 
 
 # returns List of Independent Variables
@@ -643,7 +637,7 @@ def parseIndSupport(indSupportFile):
             indList.extend(line.split())
 
     if len(indList) == 0:
-        indList = [int(x) for x in range(1, numVars+1)]
+        indList = [int(x) for x in range(1, numVars + 1)]
     else:
         indList = [int(x) for x in indList]
     return indList
@@ -671,36 +665,42 @@ def chainFormulaSetup(sampleSol, unifSol, numSolutions):
     # adding more chain formulas (at most 8 in total: 3 + 5)
     # these chain formulas will have 31 solutions over 6 variables
     lenSol = len(sampleSol.split())
-    for i in range(min(int(math.log(numSolutions, 2))+4, lenSol-3, 5)):
+    for i in range(min(int(math.log(numSolutions, 2)) + 4, lenSol - 3, 5)):
         countList.append(31)
         newVarList.append(6)
     assert len(countList) == len(newVarList)
 
     # picking selector literals, i.e. k1, k2, k3, randomly
     if args.verbose:
-        print("len count list: " +  str(len(countList)))
+        print("len count list: " + str(len(countList)))
         print("#num of samples" + str(len(sampleSol.split())))
-    
-    assert len(sampleSol.split()) > len(countList), "There are not enough samples to proceed, sampler failed ?" 
+
+    assert len(sampleSol.split()) > len(countList), "There are not enough samples to proceed, sampler failed ?"
     sampleLitList = random.sample(sampleSol.split(), len(countList))
     unifLitList = []
     unifSolMap = unifSol.split()
-    #since the reference is not always spur, some adapations are required here
-    for lit in sampleLitList:
-        if lit in unifSolMap:
-            unifLitList.append(lit)
-        elif int(lit)>0 and str('-'+lit) in unifSolMap:
-            unifLitList.append(str('-'+lit))
-        elif int(lit)<0 and str(abs(int(lit))) in unifSolMap:
-            unifLitList.append(str(abs(int(lit))))
-        else:
-            print("ERROR in Sampling ! ")     
-        #print("appending: " +  unifSolMap[abs(int(lit))-1]+  " for "+  lit) 
-        #unifLitList.append(unifSolMap[abs(int(lit))-1])
+
+    # from the last version of barbarik...
+    if CURR_REF_SAMPLER == SAMPLER_SPUR:
+        for lit in sampleLitList:
+            unifLitList.append(unifSolMap[abs(int(lit)) - 1])
+    else:
+        # since the reference is not always spur, some adapations are required here
+        for lit in sampleLitList:
+            if lit in unifSolMap:
+                unifLitList.append(lit)
+            elif int(lit) > 0 and str('-' + lit) in unifSolMap:
+                unifLitList.append(str('-' + lit))
+            elif int(lit) < 0 and str(abs(int(lit))) in unifSolMap:
+                unifLitList.append(str(abs(int(lit))))
+            else:
+                print("ERROR in Sampling ! ")
+        # print("appending: " +  unifSolMap[abs(int(lit))-1]+  " for "+  lit)
+        # unifLitList.append(unifSolMap[abs(int(lit))-1])
 
     assert len(unifLitList) == len(sampleLitList)
-    #print(unifLitList)
-    #print(sampleLitList)
+    # print(unifLitList)
+    # print(sampleLitList)
 
     for a, b in zip(unifLitList, sampleLitList):
         assert abs(int(a)) == abs(int(b))
@@ -709,9 +709,9 @@ def chainFormulaSetup(sampleSol, unifSol, numSolutions):
     indicatorLits.append(sampleLitList)
     indicatorLits.append(unifLitList)
 
-    #print("countList:", countList)
-    #print("newVarList:", newVarList)
-    #print("indicatorLits:", indicatorLits)
+    # print("countList:", countList)
+    # print("newVarList:", newVarList)
+    # print("indicatorLits:", indicatorLits)
     return ChainFormulaSetup(countList, newVarList, indicatorLits)
 
 
@@ -726,16 +726,16 @@ def getCNF(variable, binStr, sign, origTotalVars):
     cnfClauses = []
     binLen = len(binStr)
     if sign is False:
-        cnfClauses.append([-(binLen+1+origTotalVars)])
+        cnfClauses.append([-(binLen + 1 + origTotalVars)])
     else:
-        cnfClauses.append([binLen+1+origTotalVars])
+        cnfClauses.append([binLen + 1 + origTotalVars])
 
     for i in range(binLen):
-        newVar = int(binLen-i+origTotalVars)
+        newVar = int(binLen - i + origTotalVars)
         if sign is False:
-            newVar = -1*(binLen-i+origTotalVars)
+            newVar = -1 * (binLen - i + origTotalVars)
 
-        if (binStr[binLen-i-1] == '0'):
+        if (binStr[binLen - i - 1] == '0'):
             cnfClauses.append([newVar])
         else:
             cnfClauses = pushVar(newVar, cnfClauses)
@@ -748,8 +748,8 @@ def constructChainFormula(originalVar, solCount, newVar, origTotalVars, invert):
 
     binStr = str(bin(int(solCount)))[2:-1]
     binLen = len(binStr)
-    for _ in range(newVar-binLen-1):
-        binStr = '0'+binStr
+    for _ in range(newVar - binLen - 1):
+        binStr = '0' + binStr
 
     firstCNFClauses = getCNF(-int(originalVar), binStr, invert, origTotalVars)
     addedClauseNum = 0
@@ -773,7 +773,7 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
             if abs(i) not in indVarList:
                 continue
 
-            sampleVal[abs(i)] = int(i/abs(i))
+            sampleVal[abs(i)] = int(i / abs(i))
 
     # which variables are in pos/neg value in the uniform sample
     unifVal = {}
@@ -784,7 +784,7 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
             if abs(j) not in indVarList:
                 continue
 
-            unifVal[abs(j)] = int(j/abs(j))
+            unifVal[abs(j)] = int(j / abs(j))
 
             if sampleVal[abs(j)] != unifVal[abs(j)]:
                 diffIndex = abs(j)
@@ -817,8 +817,8 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
             x = int(x)
             if x == 0:
                 continue
-            sign = int(x/abs(x))
-            shiftedCNFStr += "%d " % (sign*(abs(x)+sumNewVar))
+            sign = int(x / abs(x))
+            shiftedCNFStr += "%d " % (sign * (abs(x) + sumNewVar))
         shiftedCNFStr += ' 0\n'
     del i
 
@@ -826,15 +826,15 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
     # X = sigma1 OR X = singma2
     # All variables are set except for the index where they last differ
     solClause = ''
-    splittingVar = diffIndex+sumNewVar
+    splittingVar = diffIndex + sumNewVar
     for var in indVarList:
         if var != diffIndex:
             numCls += 2
-            solClause += "%d " % (-splittingVar*sampleVal[diffIndex])
-            solClause += "%d 0\n" % (sampleVal[var]*(var+sumNewVar))
+            solClause += "%d " % (-splittingVar * sampleVal[diffIndex])
+            solClause += "%d 0\n" % (sampleVal[var] * (var + sumNewVar))
 
-            solClause += "%d " % (-splittingVar*unifVal[diffIndex])
-            solClause += "%d 0\n" % (unifVal[var]*(var+sumNewVar))
+            solClause += "%d " % (-splittingVar * unifVal[diffIndex])
+            solClause += "%d 0\n" % (unifVal[var] * (var + sumNewVar))
 
     ##########
     # We add the N number of chain formulas
@@ -846,7 +846,7 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
     ##########
     invert = True
     seenLits = {}
-    for indicLits in chainFormulaConf.indicatorLits:   # loop runs twice
+    for indicLits in chainFormulaConf.indicatorLits:  # loop runs twice
         currentNumVar = 0
         for i in range(len(indicLits)):
             newvar = chainFormulaConf.newVarList[i]
@@ -856,9 +856,9 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
 
             # not adding the chain formula twice to the same literal
             if indicLit not in seenLits:
-                sign = int(indicLit/abs(indicLit))
+                sign = int(indicLit / abs(indicLit))
                 addedClause, addedClauseNum = constructChainFormula(
-                    sign*(abs(indicLit)+sumNewVar),
+                    sign * (abs(indicLit) + sumNewVar),
                     chainFormulaConf.countList[i], newvar, currentNumVar,
                     invert)
 
@@ -871,11 +871,11 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
     del invert
 
     # create "c ind ..." lines
-    oldIndVarList = [x+sumNewVar for x in indVarList]
+    oldIndVarList = [x + sumNewVar for x in indVarList]
     tempIndVarList = copy.copy(oldIndVarList)
     indIter = 1
     indStr = 'c ind '
-    for i in range(1, currentNumVar+1):
+    for i in range(1, currentNumVar + 1):
         if indIter % 10 == 0:
             indStr += ' 0\nc ind '
         indStr += "%d " % i
@@ -891,14 +891,14 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
 
     # dump new CNF
     with open(tempFile, 'w') as f:
-        f.write('p cnf %d %d\n' % (currentNumVar+numVar, numCls))
+        f.write('p cnf %d %d\n' % (currentNumVar + numVar, numCls))
         f.write(indStr)
         f.write(solClause)
-        #f.write("c -- old CNF below -- \n")
+        # f.write("c -- old CNF below -- \n")
         f.write(shiftedCNFStr)
 
-    #print("New file: ", tempFile)
-    #exit(0)
+    # print("New file: ", tempFile)
+    # exit(0)
 
     return True, tempIndVarList, oldIndVarList
 
@@ -906,7 +906,7 @@ def constructNewCNF(inputFile, tempFile, sampleSol, unifSol, chainFormulaConf, i
 class Experiment:
     def __init__(self, inputFile, maxSamples, minSamples, samplerType, refSamplerType):
         inputFileSuffix = inputFile.split('/')[-1][:-4]
-        self.tempFile = tempfile.gettempdir() + "/" + inputFileSuffix+"_t.cnf"
+        self.tempFile = tempfile.gettempdir() + "/" + inputFileSuffix + "_t.cnf"
         self.indVarList = parseIndSupport(inputFile)
         self.inputFile = inputFile
         self.samplerType = samplerType
@@ -925,7 +925,7 @@ class Experiment:
             solFields = sol.split()
             for entry in solFields:
                 if abs(int(entry)) in indVarList:
-                    solution += entry+' '
+                    solution += entry + ' '
 
             if solution in solMap.keys():
                 solMap[solution] += 1
@@ -957,7 +957,7 @@ class Experiment:
             return None, None
 
         # generate a new seed value for every different (i,j,experiment)
-        newSeed = numExperiments*(i*tj+j)+experiment
+        newSeed = numExperiments * (i * tj + j) + experiment
         # get sampler's solutions
         sampleSol = SolutionRetriver.getSolutionFromSampler(
             self.inputFile, 1, self.samplerType, self.indVarList, newSeed)
@@ -965,11 +965,11 @@ class Experiment:
 
         # get uniform sampler's solutions
         # get uniform sampler's solutions
-        #unifSol = SolutionRetriver.getSolutionFromSampler(
-         #   self.inputFile, 1, SAMPLER_SPUR, self.indVarList, newSeed)
-        #self.totalUniformSamples += 1
+        # unifSol = SolutionRetriver.getSolutionFromSampler(
+        #   self.inputFile, 1, SAMPLER_SPUR, self.indVarList, newSeed)
+        # self.totalUniformSamples += 1
 
-        #The reference sampler is a now a parameter of barbarik  
+        # The reference sampler is a now a parameter of barbarik
         unifSol = SolutionRetriver.getSolutionFromSampler(
             self.inputFile, 1, self.ref_sampler_type, self.indVarList, newSeed)
         self.totalUniformSamples += 1
@@ -1015,14 +1015,22 @@ if __name__ == "__main__":
     parser.add_argument('--eta', type=float, help="default = 0.9", default=0.9, dest='eta')
     parser.add_argument('--epsilon', type=float, help="default = 0.3", default=0.3, dest='epsilon')
     parser.add_argument('--delta', type=float, help="default = 0.05", default=0.05, dest='delta')
-    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
-                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
-                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
-                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='sampler')
-    parser.add_argument('--ref-sampler', type=int, help=str(SAMPLER_UNIGEN)+" for UniGen;\n" + str(SAMPLER_UNIGEN3)+" for UniGen3 (AppMC3);\n" +
-                        str(SAMPLER_QUICKSAMPLER)+" for QuickSampler;\n"+str(SAMPLER_STS)+" for STS;\n" + str(SAMPLER_CMS)+" for CMS;\n" +
-                        str(SAMPLER_SPUR)+" for SPUR;\n" + str(SAMPLER_SMARCH)+" for SMARCH;\n" + str(SAMPLER_UNIGEN2)+" for UniGen2;\n" +
-                        str(SAMPLER_KUS)+" for KUS;\n" + str(SAMPLER_DISTAWARE)+" for Distance-based Sampling;\n", default=SAMPLER_STS, dest='ref_sampler')
+    parser.add_argument('--sampler', type=int, help=str(SAMPLER_UNIGEN) + " for UniGen;\n" + str(
+        SAMPLER_UNIGEN3) + " for UniGen3 (AppMC3);\n" +
+                                                    str(SAMPLER_QUICKSAMPLER) + " for QuickSampler;\n" + str(
+        SAMPLER_STS) + " for STS;\n" + str(SAMPLER_CMS) + " for CMS;\n" +
+                                                    str(SAMPLER_SPUR) + " for SPUR;\n" + str(
+        SAMPLER_SMARCH) + " for SMARCH;\n" + str(SAMPLER_UNIGEN2) + " for UniGen2;\n" +
+                                                    str(SAMPLER_KUS) + " for KUS;\n" + str(
+        SAMPLER_DISTAWARE) + " for Distance-based Sampling;\n", default=SAMPLER_STS, dest='sampler')
+    parser.add_argument('--ref-sampler', type=int, help=str(SAMPLER_UNIGEN) + " for UniGen;\n" + str(
+        SAMPLER_UNIGEN3) + " for UniGen3 (AppMC3);\n" +
+                                                        str(SAMPLER_QUICKSAMPLER) + " for QuickSampler;\n" + str(
+        SAMPLER_STS) + " for STS;\n" + str(SAMPLER_CMS) + " for CMS;\n" +
+                                                        str(SAMPLER_SPUR) + " for SPUR;\n" + str(
+        SAMPLER_SMARCH) + " for SMARCH;\n" + str(SAMPLER_UNIGEN2) + " for UniGen2;\n" +
+                                                        str(SAMPLER_KUS) + " for KUS;\n" + str(
+        SAMPLER_DISTAWARE) + " for Distance-based Sampling;\n", default=SAMPLER_STS, dest='ref_sampler')
     parser.add_argument('--reverse', type=int, default=0, help="order to search in", dest='searchOrder')
     parser.add_argument('--minSamples', type=int, default=0, help="min samples", dest='minSamples')
     parser.add_argument('--maxSamples', type=int, default=sys.maxsize, help="max samples", dest='maxSamples')
@@ -1036,7 +1044,7 @@ if __name__ == "__main__":
 
     eta = args.eta
     epsilon = args.epsilon
-    if (eta < 2*epsilon):
+    if (eta < 2 * epsilon):
         print("Eta needs to be at least two times epsilon")
         exit(1)
     delta = args.delta
@@ -1051,18 +1059,21 @@ if __name__ == "__main__":
     minSamples = args.minSamples
     maxSamples = args.maxSamples
 
-    #preparing features list for distribution-aware sampling
-    if args.sampler == SAMPLER_DISTAWARE:
-       create_features_dict(inputFile)     
+    # setting the current reference sampler
+    CURR_REF_SAMPLER = args.sampler
 
-    totalLoops = int(math.ceil(math.log(2.0/(eta+2*epsilon), 2))+1)
+    # preparing features list for distribution-aware sampling
+    if args.sampler == SAMPLER_DISTAWARE:
+        create_features_dict(inputFile)
+
+    totalLoops = int(math.ceil(math.log(2.0 / (eta + 2 * epsilon), 2)) + 1)
     listforTraversal = range(totalLoops, 0, -1)
     if searchOrder == 1:
-        listforTraversal = range(1, totalLoops+1, 1)
+        listforTraversal = range(1, totalLoops + 1, 1)
 
     exp = Experiment(
         minSamples=minSamples, maxSamples=maxSamples, inputFile=inputFile,
-        samplerType=args.sampler,refSamplerType=args.ref_sampler)
+        samplerType=args.sampler, refSamplerType=args.ref_sampler)
 
     for experiment in range(numExperiments):
         print("Experiment: {:<5} of {:>5}".format(experiment, numExperiments))
@@ -1071,19 +1082,24 @@ if __name__ == "__main__":
         exp.totalUniformSamples = 0
         exp.thresholdSolutions = 0
         for j in listforTraversal:
-            tj = math.ceil(math.pow(2, j)*(2*epsilon+eta)/((eta-2*epsilon)**2)*math.log(4.0/(eta+2*epsilon), 2)*(4*math.e/(math.e-1)*math.log(1.0/delta)))
-            beta = (math.pow(2, j-1)+1)*(eta + 2*epsilon)*1.0/(4+(2*epsilon+eta)*(math.pow(2, j-1) - 1))
-            gamma = (beta-2*epsilon)/4
-            constantFactor = math.ceil(1/(8.79*gamma*gamma))
-            boundFactor = math.log((16)*(math.e/(math.e-1))*(1/(delta*(eta-2*epsilon)**2))*math.log(4/(eta+2*epsilon), 2)*math.log(1/delta), 2)
+            tj = math.ceil(
+                math.pow(2, j) * (2 * epsilon + eta) / ((eta - 2 * epsilon) ** 2) * math.log(4.0 / (eta + 2 * epsilon),
+                                                                                             2) * (
+                            4 * math.e / (math.e - 1) * math.log(1.0 / delta)))
+            beta = (math.pow(2, j - 1) + 1) * (eta + 2 * epsilon) * 1.0 / (
+                        4 + (2 * epsilon + eta) * (math.pow(2, j - 1) - 1))
+            gamma = (beta - 2 * epsilon) / 4
+            constantFactor = math.ceil(1 / (8.79 * gamma * gamma))
+            boundFactor = math.log((16) * (math.e / (math.e - 1)) * (1 / (delta * (eta - 2 * epsilon) ** 2)) * math.log(
+                4 / (eta + 2 * epsilon), 2) * math.log(1 / delta), 2)
             print("constantFactor:{:<4} boundFactor: {:<20} logBoundFactor: {:<20}".format(
                 constantFactor, boundFactor, math.log(boundFactor, 2)))
             print("tj: {:<6} totalLoops: {:<5} beta: {:<10} epsilon: {:<10}".format(
                 tj, totalLoops, beta, epsilon))
 
-            exp.numSolutions = int(math.ceil(constantFactor*boundFactor))
-            exp.loThresh = int((exp.numSolutions*1.0/2)*(1-(beta+2*epsilon)/2))
-            exp.hiThresh = int((exp.numSolutions*1.0/2)*(1+(beta+2*epsilon)/2))
+            exp.numSolutions = int(math.ceil(constantFactor * boundFactor))
+            exp.loThresh = int((exp.numSolutions * 1.0 / 2) * (1 - (beta + 2 * epsilon) / 2))
+            exp.hiThresh = int((exp.numSolutions * 1.0 / 2) * (1 + (beta + 2 * epsilon) / 2))
             print("numSolutions: {:<5} loThresh:{:<6} hiThresh: {:<6}".format(
                 exp.numSolutions, exp.loThresh, exp.hiThresh))
 
@@ -1091,7 +1107,8 @@ if __name__ == "__main__":
             breakExperiment = False
             while i < int(tj) and not breakExperiment:
                 if args.verbose:
-                    print("*** Progress *** " + "i: " + str(i) + " j: "+ str(j)+ " ---- " + str(j*i) +  " / " + str(len(listforTraversal)*tj))
+                    print("*** Progress *** " + "i: " + str(i) + " j: " + str(j) + " ---- " + str(j * i) + " / " + str(
+                        len(listforTraversal) * tj))
                 i += 1
                 ok, breakExperiment = exp.one_experiment(experiment, j, i, numExperiments, tj)
 
